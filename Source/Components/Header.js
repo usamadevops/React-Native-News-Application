@@ -1,15 +1,49 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, Image} from 'react-native';
+import {theme} from '../constants';
 import styles from './styles';
-const App_Icon = require('../assets/Icons/App_Icon.jpg');
+const App_Icon = require('../assets/Icons/App_Icon2.png');
+const profile = require('../assets/images/profile.jpg');
 const Header = () => {
   return (
-    <View style={styles.Container}>
+    <View
+      style={{
+        alignItems: 'center',
+        justifyContent: 'center',
+        paddingHorizontal: 15,
+      }}>
       <View style={styles.Header}>
+        <Image
+          source={App_Icon}
+          style={{
+            width: 30,
+            height: 30,
+          }}
+        />
+        <View
+          style={{
+            flex: 1,
+            flexDirection: 'row',
+            alignItems: 'center',
+            marginLeft: 10,
+          }}>
+          <Text
+            style={[
+              theme.textStyles.largeText,
+              {color: theme.colors.Red, fontWeight: '600'},
+            ]}>
+            Strike
+          </Text>
+          <Text
+            style={[theme.textStyles.largeText, {color: theme.colors.Blue}]}>
+            News
+          </Text>
+        </View>
         <View>
-          <Image source={App_Icon} />
-          <Text>Strike</Text>
-          <Text>News</Text>
+          <Image
+            source={profile}
+            style={{width: 35, height: 35, borderRadius: 40}}
+          />
         </View>
       </View>
     </View>

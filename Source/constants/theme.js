@@ -7,9 +7,9 @@ const colors = {
   Black: '#000000',
   Red: '#ED1C2E',
   Blue: '#0077B6',
-  DarkGray: '7F7F7F',
+  DarkGray: '#7F7F7F',
   MediumGray: '#A7A7A7',
-  LightGray: 'CDCDCD',
+  LightGray: '#CDCDCD',
 };
 let footerHeight = 55;
 

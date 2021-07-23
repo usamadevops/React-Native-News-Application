@@ -12,6 +12,8 @@ target 'StrikeNews' do
     :hermes_enabled => false
   )
 
+  pod 'RNSVG', :path => '../node_modules/react-native-svg'
+
   target 'StrikeNewsTests' do
     inherit! :complete
     # Pods for testing

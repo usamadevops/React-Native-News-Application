@@ -1,2 +1,3 @@
 import * as theme from './theme';
-export {theme};
+import * as mock from './mock';
+export {theme, mock};
