@@ -1,11 +1,23 @@
-import React from 'react';
-import {View, Text} from 'react-native';
+import React, {useEffect} from 'react';
+import {View, Text, Image} from 'react-native';
 import {theme} from '../constants';
 import styles from './Style';
-const Splash = () => {
+const App_Icon = require('../assets/Icons/App_Icon.jpg');
+const Splash = ({navigation}) => {
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      navigation.navigate('Home');
+    }, 3000);
+    return () => {
+      timeout;
+    };
+  }, []);
   return (
     <View style={styles.container}>
-      <Text>StrikeNews</Text>
+      <View style={{flexDirection: 'column', alignItems: 'center'}}>
+        <Image source={App_Icon} style={{width: 200, height: 200}} />
+        <Text style={[styles.appTitle]}>StrikeNews</Text>
+      </View>
     </View>
   );
 };
