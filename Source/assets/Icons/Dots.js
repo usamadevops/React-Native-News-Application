@@ -11,9 +11,9 @@ function Dots(props) {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       focusable="true">
-      <Circle cx={3} cy={3} r={3} fill="#000" />
-      <Circle cx={12} cy={3} r={3} fill="#000" />
-      <Circle cx={21} cy={3} r={3} fill="#000" />
+      <Circle cx={3} cy={3} r={3} fill={props.color} />
+      <Circle cx={12} cy={3} r={3} fill={props.color} />
+      <Circle cx={21} cy={3} r={3} fill={props.color} />
     </Svg>
   );
 }

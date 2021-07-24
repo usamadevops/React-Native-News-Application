@@ -4,7 +4,7 @@ import styles from './Style';
 const Post = () => {
   return (
     <View style={styles.container}>
-      <Text>Post</Text>
+      <View></View>
     </View>
   );
 };

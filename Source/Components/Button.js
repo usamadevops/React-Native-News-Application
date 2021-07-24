@@ -31,8 +31,8 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   input: {
-    fontFamily: fontFamily.Bozon_Demi_Bold,
-    fontSize: theme.fonts.h3.fontSize,
+    fontFamily: fontFamily.Bozon_Bold,
+    fontSize: theme.fonts.header.fontSize,
     color: theme.colors.Blue,
   },
 });

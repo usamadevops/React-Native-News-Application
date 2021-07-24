@@ -1,5 +1,5 @@
 import React from 'react';
-import {Pressable, View, Text, Animated} from 'react-native';
+import {View, Animated} from 'react-native';
 
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {Home, Search, Stats, Notification, Post} from '../../Screens';
@@ -9,10 +9,8 @@ import {
   NotificationIcon,
   SearchIcon,
   StatsIcon,
-  DotsIcon,
 } from '../../assets/Icons';
 import {NavigationContainer} from '@react-navigation/native';
-
 const Tab = createBottomTabNavigator();
 export default function BottomTab() {
   const taboffSetValue = React.useRef(new Animated.Value(0)).current;
@@ -22,11 +20,9 @@ export default function BottomTab() {
         tabBarOptions={{
           showLabel: false,
           adaptive: true,
-
+          keyboardHidesTabBar: true,
           style: {
             backgroundColor: theme.colors.White,
-            position: 'absolute',
-
             height: 60,
           },
         }}>
@@ -125,13 +121,12 @@ export default function BottomTab() {
       </Tab.Navigator>
       <Animated.View
         style={{
-          width: theme.constants.screenWidth / 4,
-          height: 2,
+          width: theme.constants.screenWidth / 8,
+          height: 2.5,
           backgroundColor: theme.colors.Blue,
           position: 'absolute',
           bottom: 60,
-          borderRadius: 10,
-
+          left: 26,
           transform: [{translateX: taboffSetValue}],
         }}></Animated.View>
     </NavigationContainer>
