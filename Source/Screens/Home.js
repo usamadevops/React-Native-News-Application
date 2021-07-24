@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Text, Image, ScrollView} from 'react-native';
 import styles from './Style';
-import {Header, ImportantNewsCard, TopNewsCard, SmallCard} from '../components';
+import {Header, ImportantNewsCard, TopNewsCard, SmallCard} from '../Components';
 
 const Home = () => {
   return (

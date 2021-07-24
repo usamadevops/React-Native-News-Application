@@ -17,7 +17,7 @@ const ImportantNewsCard = () => {
         paddingHorizontal: 15,
         borderWidth: 0.6,
         marginHorizontal: 15,
-        borderColor: theme.colors.DarkGray,
+        borderColor: theme.colors.LightGray,
       }}>
       <View style={{flex: 1, flexDirection: 'row', flexWrap: 'wrap'}}>
         <Text
@@ -30,11 +30,11 @@ const ImportantNewsCard = () => {
           }}>
           <Text
             style={{
-              color: theme.colors.Blue,
+              color: theme.colors.Red,
             }}>
-            Covid News:
+            Covid-19 News:
           </Text>
-          The latest coverage about Covid-19
+          The latest coverage About Covid-19
         </Text>
       </View>
       <View>

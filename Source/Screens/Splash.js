@@ -7,7 +7,7 @@ const Splash = ({navigation}) => {
   useEffect(() => {
     const timeout = setTimeout(() => {
       navigation.navigate('Tab');
-    }, 3000);
+    }, 1000);
     return () => {
       timeout;
     };
