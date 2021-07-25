@@ -3,6 +3,7 @@ import {Button, Pressable, StyleSheet, Text, View} from 'react-native';
 import {theme} from '../constants';
 import {fontFamily} from '../constants/Fonts';
 import PropTypes from 'prop-types';
+
 function getRandomColor() {
   var letters = '0123456789ABCDEF';
   while (true) {
@@ -14,14 +15,7 @@ function getRandomColor() {
   }
 }
 
-// function getFirstletter() {
-//   let name = 'Sdfsdg';
-//   let fisrtletter = name.charAt(0);
-//   return fisrtletter;
-// }
-
-const TopicsCard = ({TopicName, Followers}) => {
-  const [letter, setLetter] = React.useState();
+const TopicsCard = ({letter, TopicName, Followers}) => {
   return (
     <View style={styles.container}>
       <View style={styles.leftContainer}>
@@ -40,7 +34,7 @@ const TopicsCard = ({TopicName, Followers}) => {
               fontSize: 25,
               color: theme.colors.White,
             }}>
-            G
+            {letter}
           </Text>
         </View>
         <View
@@ -70,12 +64,18 @@ const TopicsCard = ({TopicName, Followers}) => {
       </View>
       <View>
         <Pressable
+          android_ripple={{
+            color: theme.colors.Red,
+            borderless: false,
+            radius: 45,
+          }}
           style={{
             paddingHorizontal: 15,
             paddingVertical: 10,
             backgroundColor: theme.colors.Blue,
             borderRadius: 5,
-          }}>
+          }}
+          onPress={() => alert('followed')}>
           <Text
             style={{
               fontFamily: fontFamily.Bozon_Demi_Bold,
@@ -98,10 +98,10 @@ export default TopicsCard;
 const styles = StyleSheet.create({
   container: {
     marginVertical: 10,
+    marginHorizontal: 20,
     width: theme.constants.screenWidth - 40,
     alignItems: 'center',
     flexDirection: 'row',
-
     justifyContent: 'space-between',
   },
   leftContainer: {

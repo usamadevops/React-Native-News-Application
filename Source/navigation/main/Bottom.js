@@ -76,6 +76,11 @@ export default function BottomTab() {
           name="Notifications"
           component={Notification}
           options={{
+            tabBarBadge: 8,
+            tabBarBadgeStyle: {
+              backgroundColor: '#2CD483',
+              color: theme.colors.White,
+            },
             tabBarIcon: ({focused, size, color}) => {
               return (
                 <View>

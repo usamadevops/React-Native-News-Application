@@ -36,4 +36,26 @@ const TopNews = [
   },
 ];
 
-export {TopNews};
+const Topics = [
+  {
+    id: 1,
+    name: 'Technology',
+    Followers: '120K',
+  },
+  {
+    id: 2,
+    name: 'Sports',
+    Followers: '120K',
+  },
+  {
+    id: 3,
+    name: 'Freedom',
+    Followers: '120K',
+  },
+  {
+    id: 4,
+    name: 'Discovery',
+    Followers: '120K',
+  },
+];
+export {TopNews, Topics};
