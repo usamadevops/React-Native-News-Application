@@ -4,4 +4,13 @@ import SearchIcon from './Search';
 import StatsIcon from './Stats';
 import DotsIcon from './Dots';
 import Bookmark from './Bookmark';
-export {Bookmark, NotificationIcon, SearchIcon, StatsIcon, DotsIcon, HomeIcon};
+import BackButton from './BackButton';
+export {
+  Bookmark,
+  BackButton,
+  NotificationIcon,
+  SearchIcon,
+  StatsIcon,
+  DotsIcon,
+  HomeIcon,
+};
