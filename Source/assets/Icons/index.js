@@ -3,4 +3,5 @@ import HomeIcon from './Home';
 import SearchIcon from './Search';
 import StatsIcon from './Stats';
 import DotsIcon from './Dots';
-export {NotificationIcon, SearchIcon, StatsIcon, DotsIcon, HomeIcon};
+import Bookmark from './Bookmark';
+export {Bookmark, NotificationIcon, SearchIcon, StatsIcon, DotsIcon, HomeIcon};

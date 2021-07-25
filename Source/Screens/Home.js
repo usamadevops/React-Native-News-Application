@@ -10,7 +10,7 @@ const Home = () => {
       <ScrollView horizontal={false}>
         <ImportantNewsCard />
         <TopNewsCard />
-        <SmallCard />
+        <SmallCard navigationscreen="Post" />
       </ScrollView>
     </View>
   );

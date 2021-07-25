@@ -15,7 +15,7 @@ const Tab = createBottomTabNavigator();
 export default function BottomTab() {
   const taboffSetValue = React.useRef(new Animated.Value(0)).current;
   return (
-    <NavigationContainer independent={true}>
+    <Animated.View style={{flex: 1}} needsOffscreenAlphaCompositing={true}>
       <Tab.Navigator
         tabBarOptions={{
           showLabel: false,
@@ -134,6 +134,6 @@ export default function BottomTab() {
           left: 26,
           transform: [{translateX: taboffSetValue}],
         }}></Animated.View>
-    </NavigationContainer>
+    </Animated.View>
   );
 }
