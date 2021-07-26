@@ -7,32 +7,18 @@ import {
   ScrollView,
   StyleSheet,
   Pressable,
-  Animated,
 } from 'react-native';
 import {BackButton, Bookmark} from '../assets/Icons';
 import {theme} from '../constants';
 import {fontFamily} from '../constants/Fonts';
 import styles from './Style';
 const Image1 = require('../assets/images/IPhone.png');
+import Animated from 'react-native-reanimated';
 const IMAGE_HEIGHT = 280;
 const Post = ({navigation}) => {
-  const scrollA = useRef(new Animated.Value(0)).current;
   return (
     <Animated.View style={styles.container}>
-      <ScrollView
-        showsVerticalScrollIndicator={false}
-        onScroll={Animated.event(
-          // scrollX = e.nativeEvent.contentOffset.x
-          [
-            {
-              nativeEvent: {
-                contentOffset: {
-                  x: scrollA,
-                },
-              },
-            },
-          ],
-        )}>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <Animated.Image
           source={Image1}
           style={{
@@ -83,7 +69,6 @@ const Post = ({navigation}) => {
             }}>
             <View style={styles2.BottomContainer}>
               <Text style={styles2.timeText}>34 Mins</Text>
-
               <Text style={styles2.categoryText}>Freedom</Text>
             </View>
             <View>
@@ -107,9 +92,9 @@ const Post = ({navigation}) => {
             textBreakStrategy="balanced"
             style={{
               fontFamily: fontFamily.Bozon_Regular,
-              fontSize: 14.5,
-              lineHeight: 20,
-              letterSpacing: 0.5,
+              fontSize: 14,
+              lineHeight: 22,
+              letterSpacing: 0.9,
               color: '#151010',
             }}>
             iPhone 13 price As for how much the iPhone 13 will cost, we'd expect

@@ -1,9 +1,15 @@
 import 'react-native-gesture-handler';
 import React from 'react';
 import MainStack from './Source/navigation/main/Stack';
+import {StatusBar, View} from 'react-native';
 
 const App = () => {
-  return <MainStack />;
+  return (
+    <View style={{flex: 1}}>
+      <StatusBar hidden={true} />
+      <MainStack />
+    </View>
+  );
 };
 
 export default App;

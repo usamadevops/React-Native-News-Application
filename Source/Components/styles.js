@@ -22,7 +22,7 @@ export default styles = StyleSheet.create({
   CardContainer: {
     width: theme.constants.screenWidth,
     flexDirection: 'column',
-    paddingVertical: 10,
+    paddingTop: 10,
     paddingHorizontal: 20,
   },
   SmallCardContainer: {
@@ -49,7 +49,7 @@ export default styles = StyleSheet.create({
   },
   BottomContainer: {
     flexDirection: 'row',
-    marginVertical: 10,
+    marginTop: 10,
   },
   timeText: {
     fontFamily: fontFamily.Bozon_Demi_Bold,
@@ -77,7 +77,7 @@ export default styles = StyleSheet.create({
     fontFamily: fontFamily.Bozon_Demi_Bold,
     fontSize: theme.fonts.subTitle.fontSize,
     lineHeight: 22,
-    letterSpacing: 0.34,
+    letterSpacing: 0.55,
     color: theme.colors.MediumGray,
   },
 });

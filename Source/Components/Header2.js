@@ -2,9 +2,11 @@ import React from 'react';
 import {View, Text, Pressable} from 'react-native';
 import {theme} from '../constants';
 import styles from './styles';
-import {DotsIcon} from '../assets/Icons';
+import {BackButton, DotsIcon} from '../assets/Icons';
 import {fontFamily} from '../constants/Fonts';
-const Header2 = ({title}) => {
+import {useNavigation} from '@react-navigation/native';
+const Header2 = ({title, backButton}) => {
+  const navigation = useNavigation();
   return (
     <View
       style={{
@@ -13,6 +15,14 @@ const Header2 = ({title}) => {
         paddingHorizontal: 15,
       }}>
       <View style={styles.Header}>
+        {backButton === true ? (
+          <Pressable
+            style={{marginRight: 10}}
+            onPress={() => navigation.goBack()}>
+            <BackButton />
+          </Pressable>
+        ) : null}
+
         <View style={{flex: 1}}>
           <Text
             style={{

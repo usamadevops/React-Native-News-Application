@@ -4,5 +4,6 @@ import Stats from './Stats';
 import Splash from './Splash';
 import Notification from './Notification';
 import Post from './Post';
-
-export {Home, Search, Stats, Splash, Notification, Post};
+import Settings from './Settings';
+import Login from './Login';
+export {Home, Login, Search, Stats, Splash, Notification, Post, Settings};

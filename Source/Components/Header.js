@@ -1,10 +1,12 @@
+import {useNavigation} from '@react-navigation/native';
 import React from 'react';
-import {View, Text, Image} from 'react-native';
+import {View, Text, Image, Pressable} from 'react-native';
 import {theme} from '../constants';
 import styles from './styles';
 const App_Icon = require('../assets/Icons/App_Icon2.png');
 const profile = require('../assets/images/profile.jpg');
 const Header = () => {
+  const navigation = useNavigation();
   return (
     <View
       style={{
@@ -20,6 +22,7 @@ const Header = () => {
             height: 30,
           }}
         />
+
         <View
           style={{
             flex: 1,
@@ -30,7 +33,7 @@ const Header = () => {
           <Text
             style={[
               theme.textStyles.largeText,
-              {color: theme.colors.Red, fontWeight: '600'},
+              {color: theme.colors.Blue, fontWeight: '600'},
             ]}>
             Strike
           </Text>
@@ -40,10 +43,12 @@ const Header = () => {
           </Text>
         </View>
         <View>
-          <Image
-            source={profile}
-            style={{width: 35, height: 35, borderRadius: 40}}
-          />
+          <Pressable onPress={() => navigation.navigate('Settings')}>
+            <Image
+              source={profile}
+              style={{width: 35, height: 35, borderRadius: 40}}
+            />
+          </Pressable>
         </View>
       </View>
     </View>

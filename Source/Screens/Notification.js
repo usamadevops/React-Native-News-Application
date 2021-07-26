@@ -22,8 +22,9 @@ const Notification = () => {
               fontFamily: fontFamily.Bozon_Bold,
               fontSize: theme.fonts.subTitle.fontSize,
               color: theme.colors.MediumGray,
+              letterSpacing: 0.5,
             }}>
-            Articles for you
+            ARTICLES FOR YOU
           </Text>
         </View>
         <View>
@@ -32,6 +33,7 @@ const Notification = () => {
               fontFamily: fontFamily.Bozon_Bold,
               fontSize: theme.fonts.body.fontSize,
               color: theme.colors.Black,
+              letterSpacing: 0.5,
             }}>
             See all
           </Text>
@@ -54,8 +56,9 @@ const Notification = () => {
               fontFamily: fontFamily.Bozon_Bold,
               fontSize: theme.fonts.subTitle.fontSize,
               color: theme.colors.MediumGray,
+              letterSpacing: 0.5,
             }}>
-            Today
+            TODAY
           </Text>
         </View>
         <View>
@@ -64,6 +67,7 @@ const Notification = () => {
               fontFamily: fontFamily.Bozon_Bold,
               fontSize: theme.fonts.body.fontSize,
               color: theme.colors.Black,
+              letterSpacing: 0.5,
             }}>
             See all
           </Text>
