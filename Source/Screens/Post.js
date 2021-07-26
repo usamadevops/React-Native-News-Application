@@ -1,4 +1,5 @@
 import React from 'react';
+import {useRef} from 'react';
 import {
   View,
   Text,
@@ -6,6 +7,7 @@ import {
   ScrollView,
   StyleSheet,
   Pressable,
+  Animated,
 } from 'react-native';
 import {BackButton, Bookmark} from '../assets/Icons';
 import {theme} from '../constants';
@@ -14,10 +16,24 @@ import styles from './Style';
 const Image1 = require('../assets/images/IPhone.png');
 const IMAGE_HEIGHT = 280;
 const Post = ({navigation}) => {
+  const scrollA = useRef(new Animated.Value(0)).current;
   return (
-    <View style={styles.container}>
-      <ScrollView showsVerticalScrollIndicator={false}>
-        <Image
+    <Animated.View style={styles.container}>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        onScroll={Animated.event(
+          // scrollX = e.nativeEvent.contentOffset.x
+          [
+            {
+              nativeEvent: {
+                contentOffset: {
+                  x: scrollA,
+                },
+              },
+            },
+          ],
+        )}>
+        <Animated.Image
           source={Image1}
           style={{
             width: theme.constants.screenWidth,
@@ -71,7 +87,14 @@ const Post = ({navigation}) => {
               <Text style={styles2.categoryText}>Freedom</Text>
             </View>
             <View>
-              <Bookmark />
+              <Pressable
+                android_ripple={{
+                  color: theme.colors.LightGray,
+                  borderless: true,
+                  radius: 15,
+                }}>
+                <Bookmark />
+              </Pressable>
             </View>
           </View>
         </View>
@@ -84,9 +107,9 @@ const Post = ({navigation}) => {
             textBreakStrategy="balanced"
             style={{
               fontFamily: fontFamily.Bozon_Regular,
-              fontSize: 13,
-              lineHeight: 22,
-              letterSpacing: 0.7,
+              fontSize: 14.5,
+              lineHeight: 20,
+              letterSpacing: 0.5,
               color: '#151010',
             }}>
             iPhone 13 price As for how much the iPhone 13 will cost, we'd expect
@@ -143,7 +166,7 @@ const Post = ({navigation}) => {
           </Text>
         </View>
       </ScrollView>
-    </View>
+    </Animated.View>
   );
 };
 
