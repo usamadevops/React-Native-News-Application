@@ -4,8 +4,17 @@ import {Header2} from '../Components';
 import {theme} from '../constants';
 import {fontFamily} from '../constants/Fonts';
 const Settings = () => {
-  const [isEnabled, setIsEnabled] = React.useState(false);
-  const toggleSwitch = () => setIsEnabled(previousState => !previousState);
+  const [CoronaisEnabled, setIsCoronaEnabled] = React.useState(false);
+  const [LatestisEnabled, setIsLatestEnabled] = React.useState(false);
+  const [AnonomousisEnabled, setIsAnonomousEnabled] = React.useState(false);
+  const [HideisEnabled, setIsHideEnabled] = React.useState(false);
+  const toggleSwitch1 = () =>
+    setIsCoronaEnabled(previousState => !previousState);
+  const toggleSwitch2 = () =>
+    setIsLatestEnabled(previousState => !previousState);
+  const toggleSwitch3 = () =>
+    setIsAnonomousEnabled(previousState => !previousState);
+  const toggleSwitch4 = () => setIsHideEnabled(previousState => !previousState);
 
   return (
     <View style={styles.Container}>
@@ -48,15 +57,15 @@ const Settings = () => {
         <View>
           <Switch
             trackColor={{false: '#C0C0C0', true: '#00B4D8'}}
-            thumbColor={isEnabled ? '#0077B6' : '#0077B6'}
+            thumbColor={CoronaisEnabled ? '#0077B6' : '#0077B6'}
             ios_backgroundColor="#3e3e3e"
-            onValueChange={toggleSwitch}
-            value={isEnabled}
+            onValueChange={toggleSwitch1}
+            value={CoronaisEnabled}
           />
         </View>
       </View>
       <View style={styles.NotificationsSwitchView}>
-        <View>
+        <View style={styles.overflowcontent}>
           <Text style={styles.BtnTitle}>Latest News</Text>
           <Text style={styles.switchCaption}>
             Get the Latest News from all over the World.
@@ -65,10 +74,10 @@ const Settings = () => {
         <View>
           <Switch
             trackColor={{false: '#C0C0C0', true: '#00B4D8'}}
-            thumbColor={isEnabled ? '#0077B6' : '#0077B6'}
+            thumbColor={LatestisEnabled ? '#0077B6' : '#0077B6'}
             ios_backgroundColor="#3e3e3e"
-            onValueChange={toggleSwitch}
-            value={isEnabled}
+            onValueChange={toggleSwitch2}
+            value={LatestisEnabled}
           />
         </View>
       </View>
@@ -76,7 +85,7 @@ const Settings = () => {
         <Text style={styles.HeaderText}>PRIVACY</Text>
       </View>
       <View style={styles.NotificationsSwitchView}>
-        <View>
+        <View style={styles.overflowcontent}>
           <Text style={styles.BtnTitle}>Follow Anonomously</Text>
           <Text style={styles.switchCaption}>
             Do not let others know of your activities
@@ -85,25 +94,25 @@ const Settings = () => {
         <View>
           <Switch
             trackColor={{false: '#C0C0C0', true: '#00B4D8'}}
-            thumbColor={isEnabled ? '#0077B6' : '#0077B6'}
+            thumbColor={AnonomousisEnabled ? '#0077B6' : '#0077B6'}
             ios_backgroundColor="#3e3e3e"
-            onValueChange={toggleSwitch}
-            value={isEnabled}
+            onValueChange={toggleSwitch3}
+            value={AnonomousisEnabled}
           />
         </View>
       </View>
       <View style={styles.NotificationsSwitchView}>
-        <View>
+        <View style={styles.overflowcontent}>
           <Text style={styles.BtnTitle}>Hide your Profile from others</Text>
           <Text style={styles.switchCaption}>Hide your Identity</Text>
         </View>
         <View>
           <Switch
             trackColor={{false: '#C0C0C0', true: '#00B4D8'}}
-            thumbColor={isEnabled ? '#0077B6' : '#0077B6'}
+            thumbColor={HideisEnabled ? '#0077B6' : '#0077B6'}
             ios_backgroundColor="#3e3e3e"
-            onValueChange={toggleSwitch}
-            value={isEnabled}
+            onValueChange={toggleSwitch4}
+            value={HideisEnabled}
           />
         </View>
       </View>
@@ -152,6 +161,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     paddingVertical: 10,
   },
+  overflowcontent: {
+    width: theme.constants.screenWidth - 100,
+    flexWrap: 'nowrap',
+  },
   VersionText: {
     fontFamily: fontFamily.Bozon_Bold,
     fontSize: theme.fonts.header.fontSize,
@@ -171,16 +184,16 @@ const styles = StyleSheet.create({
     paddingVertical: 15,
   },
   BtnTitle: {
-    fontFamily: fontFamily.BRFirma_Medium,
+    fontFamily: fontFamily.Bozon_Regular,
     fontSize: theme.fonts.header.fontSize,
     color: theme.colors.Black,
     letterSpacing: 0.5,
   },
   switchCaption: {
-    fontFamily: fontFamily.Bozon_Demi_Bold,
+    fontFamily: fontFamily.Bozon_Regular,
     fontSize: theme.fonts.body.fontSize,
     color: theme.colors.DarkGray,
-    letterSpacing: 0.9,
+    letterSpacing: 0.5,
     lineHeight: 25,
   },
   NotificationsSwitchView: {
@@ -188,6 +201,6 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     paddingHorizontal: 20,
-    paddingVertical: 15,
+    paddingVertical: 10,
   },
 });
