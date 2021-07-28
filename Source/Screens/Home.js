@@ -18,6 +18,7 @@ const Home = () => {
             borderColor: theme.colors.LightGray,
           }}
         />
+
         <SmallCard navigationscreen="Post" />
       </ScrollView>
     </View>

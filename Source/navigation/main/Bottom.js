@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Animated} from 'react-native';
 
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {Home, Search, Stats, Notification, Post} from '../../Screens';
+import {Home, Search, Stats, Notification, Settings} from '../../Screens';
 import {theme} from '../../constants';
 import {
   HomeIcon,
@@ -66,7 +66,7 @@ export default function BottomTab() {
           listeners={({navigation, route}) => ({
             tabPress: e => {
               Animated.spring(taboffSetValue, {
-                toValue: theme.constants.screenWidth / 4,
+                toValue: theme.constants.screenWidth / 5,
                 useNativeDriver: true,
               }).start();
             },
@@ -94,7 +94,7 @@ export default function BottomTab() {
           listeners={({navigation, route}) => ({
             tabPress: e => {
               Animated.spring(taboffSetValue, {
-                toValue: (theme.constants.screenWidth / 4) * 2,
+                toValue: (theme.constants.screenWidth / 5) * 2,
                 useNativeDriver: true,
               }).start();
             },
@@ -117,7 +117,30 @@ export default function BottomTab() {
           listeners={({navigation, route}) => ({
             tabPress: e => {
               Animated.spring(taboffSetValue, {
-                toValue: (theme.constants.screenWidth / 4) * 3,
+                toValue: (theme.constants.screenWidth / 5) * 3,
+                useNativeDriver: true,
+              }).start();
+            },
+          })}
+        />
+        <Tab.Screen
+          name="Settings"
+          component={Settings}
+          options={{
+            tabBarIcon: ({focused, size, color}) => {
+              return (
+                <View>
+                  <StatsIcon
+                    color={focused ? theme.colors.Blue : theme.colors.LightGray}
+                  />
+                </View>
+              );
+            },
+          }}
+          listeners={({navigation, route}) => ({
+            tabPress: e => {
+              Animated.spring(taboffSetValue, {
+                toValue: (theme.constants.screenWidth / 5) * 4,
                 useNativeDriver: true,
               }).start();
             },
@@ -126,12 +149,12 @@ export default function BottomTab() {
       </Tab.Navigator>
       <Animated.View
         style={{
-          width: theme.constants.screenWidth / 8,
-          height: 2.5,
+          width: theme.constants.screenWidth / 10,
+          height: 3,
           backgroundColor: theme.colors.Blue,
           position: 'absolute',
           bottom: 60,
-          left: 26,
+          left: 20,
           transform: [{translateX: taboffSetValue}],
         }}></Animated.View>
     </Animated.View>
