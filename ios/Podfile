@@ -14,6 +14,8 @@ target 'StrikeNews' do
 
   pod 'RNSVG', :path => '../node_modules/react-native-svg'
 
+  pod 'RNSharedElement', :path => '../node_modules/react-native-shared-element'
+
   target 'StrikeNewsTests' do
     inherit! :complete
     # Pods for testing

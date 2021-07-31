@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, View, FlatList, Image} from 'react-native';
+import {Text, View, FlatList, Image, Pressable} from 'react-native';
 import styles from './styles';
 import {theme} from '../constants';
 import {fontFamily} from '../constants/Fonts';
@@ -27,12 +27,12 @@ const ChannelCard = () => {
             <Text
               style={{
                 fontFamily: fontFamily.Bozon_Demi_Bold,
-                fontSize: theme.fonts.body.fontSize,
+                fontSize: theme.fonts.subTitle.fontSize,
                 lineHeight: 22,
-                letterSpacing: 0.34,
+                letterSpacing: 0.5,
                 color: theme.colors.Black,
               }}>
-              CNN Posts new news
+              CNN Posts New News
             </Text>
             <Text
               style={{
@@ -46,15 +46,18 @@ const ChannelCard = () => {
             </Text>
           </View>
         </View>
-        <View
-          style={{
-            flex: 0.5,
-            alignItems: 'center',
-            justifyContent: 'center',
-            transform: [{rotate: '90deg'}],
-          }}>
-          <DotsIcon color={theme.colors.LightGray} />
-        </View>
+        <Pressable
+          android_ripple={{color: '#c4c4c4', borderless: true, radius: 20}}>
+          <View
+            style={{
+              flex: 0.5,
+              alignItems: 'center',
+              justifyContent: 'center',
+              transform: [{rotate: '90deg'}],
+            }}>
+            <DotsIcon color={theme.colors.LightGray} />
+          </View>
+        </Pressable>
       </View>
     </View>
   );

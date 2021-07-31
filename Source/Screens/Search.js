@@ -4,6 +4,7 @@ import {HomeIcon, NotificationIcon} from '../assets/Icons';
 import Header2 from '../Components/Header2';
 import Headlines from '../Components/Headlines';
 import Searchbar from '../Components/Searchbar';
+import Tab from '../navigation/main/Tab';
 import styles from './Style';
 
 const Search = () => {
@@ -11,7 +12,7 @@ const Search = () => {
     <View style={styles.container}>
       <Header2 title="Headlines" />
       <Searchbar />
-      <Headlines />
+      <Tab />
     </View>
   );
 };

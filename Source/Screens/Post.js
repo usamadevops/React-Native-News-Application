@@ -1,33 +1,58 @@
+import {cos} from 'prelude-ls';
 import React from 'react';
-import {useRef} from 'react';
-import {
-  View,
-  Text,
-  Image,
-  ScrollView,
-  StyleSheet,
-  Pressable,
-} from 'react-native';
+
+import {View, Text, Image, Animated, StyleSheet, Pressable} from 'react-native';
+import {sin} from 'react-native/Libraries/Animated/Easing';
 import {BackButton, Bookmark} from '../assets/Icons';
 import {theme} from '../constants';
 import {fontFamily} from '../constants/Fonts';
 import styles from './Style';
-const Image1 = require('../assets/images/IPhone.png');
-import Animated from 'react-native-reanimated';
+
+const Image1 = require('../assets/images/TopNews/card1.png');
+
 const IMAGE_HEIGHT = 280;
+
+const AnimatedImage = Animated.createAnimatedComponent(Image);
 const Post = ({navigation}) => {
+  const Scrolly = React.useRef(new Animated.Value(0)).current;
+
   return (
     <Animated.View style={styles.container}>
-      <ScrollView showsVerticalScrollIndicator={false}>
-        <Animated.Image
+      <Animated.ScrollView
+        showsVerticalScrollIndicator={false}
+        onScroll={Animated.event(
+          [
+            {
+              nativeEvent: {
+                contentOffset: {
+                  y: Scrolly,
+                },
+              },
+            },
+          ],
+          {
+            useNativeDriver: true,
+          },
+        )}>
+        <AnimatedImage
           source={Image1}
           style={{
             width: theme.constants.screenWidth,
             height: IMAGE_HEIGHT,
             borderBottomLeftRadius: 10,
             borderBottomRightRadius: 10,
+            transform: [
+              {
+                scale: Scrolly.interpolate({
+                  inputRange: [-IMAGE_HEIGHT * 10, 0],
+                  outputRange: [cos(3), 1],
+                  extrapolateLeft: 'clamp',
+                }),
+              },
+            ],
           }}
         />
+
         <View
           style={{
             padding: 15,
@@ -42,7 +67,7 @@ const Post = ({navigation}) => {
               radius: 20,
             }}
             onPress={() => navigation.goBack()}>
-            <BackButton />
+            <BackButton color="#fff" />
           </Pressable>
         </View>
         <View
@@ -150,7 +175,7 @@ const Post = ({navigation}) => {
             not been confirmed.
           </Text>
         </View>
-      </ScrollView>
+      </Animated.ScrollView>
     </Animated.View>
   );
 };
