@@ -8,18 +8,14 @@ import {
   nodeFromRef,
 } from 'react-native-shared-element';
 
-let startAncestor;
-let startNode;
 const SmallCard = ({navigationscreen}) => {
   const navigation = useNavigation();
   return (
     <Pressable
-      onLongPress={() => {
-        navigation.navigate(navigationscreen);
+      onPress={() => {
+        console.log('Pressed');
       }}>
-      <View
-        style={styles.Maincontainer}
-        ref={ref => (startAncestor = nodeFromRef(ref))}>
+      <View style={styles.Maincontainer}>
         <View style={styles.SmallCardContainer}>
           <View style={styles.CardLeftContainer}>
             <Text style={styles.headerText}>
@@ -34,12 +30,10 @@ const SmallCard = ({navigationscreen}) => {
           </View>
 
           <View style={styles.CardRightContainer}>
-            <SharedElement onNode={node => (startNode = node)}>
-              <Image
-                source={require('../assets/images/TopNews/card1.png')}
-                style={{width: 85, height: 85, borderRadius: 10}}
-              />
-            </SharedElement>
+            <Image
+              source={require('../assets/images/TopNews/card1.png')}
+              style={{width: 85, height: 85, borderRadius: 10}}
+            />
           </View>
         </View>
       </View>

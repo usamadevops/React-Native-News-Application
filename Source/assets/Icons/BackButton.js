@@ -6,7 +6,7 @@ function BackButton(props) {
   return (
     <Svg
       {...props}
-      width={32}
+      width={28}
       height={16}
       viewBox="0 0 32 16"
       fill="none"

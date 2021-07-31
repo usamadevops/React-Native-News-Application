@@ -1,8 +1,9 @@
 import React from 'react';
-import {View, Text, FlatList, Image} from 'react-native';
+import {View, Text, FlatList, Image, Animated} from 'react-native';
 import styles from './styles';
 import {mock} from '../constants';
 const TopNewsCard = () => {
+  const AnimatedFlatlist = Animated.createAnimatedComponent(FlatList);
   return (
     <View style={styles.Maincontainer}>
       <View
@@ -11,12 +12,12 @@ const TopNewsCard = () => {
         <Text style={styles.subTitleText}>Top 5 News of the day</Text>
       </View>
 
-      <FlatList
+      <AnimatedFlatlist
         data={mock.TopNews}
         horizontal={true}
-        pagingEnabled={true}
+        scrollEventThrottle={16}
         showsHorizontalScrollIndicator={false}
-        bounces={false}
+        bounces={true}
         keyExtractor={item => item.id}
         renderItem={({item, index}) => (
           <View style={styles.CardContainer}>

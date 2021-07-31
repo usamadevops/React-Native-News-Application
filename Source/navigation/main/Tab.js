@@ -11,13 +11,13 @@ import {LogBox} from 'react-native';
 export default Tab = () => {
   return (
     <ScrollableTabView
-      style={{marginTop: 10}}
+      style={{marginTop: 20}}
       initialPage={0}
       renderTabBar={() => <ScrollableTabBar />}
       tabBarInactiveTextColor={theme.colors.DarkGray}
       tabBarTextStyle={{
-        fontFamily: fontFamily.Bozon_Bold,
-        fontSize: theme.sizes.subTitle,
+        fontFamily: fontFamily.Bozon_Demi_Bold,
+        fontSize: theme.sizes.body,
         letterSpacing: 0.5,
       }}
       locked={false}

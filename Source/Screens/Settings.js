@@ -1,5 +1,12 @@
 import React from 'react';
-import {Pressable, StyleSheet, Text, View, Switch} from 'react-native';
+import {
+  Pressable,
+  StyleSheet,
+  Text,
+  View,
+  Switch,
+  ScrollView,
+} from 'react-native';
 import {Header2} from '../Components';
 import {theme} from '../constants';
 import {fontFamily} from '../constants/Fonts';
@@ -17,7 +24,7 @@ const Settings = () => {
   const toggleSwitch4 = () => setIsHideEnabled(previousState => !previousState);
 
   return (
-    <View style={styles.Container}>
+    <ScrollView style={styles.Container}>
       <Header2 title="Settings" backButton={true} />
       <View style={styles.HeaderView}>
         <Text style={styles.HeaderText}>ACCOUNT</Text>
@@ -141,10 +148,15 @@ const Settings = () => {
           <Text style={styles.BtnTitle}>Send Feedback</Text>
         </View>
       </Pressable>
-      <View style={{position: 'absolute', alignSelf: 'center', bottom: 20}}>
+      <View
+        style={{
+          position: 'relative',
+          alignSelf: 'center',
+          paddingVertical: 100,
+        }}>
         <Text style={styles.VersionText}>VERSION 1.0</Text>
       </View>
-    </View>
+    </ScrollView>
   );
 };
 

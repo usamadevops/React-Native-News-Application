@@ -2,10 +2,10 @@ import React from 'react';
 import {View, Text, Pressable} from 'react-native';
 import {theme} from '../constants';
 import styles from './styles';
-import {BackButton, DotsIcon} from '../assets/Icons';
+import {BackButton, DotsIcon, SearchIcon} from '../assets/Icons';
 import {fontFamily} from '../constants/Fonts';
 import {useNavigation} from '@react-navigation/native';
-const Header2 = ({title, backButton}) => {
+const Header2 = ({title, backButton, icon}) => {
   const navigation = useNavigation();
   return (
     <View
@@ -19,7 +19,7 @@ const Header2 = ({title, backButton}) => {
           <Pressable
             style={{marginRight: 10}}
             onPress={() => navigation.goBack()}>
-            <BackButton />
+            <BackButton color="#000" />
           </Pressable>
         ) : null}
 
@@ -42,7 +42,11 @@ const Header2 = ({title, backButton}) => {
               radius: 25,
             }}
             onPress={() => alert('dots clicked')}>
-            <DotsIcon color="#000" />
+            {icon === 'search' ? (
+              <SearchIcon color={theme.colors.DarkGray} />
+            ) : (
+              <DotsIcon color="#000" />
+            )}
           </Pressable>
         </View>
       </View>

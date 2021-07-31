@@ -1,11 +1,20 @@
 import {cos} from 'prelude-ls';
 import React from 'react';
 
-import {View, Text, Image, Animated, StyleSheet, Pressable} from 'react-native';
+import {
+  View,
+  Text,
+  Image,
+  Animated,
+  StyleSheet,
+  Pressable,
+  Screen,
+} from 'react-native';
 import {sin} from 'react-native/Libraries/Animated/Easing';
 import {BackButton, Bookmark} from '../assets/Icons';
 import {theme} from '../constants';
 import {fontFamily} from '../constants/Fonts';
+import {sizes} from '../constants/theme';
 import styles from './Style';
 
 const Image1 = require('../assets/images/TopNews/card1.png');
@@ -15,9 +24,38 @@ const IMAGE_HEIGHT = 280;
 const AnimatedImage = Animated.createAnimatedComponent(Image);
 const Post = ({navigation}) => {
   const Scrolly = React.useRef(new Animated.Value(0)).current;
-
+  const opacity = Scrolly.interpolate({
+    inputRange: [-1, 0],
+    outputRange: [0, 1],
+    extrapolate: 'clamp',
+  });
   return (
     <Animated.View style={styles.container}>
+      <Animated.View
+        style={
+          (opacity,
+          {
+            zIndex: 100,
+            padding: 15,
+            position: 'absolute',
+
+            bottom: (theme.constants.screenHeight / 2) * 1.2,
+            right: 0,
+            borderRadius: 200,
+            backgroundColor: '#ffffff',
+          })
+        }>
+        <Pressable
+          hitSlop={40}
+          android_ripple={{
+            color: theme.colors.LightGray,
+            borderless: true,
+            radius: 80,
+          }}
+          onPress={() => navigation.goBack()}>
+          <BackButton color="#000" />
+        </Pressable>
+      </Animated.View>
       <Animated.ScrollView
         showsVerticalScrollIndicator={false}
         onScroll={Animated.event(
@@ -53,23 +91,6 @@ const Post = ({navigation}) => {
           }}
         />
 
-        <View
-          style={{
-            padding: 15,
-            position: 'absolute',
-            top: 0,
-            backgroundColor: '#ffffff00',
-          }}>
-          <Pressable
-            android_ripple={{
-              color: theme.colors.LightGray,
-              borderless: true,
-              radius: 20,
-            }}
-            onPress={() => navigation.goBack()}>
-            <BackButton color="#fff" />
-          </Pressable>
-        </View>
         <View
           style={{
             width: theme.constants.screenWidth - 40,

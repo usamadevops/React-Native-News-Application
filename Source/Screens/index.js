@@ -6,4 +6,15 @@ import Notification from './Notification';
 import Post from './Post';
 import Settings from './Settings';
 import Login from './Login';
-export {Home, Login, Search, Stats, Splash, Notification, Post, Settings};
+import TopicProfile from './TopicProfile';
+export {
+  Home,
+  Login,
+  Search,
+  Stats,
+  Splash,
+  Notification,
+  Post,
+  Settings,
+  TopicProfile,
+};

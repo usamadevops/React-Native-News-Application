@@ -1,11 +1,5 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  Image,
-  Pressable,
-  TouchableWithoutFeedback,
-} from 'react-native';
+import {View, Text, Image, TouchableWithoutFeedback} from 'react-native';
 import {theme} from '../constants';
 import {fontFamily} from '../constants/Fonts';
 import {sizes} from '../constants/theme';
