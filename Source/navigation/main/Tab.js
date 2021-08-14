@@ -9,6 +9,7 @@ import {fontFamily} from '../../constants/Fonts';
 import {LogBox} from 'react-native';
 
 export default Tab = () => {
+  LogBox.ignoreAllLogs();
   return (
     <ScrollableTabView
       style={{marginTop: 20}}

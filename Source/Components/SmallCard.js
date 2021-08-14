@@ -13,7 +13,7 @@ const SmallCard = ({navigationscreen}) => {
   return (
     <Pressable
       onPress={() => {
-        console.log('Pressed');
+        navigation.navigate('Post');
       }}>
       <View style={styles.Maincontainer}>
         <View style={styles.SmallCardContainer}>
