@@ -1,8 +1,9 @@
 import React from 'react';
-import {View, Text, Image, ScrollView} from 'react-native';
+import {View, Text, Image, ScrollView, Pressable} from 'react-native';
 import styles from './Style';
 import {Header, ImportantNewsCard, TopNewsCard, SmallCard} from '../Components';
 import {theme} from '../constants';
+
 
 const Home = () => {
   return (
@@ -21,6 +22,7 @@ const Home = () => {
 
         <SmallCard navigationscreen="Post" />
       </ScrollView>
+   
     </View>
   );
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Animated} from 'react-native';
+import {View, Animated,Pressable,Text} from 'react-native';
 
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {Home, Search, Stats, Notification, Settings} from '../../Screens';
@@ -10,18 +10,22 @@ import {
   SearchIcon,
   StatsIcon,
 } from '../../assets/Icons';
-import {NavigationContainer} from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
+
 const Tab = createBottomTabNavigator();
 export default function BottomTab() {
+  const navigation = useNavigation();
   const taboffSetValue = React.useRef(new Animated.Value(0)).current;
   return (
-    <Animated.View style={{flex: 1}} needsOffscreenAlphaCompositing={true}>
+    <Animated.View style={{flex: 1}} >
       <Tab.Navigator
-        tabBarOptions={{
-          showLabel: false,
-          adaptive: true,
+        screenOptions={{
+          headerShown:false,
+          tabBarShowLabel:false,
+          tabBarActiveBackgroundColor: `${theme.colors.LightGray}50`,
           keyboardHidesTabBar: true,
-          style: {
+         
+          tabBarStyle:{
             backgroundColor: theme.colors.White,
             height: 60,
           },
@@ -29,6 +33,7 @@ export default function BottomTab() {
         <Tab.Screen
           name="Home"
           component={Home}
+        
           options={{
             tabBarIcon: ({focused}) => {
               return (
@@ -124,14 +129,20 @@ export default function BottomTab() {
           })}
         />
       </Tab.Navigator>
+      <View  style={{position:"absolute",bottom:80,right:30,borderWidth:0.5,borderRadius:1000,width:44,height:44,alignItems:'center',justifyContent:'center',backgroundColor:theme.colors.Blue}}>
+          <Pressable onPress={()=>navigation.push("NewsEditor")}>
+ 
+ <Text style={{fontSize:28,color:theme.colors.White}}>+</Text>
+        </Pressable>
+        </View>
       <Animated.View
         style={{
-          width: theme.constants.screenWidth / 8,
+          width: theme.constants.screenWidth / 4,
           height: 3,
           backgroundColor: theme.colors.Blue,
           position: 'absolute',
           bottom: 60,
-          left: 28,
+         
           transform: [{translateX: taboffSetValue}],
         }}></Animated.View>
     </Animated.View>

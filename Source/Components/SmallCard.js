@@ -2,11 +2,11 @@ import React from 'react';
 import {View, Text, Image, Pressable} from 'react-native';
 import styles from './styles';
 import {useNavigation} from '@react-navigation/native';
-import {
-  SharedElement,
-  SharedElementTransition,
-  nodeFromRef,
-} from 'react-native-shared-element';
+// import {
+//   SharedElement,
+//   SharedElementTransition,
+//   nodeFromRef,
+// } from 'react-native-shared-element';
 
 const SmallCard = ({navigationscreen}) => {
   const navigation = useNavigation();
