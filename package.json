@@ -14,6 +14,7 @@
     "@react-navigation/bottom-tabs": "^6.0.5",
     "@react-navigation/native": "^6.0.2",
     "@react-navigation/stack": "^6.0.7",
+    "axios": "^0.21.1",
     "faker": "^5.5.3",
     "newsapi": "^2.4.1",
     "react": "17.0.1",

@@ -2,14 +2,12 @@ import React from 'react';
 import {View, Text, Image, Pressable} from 'react-native';
 import styles from './styles';
 import {useNavigation} from '@react-navigation/native';
-// import {
-//   SharedElement,
-//   SharedElementTransition,
-//   nodeFromRef,
-// } from 'react-native-shared-element';
 
-const SmallCard = ({navigationscreen}) => {
+const SmallCard = ({ NewsChannel,title,image,PostedTime}) => {
   const navigation = useNavigation();
+  const SlashIndex = title.indexOf('-');
+
+
   return (
     <Pressable
       onPress={() => {
@@ -19,19 +17,20 @@ const SmallCard = ({navigationscreen}) => {
         <View style={styles.SmallCardContainer}>
           <View style={styles.CardLeftContainer}>
             <Text style={styles.headerText}>
-              Build react native Application with Zero Experience
+              {title.slice(0,SlashIndex)}
             </Text>
 
             <View style={styles.BottomContainer}>
-              <Text style={styles.timeText}>34 Mins</Text>
+              <Text style={styles.timeText}>{PostedTime.slice(5, 10)}</Text>
 
-              <Text style={styles.categoryText}>Freedom</Text>
+              <Text style={styles.categoryText}>{NewsChannel}</Text>
             </View>
           </View>
 
           <View style={styles.CardRightContainer}>
             <Image
-              source={require('../assets/images/TopNews/card1.png')}
+              source={image!==null?{uri:image}:require('../assets/images/news-icon.png')}
+              
               style={{width: 85, height: 85, borderRadius: 10}}
             />
           </View>
