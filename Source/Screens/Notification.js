@@ -39,9 +39,7 @@ const Notification = () => {
           </Text>
         </View>
       </View>
-      <SmallCard navigationscreen="Post" />
-      <SmallCard navigationscreen="Post" />
-      <SmallCard navigationscreen="Post" />
+    
       <View
         style={{
           flexDirection: 'row',

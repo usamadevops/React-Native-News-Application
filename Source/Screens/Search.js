@@ -13,7 +13,10 @@ const Search = () => {
     <View style={styles.container}>
       <Header2 title="Headlines" />
       <Searchbar />
+    
+
       <Tab />
+     
     </View>
   );
 };
