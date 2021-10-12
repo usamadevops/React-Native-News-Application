@@ -12,6 +12,7 @@
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.11",
     "@react-navigation/bottom-tabs": "^6.0.5",
+    "@react-navigation/material-top-tabs": "^6.0.2",
     "@react-navigation/native": "^6.0.2",
     "@react-navigation/stack": "^6.0.7",
     "axios": "^0.21.1",
@@ -29,6 +30,7 @@
     "react-native-scrollable-tab-view": "^1.0.0",
     "react-native-shared-element": "^0.7.0",
     "react-native-svg": "^12.1.1",
+    "react-native-tab-view": "^3.1.1",
     "react-native-webview": "^11.13.0"
   },
   "devDependencies": {

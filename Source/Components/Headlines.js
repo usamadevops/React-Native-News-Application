@@ -1,54 +1,41 @@
 import React from 'react';
-import {StyleSheet, Text, Animated, Flatlist, SafeAreaView} from 'react-native';
-import {theme} from '../constants';
-import Button from './Button';
-import SmallCard from './SmallCard';
+import {StyleSheet, Text, Animated, Flatlist, SafeAreaView,View} from 'react-native';
+
+// import {theme} from '../constants';
+// import Button from './Button';
+// import SmallCard from './SmallCard';
 
 const Latest = () => {
   return (
-    <SafeAreaView>
-      <SmallCard navigationscreen="Post" />
-      <SmallCard navigationscreen="Post" />
-      <Button />
-      <SmallCard navigationscreen="Post" />
-      <SmallCard navigationscreen="Post" />
-      <SmallCard navigationscreen="Post" />
-    </SafeAreaView>
+    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+      <Text>World</Text>
+      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+      <Text>World</Text>
+      </View>
+    </View>
   );
 };
 const World = () => {
   return (
-    <SafeAreaView>
-      <SmallCard navigationscreen="Post" />
-      <SmallCard navigationscreen="Post" />
-
-      <SmallCard navigationscreen="Post" />
-      <SmallCard navigationscreen="Post" />
-      <SmallCard navigationscreen="Post" />
+    <SafeAreaView
+      style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+      <Text>World</Text>
     </SafeAreaView>
   );
 };
 const Technology = () => {
   return (
-    <SafeAreaView>
-      <SmallCard navigationscreen="Post" />
-      <SmallCard navigationscreen="Post" />
-      <Button />
-      <SmallCard navigationscreen="Post" />
-      <SmallCard navigationscreen="Post" />
-      <SmallCard navigationscreen="Post" />
+    <SafeAreaView
+      style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+      <Text>World</Text>
     </SafeAreaView>
   );
 };
 const Indonesia = () => {
   return (
-    <SafeAreaView>
-      <SmallCard navigationscreen="Post" />
-      <SmallCard navigationscreen="Post" />
-      <Button />
-      <SmallCard navigationscreen="Post" />
-      <SmallCard navigationscreen="Post" />
-      <SmallCard navigationscreen="Post" />
+    <SafeAreaView
+      style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+      <Text>World</Text>
     </SafeAreaView>
   );
 };
