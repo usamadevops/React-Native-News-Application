@@ -1,13 +1,13 @@
 import React from 'react';
 import {View, Text, Image, Pressable} from 'react-native';
-import {theme} from '../constants';
-import {fontFamily} from '../constants/Fonts';
-import {Header2} from '../Components';
-import {sizes} from '../constants/theme';
-import Tab from '../navigation/main/Tab';
+import {theme} from '../../../constants';
+import {fontFamily} from '../../../constants/Fonts';
+import {Header2} from '../../../Components';
+import {sizes} from '../../../constants/theme';
+import Tab from '../../../navigation/Tab';
 const TopicProfile = () => {
   return (
-    <View style={{flex: 1}}>
+    <View style={{flex: 1,backgroundColor:theme.colors.White}}>
       <Header2 title="CNN" backButton={true} icon="search" />
       <View
         style={{
@@ -24,7 +24,7 @@ const TopicProfile = () => {
           }}>
           <View style={{flexDirection: 'row', paddingRight: 15}}>
             <Image
-              source={require('../assets/images/CNN.png')}
+              source={require('../../../assets/images/CNN.png')}
               style={{width: 74, height: 74, borderRadius: 5}}
             />
           </View>
@@ -75,7 +75,7 @@ const TopicProfile = () => {
           </Text>
         </Pressable>
       </View>
-      <View style={{flex: 1}}>
+      <View style={{flex: 1,marginTop:20}}>
         <Tab />
       </View>
     </View>

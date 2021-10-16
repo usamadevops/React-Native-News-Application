@@ -7,9 +7,9 @@ import {
   Switch,
   ScrollView,
 } from 'react-native';
-import {Header2} from '../Components';
-import {theme} from '../constants';
-import {fontFamily} from '../constants/Fonts';
+import {Header2} from '../../../Components';
+import {theme} from '../../../constants';
+import {fontFamily} from '../../../constants/Fonts';
 const Settings = () => {
   const [CoronaisEnabled, setIsCoronaEnabled] = React.useState(false);
   const [LatestisEnabled, setIsLatestEnabled] = React.useState(false);

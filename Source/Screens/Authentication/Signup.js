@@ -7,11 +7,11 @@ import {
   TouchableOpacity,
   Pressable,
 } from 'react-native';
-import {EyeClose, Tick} from '../assets/Icons';
-import {theme} from '../constants';
-import {fontFamily} from '../constants/Fonts';
+import {EyeClose, Tick} from '../../assets/Icons';
+import {theme} from '../../constants';
+import {fontFamily} from '../../constants/Fonts';
 
-const Login = ({navigation}) => {
+const Signup = ({navigation}) => {
   return (
     <View style={styles.container}>
       <View
@@ -292,7 +292,7 @@ const Login = ({navigation}) => {
   );
 };
 
-export default Login;
+export default Signup;
 
 const styles = StyleSheet.create({
   container: {
