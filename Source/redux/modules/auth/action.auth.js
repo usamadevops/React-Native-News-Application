@@ -1,5 +1,5 @@
 import {
-    SIGN_IN, SIGN_UP, GET_AUTHENTICATION,SIGN_OUT
+    SIGN_IN, SIGN_UP,SIGN_OUT, AUTH_ERROR
 } from './constant.auth.js';
 
 export const SignIn = (payload) => {
@@ -22,3 +22,10 @@ export const SignOut = (payload) => {
         payload: payload
     }
 };
+
+export const authError = (err) => {
+    return {
+        type: AUTH_ERROR,
+        payload:err
+    }
+}

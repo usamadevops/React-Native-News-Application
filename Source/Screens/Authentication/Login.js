@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  StyleSheet,
   Text,
   View,
   TextInput,
@@ -10,106 +9,54 @@ import {
 import {EyeClose, Tick} from '../../assets/Icons';
 import {theme} from '../../constants';
 import {fontFamily} from '../../constants/Fonts';
-
+import styles from './Styles';
 const Login = ({navigation}) => {
   return (
     <View style={styles.container}>
+      <View style={{ backgroundColor: theme.colors.Blue, width: 70, height: 70, position: 'absolute', borderRadius: 40, opacity: 0.5, left: -20, top: -15 }} />
+      <View style={{backgroundColor:theme.colors.Red,width:70,height:70,position:'absolute',borderRadius:40,opacity:0.5,right:-20,bottom:-15}}/>
       <View
-        style={{
-          flexWrap: 'nowrap',
-          paddingTop: 40,
-          width: theme.constants.screenWidth - 80,
-          paddingBottom: 40 / 2.9,
-        }}>
+        style={styles.InnerContainer}>
         <View>
           <Text
-            style={{
-              fontFamily: fontFamily.Bozon_Bold,
-              fontSize: theme.sizes.h1,
-            }}>
+            style={styles.headerText}>
             Login Now
           </Text>
         </View>
         <View style={{flexWrap: 'nowrap', marginTop: 5}}>
           <Text
-            style={{
-              fontFamily: fontFamily.Bozon_Demi_Bold,
-              fontSize: theme.sizes.subTitle,
-              color: theme.colors.MediumGray,
-              letterSpacing: 0.3,
-            }}>
-            To Track your Reading Progress😉
+            style={styles.subHeaderText}>
+            Where were you Gone?😉
           </Text>
         </View>
       </View>
       <View
-        style={{
-          width: theme.constants.screenWidth - 80,
-          borderWidth: 0.4,
-          backgroundColor: '#E8E8E825',
-          borderColor: theme.colors.MediumGray,
-          borderRadius: 10,
-          height: 55,
-          flexDirection: 'row',
-          alignItems: 'center',
-          marginVertical: 10,
-        }}>
+        style={styles.inputOuterContainer}>
         <TextInput
           placeholder="Email"
           placeholderTextColor={theme.colors.MediumGray}
-          style={{
-            padding: 10,
-            fontFamily: fontFamily.Bozon_Demi_Bold,
-            fontSize: theme.sizes.h2,
-            borderRadius: 10,
-            height: 55,
-            width: theme.constants.screenWidth - 120,
-            color: theme.colors.Blue,
-          }}
+          style={styles.inputInnerContainer}
         />
         <Tick />
       </View>
       <View
-        style={{
-          width: theme.constants.screenWidth - 80,
-          borderWidth: 0.4,
-          backgroundColor: '#E8E8E825',
-          borderColor: theme.colors.MediumGray,
-          borderRadius: 10,
-          height: 55,
-          flexDirection: 'row',
-          alignItems: 'center',
-          marginVertical: 10,
-        }}>
+        style={styles.inputOuterContainer}>
         <TextInput
           placeholder="Password"
           placeholderTextColor={theme.colors.MediumGray}
           secureTextEntry={true}
-          style={{
-            padding: 10,
-            fontFamily: fontFamily.Bozon_Demi_Bold,
-            fontSize: theme.sizes.h2,
-            borderRadius: 10,
-            height: 55,
-            width: theme.constants.screenWidth - 120,
-            color: theme.colors.Blue,
-          }}
+          style={styles.inputInnerContainer}
         />
         <EyeClose />
       </View>
       <View
         style={{
           width: theme.constants.screenWidth - 80,
-
           paddingBottom: 40,
         }}>
         <TouchableOpacity>
           <Text
-            style={{
-              fontFamily: fontFamily.Bozon_Demi_Bold,
-              fontSize: theme.sizes.header,
-              color: theme.colors.LightGray,
-            }}>
+            style={styles.semiText}>
             Forgot your Password?
           </Text>
         </TouchableOpacity>
@@ -121,184 +68,34 @@ const Login = ({navigation}) => {
           borderless: false,
           radius: 200,
         }}
-        onPress={() => navigation.navigate('Tab')}>
+        onPress={() => console.log('SignUp')}>
         <View
-          style={{
-            width: theme.constants.screenWidth - 80,
-            borderWidth: 0.4,
-            backgroundColor: '#96D3F2',
-            borderColor: theme.colors.MediumGray,
-            borderRadius: 10,
-            height: 55,
-            flexDirection: 'row',
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}>
+          style={styles.buttonContainer}>
           <Text
-            style={{
-              fontFamily: fontFamily.Bozon_Demi_Bold,
-              fontSize: theme.sizes.header,
-              color: theme.colors.Blue,
-            }}>
-            Login
+            style={styles.buttonText}>
+          Let's Get you Back
           </Text>
         </View>
       </Pressable>
       <View
-        style={{
-          width: theme.constants.screenWidth - 80,
-          justifyContent: 'center',
-          paddingTop: 10,
-          flexDirection: 'row',
-        }}>
+        style={styles.hintTextContainer}>
         <Text
-          style={{
-            fontFamily: fontFamily.Bozon_Regular,
-            fontSize: theme.sizes.base,
-            color: theme.colors.DarkGray,
-          }}>
-          Don't have an account?
+          style={styles.hintText}>
+         Are You new to this?
         </Text>
-        <TouchableOpacity>
+        <TouchableOpacity
+        onPress={()=>navigation.navigate('Signup')}>
           <Text
-            style={{
-              fontFamily: fontFamily.Bozon_Bold,
-              fontSize: theme.sizes.h3,
-              color: theme.colors.Blue,
-            }}>
-            Signup
+            style={styles.hintTextAction}>
+            Register
           </Text>
         </TouchableOpacity>
       </View>
-      <View>
-        <View
-          style={{
-            marginVertical: 60,
-
-            width: theme.constants.screenWidth - 200,
-            borderWidth: 0.4,
-            borderColor: theme.colors.LightGray,
-          }}
-        />
-        <View
-          style={{
-            position: 'absolute',
-            alignSelf: 'center',
-            marginVertical: 38,
-            padding: 10,
-            backgroundColor: theme.colors.White,
-          }}>
-          <Text
-            style={{
-              fontFamily: fontFamily.Bozon_Regular,
-              fontSize: theme.sizes.base,
-              color: theme.colors.Black,
-            }}>
-            or
-          </Text>
-        </View>
-      </View>
-      <View
-        style={{
-          justifyContent: 'space-evenly',
-          flexDirection: 'column',
-        }}>
-        <Pressable
-          android_ripple={{
-            color: theme.colors.LightGray,
-            borderless: false,
-            radius: 200,
-          }}>
-          <View
-            style={{
-              width: theme.constants.screenWidth - 80,
-              borderWidth: 1,
-
-              borderColor: theme.colors.Blue,
-              borderRadius: 10,
-              height: 55,
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}>
-            <Text
-              style={{
-                fontFamily: fontFamily.Bozon_Demi_Bold,
-                fontSize: theme.sizes.header,
-                color: theme.colors.Blue,
-              }}>
-              Login with Facebook
-            </Text>
-          </View>
-        </Pressable>
-        <Pressable
-          android_ripple={{
-            color: theme.colors.LightGray,
-            borderless: false,
-            radius: 200,
-          }}>
-          <View
-            style={{
-              width: theme.constants.screenWidth - 80,
-              borderWidth: 1,
-              marginVertical: 20,
-              borderColor: theme.colors.Blue,
-              borderRadius: 10,
-              height: 55,
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}>
-            <Text
-              style={{
-                fontFamily: fontFamily.Bozon_Demi_Bold,
-                fontSize: theme.sizes.header,
-                color: theme.colors.Blue,
-              }}>
-              Login with Google
-            </Text>
-          </View>
-        </Pressable>
-        <Pressable
-          android_ripple={{
-            color: theme.colors.LightGray,
-            borderless: false,
-            radius: 200,
-          }}>
-          <View
-            style={{
-              width: theme.constants.screenWidth - 80,
-              borderWidth: 1,
-
-              borderColor: theme.colors.Blue,
-              borderRadius: 10,
-              height: 55,
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}>
-            <Text
-              style={{
-                fontFamily: fontFamily.Bozon_Demi_Bold,
-                fontSize: theme.sizes.header,
-                color: theme.colors.Blue,
-              }}>
-              Continue as a Guest
-            </Text>
-          </View>
-        </Pressable>
-      </View>
+  
+      
     </View>
   );
 };
 
 export default Login;
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 20,
-    alignItems: 'center',
-    backgroundColor: theme.colors.White,
-  },
-});

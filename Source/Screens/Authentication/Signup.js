@@ -1,117 +1,120 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
-  StyleSheet,
   Text,
   View,
   TextInput,
   TouchableOpacity,
   Pressable,
 } from 'react-native';
-import {EyeClose, Tick} from '../../assets/Icons';
-import {theme} from '../../constants';
-import {fontFamily} from '../../constants/Fonts';
+import { connect, shallowEqual, useSelector } from 'react-redux';
+import { EyeClose, EyeOpen, Tick } from '../../assets/Icons';
+import { theme } from '../../constants';
+import { fontFamily } from '../../constants/Fonts';
+import styles from './Styles';
+import { regularExp } from '../../Utils/regExp';
 
-const Signup = ({navigation}) => {
+const Signup = ({ navigation }) => {
+  const [NickName, setNickName] = useState({
+    nickname: '',
+    checknickNameInputChange: false
+  });
+  const [Email, setEmail] = useState({
+    useremail: 'ualtaf234@gmail.com',
+    checkEmailInputChange: false
+  });
+  const [Passward, setPassward] = useState({
+    Password: '',
+    secureTextEntry: true
+  });
+
+  const validateEmail = (email) => {
+    const re = regularExp.email;
+    re.test(email) === true ? setEmail({ ...Email, useremail: email, checkEmailInputChange: true })
+      :
+      setEmail({ ...Email, useremail: email, checkEmailInputChange: false });
+  };
+  const NickNameChange = (nicknameval) => {
+    const re = regularExp.fullName;
+    if (nicknameval.length > 5 && re.test(nicknameval)) {
+      setNickName({ ...NickName, nickname: nicknameval, checknickNameInputChange: true });
+    } else {
+      setNickName({ ...NickName, nickname: '', checknickNameInputChange: false });
+    }
+  };
+  function HandlePasswordChange(PasswordVal) {
+    setPassward({ ...Passward, Password: PasswordVal });
+  }
+  const updateSecuretextEntry = () => {
+    setPassward({ ...Passward, secureTextEntry: !Passward.secureTextEntry });
+  };
+  const secureIt = Passward.secureTextEntry ? true : false;
   return (
     <View style={styles.container}>
+      <View style={{ backgroundColor: theme.colors.Blue, width: 70, height: 70, position: 'absolute', borderRadius: 40, opacity: 0.5, right: -20, top: -15 }} />
+      <View style={{ backgroundColor: theme.colors.Red, width: 70, height: 70, position: 'absolute', borderRadius: 40, opacity: 0.5, left: -20, bottom: -15 }} />
       <View
-        style={{
-          flexWrap: 'nowrap',
-          paddingTop: 40,
-          width: theme.constants.screenWidth - 80,
-          paddingBottom: 40 / 2.9,
-        }}>
+        style={styles.InnerContainer}>
         <View>
           <Text
-            style={{
-              fontFamily: fontFamily.Bozon_Bold,
-              fontSize: theme.sizes.h1,
-            }}>
-            Login Now
+            style={styles.headerText}>
+            Signup Now
           </Text>
         </View>
-        <View style={{flexWrap: 'nowrap', marginTop: 5}}>
+        <View style={{ flexWrap: 'nowrap', marginTop: 5 }}>
           <Text
-            style={{
-              fontFamily: fontFamily.Bozon_Demi_Bold,
-              fontSize: theme.sizes.subTitle,
-              color: theme.colors.MediumGray,
-              letterSpacing: 0.3,
-            }}>
+            style={styles.subHeaderText}>
             To Track your Reading Progress😉
           </Text>
         </View>
       </View>
       <View
-        style={{
-          width: theme.constants.screenWidth - 80,
-          borderWidth: 0.4,
-          backgroundColor: '#E8E8E825',
-          borderColor: theme.colors.MediumGray,
-          borderRadius: 10,
-          height: 55,
-          flexDirection: 'row',
-          alignItems: 'center',
-          marginVertical: 10,
-        }}>
+        style={styles.inputOuterContainer}>
+        <TextInput
+          placeholder="NickName"
+          placeholderTextColor={theme.colors.MediumGray}
+          style={styles.inputInnerContainer}
+          value={NickName}
+          onChangeText={(res) => NickNameChange(res)}
+        />
+        {
+          NickName.checknickNameInputChange ?
+            <Tick />
+            :
+            null
+        }
+      </View>
+      <View
+        style={styles.inputOuterContainer}>
         <TextInput
           placeholder="Email"
           placeholderTextColor={theme.colors.MediumGray}
-          style={{
-            padding: 10,
-            fontFamily: fontFamily.Bozon_Demi_Bold,
-            fontSize: theme.sizes.h2,
-            borderRadius: 10,
-            height: 55,
-            width: theme.constants.screenWidth - 120,
-            color: theme.colors.Blue,
-          }}
+          style={styles.inputInnerContainer}
+          value={Email}
+          onChangeText={(res) => validateEmail(res)}
         />
-        <Tick />
+        {
+          Email.checkEmailInputChange ?
+            <Tick />
+            :
+            null
+        }
       </View>
       <View
-        style={{
-          width: theme.constants.screenWidth - 80,
-          borderWidth: 0.4,
-          backgroundColor: '#E8E8E825',
-          borderColor: theme.colors.MediumGray,
-          borderRadius: 10,
-          height: 55,
-          flexDirection: 'row',
-          alignItems: 'center',
-          marginVertical: 10,
-        }}>
+        style={styles.inputOuterContainer}>
         <TextInput
           placeholder="Password"
           placeholderTextColor={theme.colors.MediumGray}
-          secureTextEntry={true}
-          style={{
-            padding: 10,
-            fontFamily: fontFamily.Bozon_Demi_Bold,
-            fontSize: theme.sizes.h2,
-            borderRadius: 10,
-            height: 55,
-            width: theme.constants.screenWidth - 120,
-            color: theme.colors.Blue,
-          }}
+          secureTextEntry={secureIt}
+          style={styles.inputInnerContainer}
+          value={Passward}
+          onChangeText={(res) => HandlePasswordChange(res)}
         />
-        <EyeClose />
-      </View>
-      <View
-        style={{
-          width: theme.constants.screenWidth - 80,
-
-          paddingBottom: 40,
-        }}>
-        <TouchableOpacity>
-          <Text
-            style={{
-              fontFamily: fontFamily.Bozon_Demi_Bold,
-              fontSize: theme.sizes.header,
-              color: theme.colors.LightGray,
-            }}>
-            Forgot your Password?
-          </Text>
+        <TouchableOpacity onPress={() => updateSecuretextEntry()} style={{ zIndex: 10, }} >
+          {Passward.secureTextEntry == true ?
+            <EyeOpen />
+            :
+            <EyeClose />
+          }
         </TouchableOpacity>
       </View>
 
@@ -121,52 +124,26 @@ const Signup = ({navigation}) => {
           borderless: false,
           radius: 200,
         }}
-        onPress={() => navigation.navigate('Tab')}>
+        onPress={() => console.log('SignUp')}>
         <View
-          style={{
-            width: theme.constants.screenWidth - 80,
-            borderWidth: 0.4,
-            backgroundColor: '#96D3F2',
-            borderColor: theme.colors.MediumGray,
-            borderRadius: 10,
-            height: 55,
-            flexDirection: 'row',
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}>
+          style={styles.buttonContainer}>
           <Text
-            style={{
-              fontFamily: fontFamily.Bozon_Demi_Bold,
-              fontSize: theme.sizes.header,
-              color: theme.colors.Blue,
-            }}>
-            Login
+            style={styles.buttonText}>
+            Register Now
           </Text>
         </View>
       </Pressable>
       <View
-        style={{
-          width: theme.constants.screenWidth - 80,
-          justifyContent: 'center',
-          paddingTop: 10,
-          flexDirection: 'row',
-        }}>
+        style={styles.hintTextContainer}>
         <Text
-          style={{
-            fontFamily: fontFamily.Bozon_Regular,
-            fontSize: theme.sizes.base,
-            color: theme.colors.DarkGray,
-          }}>
-          Don't have an account?
+          style={styles.hintText}>
+          Already have an account?
         </Text>
-        <TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => navigation.navigate('Login')}>
           <Text
-            style={{
-              fontFamily: fontFamily.Bozon_Bold,
-              fontSize: theme.sizes.h3,
-              color: theme.colors.Blue,
-            }}>
-            Signup
+            style={styles.hintTextAction}>
+            Login
           </Text>
         </TouchableOpacity>
       </View>
@@ -174,7 +151,6 @@ const Signup = ({navigation}) => {
         <View
           style={{
             marginVertical: 60,
-
             width: theme.constants.screenWidth - 200,
             borderWidth: 0.4,
             borderColor: theme.colors.LightGray,
@@ -210,79 +186,9 @@ const Signup = ({navigation}) => {
             radius: 200,
           }}>
           <View
-            style={{
-              width: theme.constants.screenWidth - 80,
-              borderWidth: 1,
-
-              borderColor: theme.colors.Blue,
-              borderRadius: 10,
-              height: 55,
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}>
+            style={styles.otherOptionButtonContainer}>
             <Text
-              style={{
-                fontFamily: fontFamily.Bozon_Demi_Bold,
-                fontSize: theme.sizes.header,
-                color: theme.colors.Blue,
-              }}>
-              Login with Facebook
-            </Text>
-          </View>
-        </Pressable>
-        <Pressable
-          android_ripple={{
-            color: theme.colors.LightGray,
-            borderless: false,
-            radius: 200,
-          }}>
-          <View
-            style={{
-              width: theme.constants.screenWidth - 80,
-              borderWidth: 1,
-              marginVertical: 20,
-              borderColor: theme.colors.Blue,
-              borderRadius: 10,
-              height: 55,
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}>
-            <Text
-              style={{
-                fontFamily: fontFamily.Bozon_Demi_Bold,
-                fontSize: theme.sizes.header,
-                color: theme.colors.Blue,
-              }}>
-              Login with Google
-            </Text>
-          </View>
-        </Pressable>
-        <Pressable
-          android_ripple={{
-            color: theme.colors.LightGray,
-            borderless: false,
-            radius: 200,
-          }}>
-          <View
-            style={{
-              width: theme.constants.screenWidth - 80,
-              borderWidth: 1,
-
-              borderColor: theme.colors.Blue,
-              borderRadius: 10,
-              height: 55,
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}>
-            <Text
-              style={{
-                fontFamily: fontFamily.Bozon_Demi_Bold,
-                fontSize: theme.sizes.header,
-                color: theme.colors.Blue,
-              }}>
+              style={styles.otherOptionButtonText}>
               Continue as a Guest
             </Text>
           </View>
@@ -293,12 +199,3 @@ const Signup = ({navigation}) => {
 };
 
 export default Signup;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 20,
-    alignItems: 'center',
-    backgroundColor: theme.colors.White,
-  },
-});

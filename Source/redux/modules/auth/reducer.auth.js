@@ -1,6 +1,6 @@
 import { fromJS, Map } from 'immutable';
 import {
-    SIGN_UP,SIGN_UP_RECIEVED,SIGN_IN,SIGN_IN_RECIEVED,GET_AUTHENTICATION,SIGN_OUT,SIGNOUT_SUCCESS
+    SIGN_UP,SIGN_UP_RECIEVED,SIGN_IN,SIGN_IN_RECIEVED,GET_AUTHENTICATION,SIGN_OUT,SIGNOUT_SUCCESS,AUTH_ERROR
 } from './constant.auth'
 
 
@@ -33,6 +33,8 @@ const AuthenticationReducer = (state = initialState, action = {}) => {
             
         case SIGNOUT_SUCCESS:
            return state.toSet('isLoading', false).toSet('isAuthenticated', false);
+           case AUTH_ERROR:
+            return state.toSet('isLoading', false).toSet('error', fromJS(error));
         default:
             return state;
         }

@@ -6,3 +6,4 @@ export const SIGN_UP_RECIEVED = 'SIGN_UP_RECIEVED';
 export const GET_AUTHENTICATION = ' GET_AUTHENTICATION';
 export const SIGN_OUT = 'SIGN_OUT';
 export const SIGN_OUT_SUCCESS = 'SIGN_OUT_SUCCESS';
+export const AUTH_ERROR = 'AUTH_ERROR';
