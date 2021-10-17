@@ -1,9 +1,9 @@
 import React from 'react';
 import {View, Text} from 'react-native';
-import {ChannelCard, Header2, SmallCard} from '../Components';
-import {theme} from '../constants';
-import {fontFamily} from '../constants/Fonts';
-import styles from './Style';
+import {ChannelCard, Header2, SmallCard} from '../../../Components';
+import {theme} from '../../../constants';
+import {fontFamily} from '../../../constants/Fonts';
+import styles from '../../Style';
 const Notification = () => {
   return (
     <View style={styles.container}>

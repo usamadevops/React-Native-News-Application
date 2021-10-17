@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Animated, Pressable, Text} from 'react-native';
 
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {Home, Search, Stats, Notification, Settings} from '../../Screens';
+import { Main } from '../Screens';
 import {theme} from '../../constants';
 import {
   HomeIcon,
@@ -32,7 +32,8 @@ export default function BottomTab() {
         }}>
         <Tab.Screen
           name="Home"
-          component={Home}
+          component={Main.Homefeed}
+        
           options={{
             tabBarIcon: ({focused}) => {
               return (
@@ -55,7 +56,7 @@ export default function BottomTab() {
         />
         <Tab.Screen
           name="Search"
-          component={Search}
+          component={Main.Search}
           options={{
             tabBarIcon: ({focused}) => {
               return (
@@ -78,7 +79,7 @@ export default function BottomTab() {
         />
         <Tab.Screen
           name="Notifications"
-          component={Notification}
+          component={Main.Notification}
           options={{
             tabBarBadge: 8,
             tabBarBadgeStyle: {
@@ -106,7 +107,7 @@ export default function BottomTab() {
         />
         <Tab.Screen
           name="Stats"
-          component={Stats}
+          component={Main.Stats}
           options={{
             tabBarIcon: ({focused, size, color}) => {
               return (

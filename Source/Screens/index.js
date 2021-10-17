@@ -1,20 +1,7 @@
-import Home from './Home';
-import Search from './Search';
-import Stats from './Stats';
+import * as Main from './MainStack';
+import * as Auth from './Authentication'
 import Splash from './Splash';
-import Notification from './Notification';
-import Post from './Post';
-import Settings from './Settings';
-import Login from './Login';
-import TopicProfile from './TopicProfile';
+import NewsEditor from './NewsEditor';
 export {
-  Home,
-  Login,
-  Search,
-  Stats,
-  Splash,
-  Notification,
-  Post,
-  Settings,
-  TopicProfile,
-};
+  Main,Auth,Splash,NewsEditor
+}

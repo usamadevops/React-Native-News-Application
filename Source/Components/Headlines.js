@@ -1,49 +1,170 @@
 import React from 'react';
-import {
-  StyleSheet,
-  Text,
-  Animated,
-  Flatlist,
-  SafeAreaView,
-  View,
-} from 'react-native';
-
-// import {theme} from '../constants';
-// import Button from './Button';
-// import SmallCard from './SmallCard';
-
+import {StyleSheet, Text, View,ScrollView} from 'react-native';
+import styles from '../Screens/Style';
+import { ImportantNewsCard, TopNewsCard, SmallCard} from '../Components';
+import {theme} from '../constants';
+// import axios from 'axios';
+import articles from '../assets/data';
 const Latest = () => {
   return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text>World</Text>
-      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-        <Text>World</Text>
-      </View>
+    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center',backgroundColor:theme.colors.White}}>
+    <ScrollView horizontal={false}>
+        <View
+          style={{
+            borderWidth: 0.4,
+            marginHorizontal: 20,
+            borderColor: theme.colors.LightGray,
+          }}
+        />
+        {articles.map(items => {
+          return (
+            <View key={items.source.id}>
+              <SmallCard
+                title={items.title}
+                NewsChannel={items.source.name}
+                PostedTime={items.publishedAt}
+                image={items.urlToImage.toString()}
+              />
+            </View>
+          );
+        })}
+      </ScrollView>
     </View>
   );
 };
 const World = () => {
   return (
-    <SafeAreaView
-      style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text>World</Text>
-    </SafeAreaView>
+    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center',backgroundColor:theme.colors.White}}>
+     <ScrollView horizontal={false}>
+        <View
+          style={{
+            borderWidth: 0.4,
+            marginHorizontal: 20,
+            borderColor: theme.colors.LightGray,
+          }}
+        />
+        {articles.map(items => {
+          return (
+            <View key={items.source.id}>
+              <SmallCard
+                title={items.title}
+                NewsChannel={items.source.name}
+                PostedTime={items.publishedAt}
+                image={items.urlToImage.toString()}
+              />
+            </View>
+          );
+        })}
+      </ScrollView>
+    </View>
   );
 };
 const Technology = () => {
   return (
-    <SafeAreaView
-      style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text>World</Text>
-    </SafeAreaView>
+    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center',backgroundColor:theme.colors.White}}>
+       <ScrollView horizontal={false}>
+        <View
+          style={{
+            borderWidth: 0.4,
+            marginHorizontal: 20,
+            borderColor: theme.colors.LightGray,
+          }}
+        />
+        {articles.map(items => {
+          return (
+            <View key={items.source.id}>
+              <SmallCard
+                title={items.title}
+                NewsChannel={items.source.name}
+                PostedTime={items.publishedAt}
+                image={items.urlToImage.toString()}
+              />
+            </View>
+          );
+        })}
+      </ScrollView>
+    </View>
   );
 };
-const Indonesia = () => {
+const Toys = () => {
   return (
-    <SafeAreaView
-      style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text>World</Text>
-    </SafeAreaView>
+    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center',backgroundColor:theme.colors.White}}>
+      <ScrollView horizontal={false}>
+        <View
+          style={{
+            borderWidth: 0.4,
+            marginHorizontal: 20,
+            borderColor: theme.colors.LightGray,
+          }}
+        />
+        {articles.map(items => {
+          return (
+            <View key={items.source.id}>
+              <SmallCard
+                title={items.title}
+                NewsChannel={items.source.name}
+                PostedTime={items.publishedAt}
+                image={items.urlToImage.toString()}
+              />
+            </View>
+          );
+        })}
+      </ScrollView>
+    </View>
   );
 };
-export {Latest, World, Indonesia, Technology};
+const Fashion = () => {
+  return (
+    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center',backgroundColor:theme.colors.White}}>
+      <ScrollView horizontal={false}>
+        <View
+          style={{
+            borderWidth: 0.4,
+            marginHorizontal: 20,
+            borderColor: theme.colors.LightGray,
+          }}
+        />
+        {articles.map(items => {
+          return (
+            <View key={items.source.id}>
+              <SmallCard
+                title={items.title}
+                NewsChannel={items.source.name}
+                PostedTime={items.publishedAt}
+                image={items.urlToImage.toString()}
+              />
+            </View>
+          );
+        })}
+      </ScrollView>
+    </View>
+  );
+};
+const Sports = () => {
+  return (
+    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center',backgroundColor:theme.colors.White}}>
+       <ScrollView horizontal={false}>
+        <View
+          style={{
+            borderWidth: 0.4,
+            marginHorizontal: 20,
+            borderColor: theme.colors.LightGray,
+          }}
+        />
+        {articles.map(items => {
+          return (
+            <View key={items.source.id}>
+              <SmallCard
+                title={items.title}
+                NewsChannel={items.source.name}
+                PostedTime={items.publishedAt}
+                image={items.urlToImage.toString()}
+              />
+            </View>
+          );
+        })}
+      </ScrollView>
+    </View>
+  );
+};
+export {Latest, World, Sports, Technology, Toys, Fashion};

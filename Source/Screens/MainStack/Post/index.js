@@ -11,13 +11,13 @@ import {
   Screen,
 } from 'react-native';
 import {sin} from 'react-native/Libraries/Animated/Easing';
-import {BackButton, Bookmark} from '../assets/Icons';
-import {theme} from '../constants';
-import {fontFamily} from '../constants/Fonts';
-import {sizes} from '../constants/theme';
-import styles from './Style';
+import {BackButton, Bookmark} from '../../../assets/Icons';
+import {theme} from '../../../constants';
+import {fontFamily} from '../../../constants/Fonts';
+import {sizes} from '../../../constants/theme';
+import styles from '../../Style';
 
-const Image1 = require('../assets/images/TopNews/card1.png');
+const Image1 = require('../../../assets/images/TopNews/card1.png');
 
 const IMAGE_HEIGHT = 280;
 

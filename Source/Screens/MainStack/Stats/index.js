@@ -1,8 +1,8 @@
 import React from 'react';
 import {View, Text, FlatList, ScrollView} from 'react-native';
-import {Header2, HeaderText, Statscard, TopicsCard} from '../Components';
-import {Topics} from '../constants/mock';
-import styles from './Style';
+import {Header2, HeaderText, Statscard, TopicsCard} from '../../../Components';
+import {Topics} from '../../../constants/mock';
+import styles from '../../Style';
 const Stats = () => {
   return (
     <View style={styles.container}>

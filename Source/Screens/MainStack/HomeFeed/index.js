@@ -1,10 +1,10 @@
 import React from 'react';
 import {View, ScrollView} from 'react-native';
-import styles from './Style';
-import {Header, ImportantNewsCard, TopNewsCard, SmallCard} from '../Components';
-import {theme} from '../constants';
+import styles from '../../Style';
+import {Header, ImportantNewsCard, TopNewsCard, SmallCard} from '../../../Components';
+import {theme} from '../../../constants';
 // import axios from 'axios';
-import articles from '../assets/data';
+import articles from '../../../assets/data';
 const Home = () => {
   // React.useEffect(() => {
   //   let dataget=() =>{
