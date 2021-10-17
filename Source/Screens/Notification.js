@@ -39,7 +39,7 @@ const Notification = () => {
           </Text>
         </View>
       </View>
-    
+
       <View
         style={{
           flexDirection: 'row',

@@ -28,9 +28,7 @@ const TopicProfile = () => {
               style={{width: 74, height: 74, borderRadius: 5}}
             />
           </View>
-          <View style={
-            { flexDirection: 'column' }
-          }>
+          <View style={{flexDirection: 'column'}}>
             <Text
               style={{
                 fontFamily: fontFamily.Bozon_Demi_Bold,

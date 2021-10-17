@@ -1,5 +1,12 @@
 import React from 'react';
-import {StyleSheet, Text, Animated, Flatlist, SafeAreaView,View} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  Animated,
+  Flatlist,
+  SafeAreaView,
+  View,
+} from 'react-native';
 
 // import {theme} from '../constants';
 // import Button from './Button';
@@ -10,7 +17,7 @@ const Latest = () => {
     <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
       <Text>World</Text>
       <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text>World</Text>
+        <Text>World</Text>
       </View>
     </View>
   );
