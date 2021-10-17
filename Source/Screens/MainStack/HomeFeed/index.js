@@ -1,7 +1,12 @@
 import React from 'react';
 import {View, ScrollView} from 'react-native';
 import styles from '../../Style';
-import {Header, ImportantNewsCard, TopNewsCard, SmallCard} from '../../../Components';
+import {
+  Header,
+  ImportantNewsCard,
+  TopNewsCard,
+  SmallCard,
+} from '../../../Components';
 import {theme} from '../../../constants';
 // import axios from 'axios';
 import articles from '../../../assets/data';

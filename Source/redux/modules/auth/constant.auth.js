@@ -1,4 +1,3 @@
-
 export const SIGN_IN = 'SIGN_IN';
 export const SIGN_IN_RECIEVED = 'SIGN_IN_RECIEVED';
 export const SIGN_UP = 'SIGN_UP';

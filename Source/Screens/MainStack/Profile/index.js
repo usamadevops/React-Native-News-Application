@@ -7,7 +7,7 @@ import {sizes} from '../../../constants/theme';
 import Tab from '../../../navigation/Tab';
 const TopicProfile = () => {
   return (
-    <View style={{flex: 1,backgroundColor:theme.colors.White}}>
+    <View style={{flex: 1, backgroundColor: theme.colors.White}}>
       <Header2 title="CNN" backButton={true} icon="search" />
       <View
         style={{
@@ -73,7 +73,7 @@ const TopicProfile = () => {
           </Text>
         </Pressable>
       </View>
-      <View style={{flex: 1,marginTop:20}}>
+      <View style={{flex: 1, marginTop: 20}}>
         <Tab />
       </View>
     </View>

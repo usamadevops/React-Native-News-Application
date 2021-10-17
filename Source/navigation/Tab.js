@@ -17,8 +17,7 @@ function Tab() {
         tabBarScrollEnabled: true,
         tabBarItemStyle: {width: 'auto'},
       }}
-      transitionStyle="curl"
-    >
+      transitionStyle="curl">
       <Tabs.Screen name="Latest" component={Latest} />
       <Tabs.Screen name="World" component={World} />
       <Tabs.Screen name="Toys" component={Toys} />

@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Animated, Pressable, Text} from 'react-native';
 
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import { Main } from '../Screens';
+import {Main} from '../Screens';
 import {theme} from '../../constants';
 import {
   HomeIcon,
@@ -33,7 +33,6 @@ export default function BottomTab() {
         <Tab.Screen
           name="Home"
           component={Main.Homefeed}
-        
           options={{
             tabBarIcon: ({focused}) => {
               return (

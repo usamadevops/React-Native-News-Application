@@ -1,7 +1,7 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-import {Main,NewsEditor} from '../Screens';
+import {Main, NewsEditor} from '../Screens';
 import BottomTab from './Bottom';
 
 const Stack = createStackNavigator();

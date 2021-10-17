@@ -1,14 +1,20 @@
 import React from 'react';
-import {StyleSheet, Text, View,ScrollView} from 'react-native';
+import {StyleSheet, Text, View, ScrollView} from 'react-native';
 import styles from '../Screens/Style';
-import { ImportantNewsCard, TopNewsCard, SmallCard} from '../Components';
+import {ImportantNewsCard, TopNewsCard, SmallCard} from '../Components';
 import {theme} from '../constants';
 // import axios from 'axios';
 import articles from '../assets/data';
 const Latest = () => {
   return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center',backgroundColor:theme.colors.White}}>
-    <ScrollView horizontal={false}>
+    <View
+      style={{
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: theme.colors.White,
+      }}>
+      <ScrollView horizontal={false}>
         <View
           style={{
             borderWidth: 0.4,
@@ -34,8 +40,14 @@ const Latest = () => {
 };
 const World = () => {
   return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center',backgroundColor:theme.colors.White}}>
-     <ScrollView horizontal={false}>
+    <View
+      style={{
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: theme.colors.White,
+      }}>
+      <ScrollView horizontal={false}>
         <View
           style={{
             borderWidth: 0.4,
@@ -61,8 +73,14 @@ const World = () => {
 };
 const Technology = () => {
   return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center',backgroundColor:theme.colors.White}}>
-       <ScrollView horizontal={false}>
+    <View
+      style={{
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: theme.colors.White,
+      }}>
+      <ScrollView horizontal={false}>
         <View
           style={{
             borderWidth: 0.4,
@@ -88,7 +106,13 @@ const Technology = () => {
 };
 const Toys = () => {
   return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center',backgroundColor:theme.colors.White}}>
+    <View
+      style={{
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: theme.colors.White,
+      }}>
       <ScrollView horizontal={false}>
         <View
           style={{
@@ -115,7 +139,13 @@ const Toys = () => {
 };
 const Fashion = () => {
   return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center',backgroundColor:theme.colors.White}}>
+    <View
+      style={{
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: theme.colors.White,
+      }}>
       <ScrollView horizontal={false}>
         <View
           style={{
@@ -142,8 +172,14 @@ const Fashion = () => {
 };
 const Sports = () => {
   return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center',backgroundColor:theme.colors.White}}>
-       <ScrollView horizontal={false}>
+    <View
+      style={{
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: theme.colors.White,
+      }}>
+      <ScrollView horizontal={false}>
         <View
           style={{
             borderWidth: 0.4,
