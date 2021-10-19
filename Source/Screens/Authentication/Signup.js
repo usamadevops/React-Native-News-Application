@@ -70,9 +70,9 @@ const Signup = ({navigation, signupFunc}) => {
       Passward.Password.length >= 6
     ) {
       const data = {
-        email: Email.useremail,
-        password: Passward.Password,
-        Fullname: NickName.nickname,
+        'email': Email.useremail,
+        'password': Passward.Password,
+        'Fullname': NickName.nickname,
       };
       signupFunc(data);
     } else {

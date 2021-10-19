@@ -39,7 +39,7 @@ function* Register({payload}) {
     payload.userId = Response.userSub;
     yield put({
       type: auth.SIGN_UP_RECIEVED,
-      payload: payload,
+      payload: Response,
     });
     console.log(Response);
   } catch (err) {
