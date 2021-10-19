@@ -13,12 +13,13 @@ import {theme} from '../../constants';
 import {fontFamily} from '../../constants/Fonts';
 import styles from './Styles';
 import {regularExp} from '../../Utils/regExp';
-import {SignUp} from '../../redux/Modules/auth/action.auth';
+import {SignUp} from '../../redux/modules/auth/action.auth';
 import {
   Authorization,
   isLoadingSelector,
   errorSelector,
-} from '../../redux/Modules/auth/selector.auth';
+} from '../../redux/modules/auth/selector.auth';
+import Auth from '@aws-amplify/auth';
 
 const Signup = ({navigation, signupFunc}) => {
   const UserAuth = useSelector(Authorization, shallowEqual);
@@ -26,15 +27,15 @@ const Signup = ({navigation, signupFunc}) => {
   const error = useSelector(errorSelector, shallowEqual);
 
   const [NickName, setNickName] = useState({
-    nickname: '',
+    nickname: 'fasfa',
     checknickNameInputChange: false,
   });
   const [Email, setEmail] = useState({
-    useremail: 'ualtaf234@gmail.com',
+    useremail: 'gsgs@gmail.com',
     checkEmailInputChange: false,
   });
   const [Passward, setPassward] = useState({
-    Password: '',
+    Password: 'sgdgsgsdgg',
     secureTextEntry: true,
   });
 
@@ -46,14 +47,14 @@ const Signup = ({navigation, signupFunc}) => {
   };
   const NickNameChange = nicknameval => {
     const re = regularExp.fullName;
-    if (nicknameval.length >= 5 && re.test(nicknameval)) {
+    if (re.test(nicknameval)===true) {
       setNickName({
         ...NickName,
         nickname: nicknameval,
         checknickNameInputChange: true,
       });
     } else {
-      setNickName({...NickName, nickname: '', checknickNameInputChange: false});
+      setNickName({...NickName, nickname: nicknameval, checknickNameInputChange: false});
     }
   };
   function HandlePasswordChange(PasswordVal) {
@@ -63,7 +64,7 @@ const Signup = ({navigation, signupFunc}) => {
     setPassward({...Passward, secureTextEntry: !Passward.secureTextEntry});
   };
   const secureIt = Passward.secureTextEntry ? true : false;
-  function Register() {
+async  function Register() {
     if (
       NickName.checknickNameInputChange &&
       Email.checkEmailInputChange &&
@@ -120,7 +121,7 @@ const Signup = ({navigation, signupFunc}) => {
           placeholder="NickName"
           placeholderTextColor={theme.colors.MediumGray}
           style={styles.inputInnerContainer}
-          value={NickName}
+          value={NickName.nickname}
           onChangeText={res => NickNameChange(res)}
         />
         {NickName.checknickNameInputChange ? <Tick /> : null}

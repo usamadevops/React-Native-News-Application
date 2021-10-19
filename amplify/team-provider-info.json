@@ -10,6 +10,11 @@
       "StackName": "amplify-strikenews-dev-224629",
       "StackId": "arn:aws:cloudformation:us-east-2:002015640776:stack/amplify-strikenews-dev-224629/01ab0a60-2ea9-11ec-bbd0-069e3da331c6",
       "AmplifyAppId": "d1777qbwj628qf"
+    },
+    "categories": {
+      "auth": {
+        "strikenewsa3fe2703": {}
+      }
     }
   }
 }
