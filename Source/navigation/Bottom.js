@@ -3,13 +3,13 @@ import {View, Animated, Pressable, Text} from 'react-native';
 
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {Main} from '../Screens';
-import {theme} from '../../constants';
+import {theme} from '../constants';
 import {
   HomeIcon,
   NotificationIcon,
   SearchIcon,
   StatsIcon,
-} from '../../assets/Icons';
+} from '../assets/Icons';
 import {useNavigation} from '@react-navigation/native';
 
 const Tab = createBottomTabNavigator();
