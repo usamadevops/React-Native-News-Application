@@ -8387,10 +8387,10 @@ react-is@^16.13.0, react-is@^16.13.1, react-is@^16.7.0, react-is@^16.8.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
-react-native-cn-quill@^0.7.0:
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/react-native-cn-quill/-/react-native-cn-quill-0.7.0.tgz#bc4813025c0e8064892c9b457907183f0ed39877"
-  integrity sha512-rqBtS+xYKHmIgx1/IBRMWhDcL2B/D0BdbWJK5nDOkE8uypvYTX0PAk+N8ANoCvcb5PE9I9viaFvnz/Qo2nHvRg==
+react-native-cn-quill@^0.7.14:
+  version "0.7.14"
+  resolved "https://registry.yarnpkg.com/react-native-cn-quill/-/react-native-cn-quill-0.7.14.tgz#b53c01c7cdad9a6c126f696c77950335b952987c"
+  integrity sha512-g72F1Lo8HpDQZXsnXsMjzGl5+8N58IqqArM24sgg9ZbVVCaoXm0kTqvMhk4kG+rfW6vS7GLd1V4N27yI1y5+NA==
 
 react-native-codegen@^0.0.6:
   version "0.0.6"

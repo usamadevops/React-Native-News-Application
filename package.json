@@ -28,7 +28,7 @@
     "newsapi": "^2.4.1",
     "react": "17.0.1",
     "react-native": "0.64.2",
-    "react-native-cn-quill": "^0.7.0",
+    "react-native-cn-quill": "^0.7.14",
     "react-native-gesture-handler": "^1.10.3",
     "react-native-htmlview": "^0.16.0",
     "react-native-pager-view": "^5.4.0",

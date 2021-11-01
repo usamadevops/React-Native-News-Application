@@ -27,6 +27,12 @@ export const recieveSignUp = payload => {
   };
 };
 
+export const GetData = payload => {
+  return {
+  type: GET_AUTHENTICATION,
+  payload: payload,
+};
+};
 export const SignOut = payload => {
   return {
     type: SIGN_OUT,

@@ -1,7 +1,7 @@
 import axios from 'axios';
 import Session from './Session';
 
-const Uri = 'http://192.168.100.21:5000';
+const Uri = 'https://newsapi.org/v2/';
 /**
  * setAuthToken sets the token in the headers of each call
  * @param {string} token taken from the amplify Aws
@@ -17,10 +17,10 @@ export const axiosInstance = axios.create({
 
 axiosInstance.interceptors.request.use(
   async config => {
-    const session = await Session();
-    if (session) {
-      config.headers.common = {Authorization: `Bearer ${session}`};
-    }
+    const APIKEY = '68b18ea87f8a45f5984bb9f135dcdf68';
+   
+      config.headers.common = {Authorization: ` ${ APIKEY }`};
+  
     return config;
   },
   error => {
