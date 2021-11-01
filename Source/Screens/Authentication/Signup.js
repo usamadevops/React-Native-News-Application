@@ -13,13 +13,12 @@ import {theme} from '../../constants';
 import {fontFamily} from '../../constants/Fonts';
 import styles from './Styles';
 import {regularExp} from '../../Utils/regExp';
-import {SignUp} from '../../redux/modules/auth/action.auth';
+import {SignUp} from '../../redux/Modules/auth/action.auth';
 import {
   Authorization,
   isLoadingSelector,
   errorSelector,
-} from '../../redux/modules/auth/selector.auth';
-import Auth from '@aws-amplify/auth';
+} from '../../redux/Modules/auth/selector.auth';
 
 const Signup = ({navigation, signupFunc}) => {
   const UserAuth = useSelector(Authorization, shallowEqual);
@@ -47,14 +46,18 @@ const Signup = ({navigation, signupFunc}) => {
   };
   const NickNameChange = nicknameval => {
     const re = regularExp.fullName;
-    if (re.test(nicknameval)===true) {
+    if (re.test(nicknameval) === true) {
       setNickName({
         ...NickName,
         nickname: nicknameval,
         checknickNameInputChange: true,
       });
     } else {
-      setNickName({...NickName, nickname: nicknameval, checknickNameInputChange: false});
+      setNickName({
+        ...NickName,
+        nickname: nicknameval,
+        checknickNameInputChange: false,
+      });
     }
   };
   function HandlePasswordChange(PasswordVal) {
@@ -64,16 +67,16 @@ const Signup = ({navigation, signupFunc}) => {
     setPassward({...Passward, secureTextEntry: !Passward.secureTextEntry});
   };
   const secureIt = Passward.secureTextEntry ? true : false;
-async  function Register() {
+  function Register() {
     if (
       NickName.checknickNameInputChange &&
       Email.checkEmailInputChange &&
       Passward.Password.length >= 6
     ) {
       const data = {
-        'email': Email.useremail,
-        'password': Passward.Password,
-        'Fullname': NickName.nickname,
+        email: Email.useremail,
+        password: Passward.Password,
+        Fullname: NickName.nickname,
       };
       signupFunc(data);
     } else {

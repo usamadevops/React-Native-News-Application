@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import {View, Text, Image} from 'react-native';
-import { theme } from '../../constants';
+import {theme} from '../../constants';
 import axios from 'axios';
 import styles from './Styles';
 const App_Icon = require('../../assets/Icons/App_Icon.jpg');

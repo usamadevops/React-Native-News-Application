@@ -28,6 +28,7 @@ function* Register({payload}) {
   const username = payload.email;
   const password = payload.password;
   const name = payload.Fullname;
+  console.log(payload);
   try {
     const Response = yield Auth.signUp({
       username,
