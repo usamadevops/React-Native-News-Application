@@ -60,8 +60,8 @@ export default function NewsEditor() {
         style={styles.editor}
         ref={_editor}
         quill={{
-          modules: {toolbar: true},
-          theme: 'snow',
+          Modules: {toolbar: true},
+          theme: 'bubble',
           placeholder: 'Whats the News',
         }}
       />

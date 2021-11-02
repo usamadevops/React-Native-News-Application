@@ -5,11 +5,11 @@ import {Auth} from '../Screens';
 const Stack = createStackNavigator();
 const AuthStack = () => {
   return (
-      <Stack.Navigator screenOptions={{headerShown: false}}>
-        <Stack.Screen name="Signup" component={Auth.Signup} />
-        <Stack.Screen name="Login" component={Auth.Login} />
-        <Stack.Screen name="ForgetPassword" component={Auth.ForgotPassword} />
-      </Stack.Navigator>
+    <Stack.Navigator screenOptions={{headerShown: false}}>
+      <Stack.Screen name="Signup" component={Auth.Signup} />
+      <Stack.Screen name="Login" component={Auth.Login} />
+      <Stack.Screen name="ForgetPassword" component={Auth.ForgotPassword} />
+    </Stack.Navigator>
   );
 };
 

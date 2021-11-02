@@ -6,13 +6,13 @@ import {
   View,
   Switch,
   ScrollView,
-  Image
+  Image,
 } from 'react-native';
-import { shallowEqual, useSelector } from 'react-redux';
+import {shallowEqual, useSelector} from 'react-redux';
 import {Header2} from '../../../Components';
 import {theme} from '../../../constants';
-import { fontFamily } from '../../../constants/Fonts';
-import { Authorization } from '../../../redux/modules/auth/selector.auth';
+import {fontFamily} from '../../../constants/Fonts';
+import {Authorization} from '../../../redux/Modules/auth/selector.auth';
 
 const Settings = () => {
   const isAuthenticated = useSelector(Authorization, shallowEqual);
@@ -31,44 +31,42 @@ const Settings = () => {
   return (
     <ScrollView style={styles.Container}>
       <Header2 title="Settings" backButton={true} />
-      {
-        !isAuthenticated.User ? (
-          <>
+      {!isAuthenticated.User ? (
+        <>
           <View style={styles.HeaderView}>
-          <Text style={styles.HeaderText}>ACCOUNT</Text>
-        </View>
-        <Pressable
-          style={styles.buttonView}
-          android_ripple={{
-            color: theme.colors.LightGray,
-            borderless: false,
-            radius: 300,
-          }}>
-          <View>
-            <Text style={styles.BtnTitle}>Create a free SN Account </Text>
+            <Text style={styles.HeaderText}>ACCOUNT</Text>
           </View>
-        </Pressable>
-        <Pressable
-          style={styles.buttonView}
-          android_ripple={{
-            color: theme.colors.LightGray,
-            borderless: false,
-            radius: 300,
-          }}>
-          <View>
-            <Text style={styles.BtnTitle}>Login to your SN Account </Text>
-          </View>
-        </Pressable>
-          </>
-        ) : (
-            <>
-          <View style={styles.HeaderView}>
-          <Text style={styles.HeaderText}>Profile</Text>
+          <Pressable
+            style={styles.buttonView}
+            android_ripple={{
+              color: theme.colors.LightGray,
+              borderless: false,
+              radius: 300,
+            }}>
+            <View>
+              <Text style={styles.BtnTitle}>Create a free SN Account </Text>
             </View>
-            <Image />
-            </>
-     )
-      }
+          </Pressable>
+          <Pressable
+            style={styles.buttonView}
+            android_ripple={{
+              color: theme.colors.LightGray,
+              borderless: false,
+              radius: 300,
+            }}>
+            <View>
+              <Text style={styles.BtnTitle}>Login to your SN Account </Text>
+            </View>
+          </Pressable>
+        </>
+      ) : (
+        <>
+          <View style={styles.HeaderView}>
+            <Text style={styles.HeaderText}>Profile</Text>
+          </View>
+          <Image />
+        </>
+      )}
       <View style={styles.HeaderView}>
         <Text style={styles.HeaderText}>NOTIFICATIONS</Text>
       </View>

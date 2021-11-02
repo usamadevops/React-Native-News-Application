@@ -1,6 +1,6 @@
 import {all} from 'redux-saga/effects';
 
-import {authsaga} from '../modules/auth/saga.auth';
+import {authsaga} from '../Modules/auth/saga.auth';
 
 export default function* rootSagas() {
   try {

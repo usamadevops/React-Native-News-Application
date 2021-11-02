@@ -18,9 +18,9 @@ export const axiosInstance = axios.create({
 axiosInstance.interceptors.request.use(
   async config => {
     const APIKEY = '68b18ea87f8a45f5984bb9f135dcdf68';
-   
-      config.headers.common = {Authorization: ` ${ APIKEY }`};
-  
+
+    config.headers.common = {Authorization: ` ${APIKEY}`};
+
     return config;
   },
   error => {

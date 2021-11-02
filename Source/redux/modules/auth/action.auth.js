@@ -29,9 +29,9 @@ export const recieveSignUp = payload => {
 
 export const GetData = payload => {
   return {
-  type: GET_AUTHENTICATION,
-  payload: payload,
-};
+    type: GET_AUTHENTICATION,
+    payload: payload,
+  };
 };
 export const SignOut = payload => {
   return {

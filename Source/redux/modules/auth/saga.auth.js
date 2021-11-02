@@ -7,8 +7,6 @@ function* Login({payload}) {
     const email = payload.email;
     const password = payload.password;
     const user = yield Auth.signIn(email, password);
-    payload.accessToken = user.signInUserSession.accessToken.jwtToken;
-    payload.refreshToken = user.signInUserSession.refreshToken.token;
     payload.userId = user.attributes.sub;
     console.log('Refresh Token =', user.signInUserSession.refreshToken.token);
     console.log(payload);
