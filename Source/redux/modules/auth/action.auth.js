@@ -3,8 +3,8 @@ import {
   SIGN_UP,
   SIGN_OUT,
   AUTH_ERROR,
-  SIGN_UP_RECIEVED,
-  SIGN_IN_RECIEVED,
+CONFIRM_ACCOUNT
+
 } from './constant.auth.js';
 
 export const SignIn = payload => {
@@ -20,9 +20,9 @@ export const SignUp = payload => {
     payload: payload,
   };
 };
-export const recieveSignUp = payload => {
+export const confirmUser = payload => {
   return {
-    type: SIGN_UP_RECIEVED,
+    type: CONFIRM_ACCOUNT,
     payload: payload,
   };
 };

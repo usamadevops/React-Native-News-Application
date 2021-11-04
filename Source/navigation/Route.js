@@ -1,31 +1,38 @@
 import React from 'react';
-import {View, Text} from 'react-native';
 import {shallowEqual, useSelector} from 'react-redux';
 import AuthStack from './AuthStack';
 import MainStack from './MainStack';
-import {Splash} from '../Screens';
+import { Splash } from '../Screens';
+import { ReadDataSingleString } from '../Utils/AsyncStorage';
 import {
   Authorization,
 } from '../redux/Modules/auth/selector.auth';
 import {NavigationContainer} from '@react-navigation/native';
 const Route = () => {
   const Authenticated = useSelector(Authorization, shallowEqual);
-  const [isReady, setisReady] = React.useState(false);
+  // const [isReady, setisReady] = React.useState(false);
 
-  React.useEffect(() => {
-    
-    
-  }, []);
+  // let AsyncToken;
+	// React.useEffect(() => {
+	// 	const loadApp = (async () => {	
+	// 		AsyncToken = await ReadDataSingleString('@Token');	
+	// 		setisReady(true);
+	// 	})();
+	// 	return () => {
+	// 		loadApp;
+	// 	};
+  // }, [AsyncToken]);
+  
 
-  if (!isReady) {
-    return <Splash />;
-  } else {
+  // if (!isReady) {
+  //   return <Splash />;
+  // } else {
     return (
       <NavigationContainer>
-        {!Authenticated.User ? <AuthStack /> : <MainStack />}
+        {!Authenticated.User? <AuthStack /> : <MainStack />}
       </NavigationContainer>
     );
-  }
+  
 };
 
 export default Route;

@@ -8,6 +8,8 @@ import {
   SIGN_OUT,
   SIGNOUT_SUCCESS,
   AUTH_ERROR,
+  CONFIRM_ACCOUNT,
+  ACCOUNT_CONFIRMED,
 } from './constant.auth';
 
 const initialState = fromJS({
@@ -15,6 +17,7 @@ const initialState = fromJS({
   error: Map(),
   data: Map(),
   isAuthenticated: false,
+  isConfirm:true,
 });
 
 const AuthenticationReducer = (state = initialState, action = {}) => {
@@ -38,13 +41,19 @@ const AuthenticationReducer = (state = initialState, action = {}) => {
     case SIGN_UP_RECIEVED:
       return state
         .set('isLoading', false)
-        .set('isAuthenticated', true)
+        .set('isAuthenticated', false)
         .set('data', fromJS(payload))
-        .set('error', Map());
+        .set('error', Map())
+        .set('isConfirm', false);
 
     case SIGN_OUT:
       return state.set('isLoading', true).set('error', Map());
 
+    case CONFIRM_ACCOUNT:
+      return state.set('isLoading', true).set('data', fromJS(payload)).set('error', Map()).set('isConfirm', false);
+    
+    case ACCOUNT_CONFIRMED:
+      return state.set('isLoading',false).set('data', fromJS(payload)).set('isAuthenticated', false).set('error',Map()).set('isConfirm,true')
     case SIGNOUT_SUCCESS:
       return state.set('isLoading', false).set('isAuthenticated', false);
     case AUTH_ERROR:

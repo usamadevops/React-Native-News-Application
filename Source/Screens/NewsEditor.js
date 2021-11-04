@@ -7,8 +7,8 @@ import {
   Text,
   Pressable,
 } from 'react-native';
-import QuillEditor, {QuillToolbar} from 'react-native-cn-quill';
-import {BackButton} from '../assets/Icons';
+import { BackButton } from '../assets/Icons';
+import {RichEditor,RichToolbar} from 'react-native-pell-rich-editor'
 import {theme} from '../constants';
 import {useNavigation} from '@react-navigation/core';
 import {fontFamily} from '../constants/Fonts';
@@ -56,16 +56,12 @@ export default function NewsEditor() {
           </Text>
         </Pressable>
       </View>
-      <QuillEditor
-        style={styles.editor}
-        ref={_editor}
-        quill={{
-          Modules: {toolbar: true},
-          theme: 'bubble',
-          placeholder: 'Whats the News',
-        }}
+      <RichEditor
+  ref={_editor}
+  initialContentHTML={'Hello <b>World</b> <p>this is a new paragraph</p> <p>this is another new paragraph</p>'}
+
       />
-      <QuillToolbar editor={_editor} options="basic" theme="dark" />
+      <RichToolbar editor={_editor}/>
     </SafeAreaView>
   );
 }

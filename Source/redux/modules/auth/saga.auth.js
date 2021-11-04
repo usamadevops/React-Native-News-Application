@@ -1,6 +1,7 @@
 import {Auth} from 'aws-amplify';
-import {call, put, takeLatest} from 'redux-saga/effects';
+import { put, takeLatest} from 'redux-saga/effects';
 import * as auth from './constant.auth';
+import Session from '../../utils/Session';
 
 function* Login({payload}) {
   try {
@@ -10,6 +11,7 @@ function* Login({payload}) {
     payload.userId = user.attributes.sub;
     console.log('Refresh Token =', user.signInUserSession.refreshToken.token);
     console.log(payload);
+    yield Session();
     yield put({
       type: auth.SIGN_IN_RECIEVED,
       payload: payload,
@@ -37,11 +39,28 @@ function* Register({payload}) {
     payload.userId = Response.userSub;
     yield put({
       type: auth.SIGN_UP_RECIEVED,
-      payload: Response,
+      payload: payload,
     });
+
     console.log(Response);
   } catch (err) {
     yield put({type: auth.AUTH_ERROR, error: err});
+  }
+}
+function* ConfirmUserAccount({ payload })
+{
+  try {
+    yield Auth.confirmSignUp(payload);
+    yield put({
+      type: auth.ACCOUNT_CONFIRMED,
+      payload: payload
+    });
+  }
+  catch(err){
+    yield put({
+      type: auth.AUTH_ERROR,
+      error: err,
+    });
   }
 }
 function* signoutUser({payload}) {
@@ -68,9 +87,13 @@ function* watchmanofsignn() {
 function* watchmanofsignout() {
   yield takeLatest(auth.SIGN_OUT, signoutUser);
 }
+function* watchmanofConfirmation() {
+  yield takeLatest(auth.CONFIRM_ACCOUNT, ConfirmUserAccount);
+}
 
 export const authsaga = [
   watchmanoflogin(),
   watchmanofsignn(),
   watchmanofsignout(),
+  watchmanofConfirmation(),
 ];

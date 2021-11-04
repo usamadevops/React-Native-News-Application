@@ -1,10 +1,18 @@
-// import AsyncStorage from '@react-native-async-storage/async-storage';
+import { storeDataSingleValue } from '../../Utils/AsyncStorage';
 import {Auth} from 'aws-amplify';
 const Session = async () => {
-  const AccessToken = (await Auth.currentSession())
-    .getAccessToken()
-    .getJwtToken();
-  return AccessToken;
+
+	let AccessToken;
+	await Auth.currentSession().then((res) => {
+		AccessToken = res.getAccessToken().getJwtToken();
+		storeDataSingleValue('@Token', AccessToken);
+		return AccessToken;
+	}).catch((err) => {
+    // throw new Error(err);
+    AccessToken = null;
+		return AccessToken;
+	}
+	);
 };
 
 export default Session;

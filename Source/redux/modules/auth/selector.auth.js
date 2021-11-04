@@ -13,14 +13,16 @@ export const isLoadingSelector = createSelector(auth, data => ({
 export const Authorization = createSelector(auth, data => ({
   User: data?.get('isAuthenticated'),
 }));
+export const isConfirmed = createSelector(auth, data => ({
+  isUserConfirmed: data?.get('isConfirm'),
+}));
 
-export const authUserNameFullNameEmailAndPasswordSelector = createSelector(
+export const authSelector = createSelector(
   auth,
   data => ({
-    userName: data?.get('data')?.get('username'),
-    fullName: data?.get('data')?.get('Fullname'),
-    email: data?.get('data')?.get('email'),
-    password: data?.get('data')?.get('password'),
-    userId: data.get('data')?.get('userId'),
+    fullName: data?.get('name'),
+    email: data?.get('username'),
+    password: data?.get('password'),
+    userId: data.get('userId'),
   }),
 );
