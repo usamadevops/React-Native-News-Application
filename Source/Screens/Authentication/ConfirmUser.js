@@ -8,7 +8,7 @@ import { errorSelector, isLoadingSelector } from '../../redux/Modules/auth/selec
 const ConfirmUser = ({ confirmUserFunc,route }) => {
     const { Email } = route.params;
     const Error = useSelector(errorSelector, shallowEqual);
-    const isLoading = useSelector(isLoadingSelector, shallowEqual);
+    const Loader = useSelector(isLoadingSelector, shallowEqual);
     const [code, setCode] = React.useState('');
     const [error, setError] = React.useState('');
     const [errorExist,setErrorExist]=React.useState(false)
@@ -41,7 +41,11 @@ const ConfirmUser = ({ confirmUserFunc,route }) => {
              setError('');
             }
             console.log(Email);
-           await confirmUserFunc({ username: Email, code: code })
+            const payload = {
+                username: Email,
+                Code: code
+            };
+           await confirmUserFunc(payload)
         }
         else
         {
@@ -53,6 +57,8 @@ const ConfirmUser = ({ confirmUserFunc,route }) => {
 
     return (
         <View style={styles.container}>
+             {Loader.isLoading && <GifLoader />
+    }
             <View
                 style={{
                     backgroundColor: theme.colors.Blue,

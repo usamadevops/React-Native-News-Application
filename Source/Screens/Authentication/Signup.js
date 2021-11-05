@@ -25,7 +25,7 @@ const Signup = ({navigation, signupFunc}) => {
   const confirm = useSelector(isConfirmed, shallowEqual);
   const Loader = useSelector(isLoadingSelector, shallowEqual);
   const error = useSelector(errorSelector, shallowEqual);
-
+  const [loading, setloading] = useState(true);
   const [NickName, setNickName] = useState({
     nickname: '',
     checknickNameInputChange: false,
@@ -140,7 +140,8 @@ const Signup = ({navigation, signupFunc}) => {
             placeholder="NickName"
             placeholderTextColor={theme.colors.MediumGray}
             style={styles.inputInnerContainer}
-            value={NickName.nickname}
+          value={NickName.nickname}
+          
             onChangeText={res => NickNameChange(res)}
           />
           {NickName.checknickNameInputChange ? <Tick /> : null}

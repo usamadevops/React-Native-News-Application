@@ -49,11 +49,13 @@ function* Register({payload}) {
 }
 function* ConfirmUserAccount({ payload })
 {
+  const username = payload.username;
+  const code = payload.Code;
   try {
-    yield Auth.confirmSignUp(payload);
+    const res=yield Auth.confirmSignUp(username,code);
     yield put({
       type: auth.ACCOUNT_CONFIRMED,
-      payload: payload
+      payload: res
     });
   }
   catch(err){
@@ -63,6 +65,7 @@ function* ConfirmUserAccount({ payload })
     });
   }
 }
+
 function* signoutUser({payload}) {
   try {
     yield Auth.signOut();

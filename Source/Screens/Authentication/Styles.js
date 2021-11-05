@@ -43,9 +43,10 @@ const styles = StyleSheet.create({
     fontSize: theme.sizes.h2,
     borderRadius: 10,
     height: 55,
-    width: theme.constants.screenWidth - 80,
+    width: theme.constants.screenWidth - 120  ,
     color: theme.colors.Blue,
   },
+  
   semiText: {
     fontFamily: fontFamily.Bozon_Demi_Bold,
     fontSize: theme.sizes.header,

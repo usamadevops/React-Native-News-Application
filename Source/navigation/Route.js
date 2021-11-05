@@ -10,29 +10,30 @@ import {
 import {NavigationContainer} from '@react-navigation/native';
 const Route = () => {
   const Authenticated = useSelector(Authorization, shallowEqual);
-  // const [isReady, setisReady] = React.useState(false);
+  const [isReady, setisReady] = React.useState(false);
 
-  // let AsyncToken;
-	// React.useEffect(() => {
-	// 	const loadApp = (async () => {	
-	// 		AsyncToken = await ReadDataSingleString('@Token');	
-	// 		setisReady(true);
-	// 	})();
-	// 	return () => {
-	// 		loadApp;
-	// 	};
-  // }, [AsyncToken]);
+  let AsyncToken;
+  React.useEffect(() => {
+    const loadApp = (async () => {
+      AsyncToken = await ReadDataSingleString('@Token');
+      setisReady(true);
+    })();
+    return () => {
+      loadApp;
+    };
+  }, [AsyncToken, Authenticated]);
   
 
-  // if (!isReady) {
-  //   return <Splash />;
-  // } else {
+  if (!isReady) {
+    return <Splash />;
+  } else {
     return (
       <NavigationContainer>
-        {!Authenticated.User? <AuthStack /> : <MainStack />}
+        {!Authenticated.User ? <AuthStack /> : <MainStack />}
       </NavigationContainer>
     );
   
-};
+  };
+}
 
 export default Route;

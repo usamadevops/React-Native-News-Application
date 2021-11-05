@@ -57,11 +57,20 @@ export default function NewsEditor() {
         </Pressable>
       </View>
       <RichEditor
+        placeholder="Start Writing your Article from here"
+        editorStyle={{
+          placeholderColor:'#eeee',
+          backgroundColor: '#000',
+          caretColor: '#fff',
+          color: '#fff',
+        } }
+        containerStyle={{minHeight:700 }}
+    
   ref={_editor}
-  initialContentHTML={'Hello <b>World</b> <p>this is a new paragraph</p> <p>this is another new paragraph</p>'}
+  initialContentHTML={'Start Writing Your Article From Here.'}
 
       />
-      <RichToolbar editor={_editor}/>
+      <RichToolbar  selectedIconTint="#000" getEditor={_editor} style={{maxHeight:30,width:('100%'),position:'absolute',left:0,right:0,bottom:10}} editor={_editor} iconSize={28} actions={['insertVideo','image','bold','italic','unorderedList','orderedList','link','keyboard']}/>
     </SafeAreaView>
   );
 }
