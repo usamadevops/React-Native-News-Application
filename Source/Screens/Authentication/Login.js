@@ -1,12 +1,14 @@
-import React  , {useState} from 'react';
+import React, {useState} from 'react';
 import {
-  Text, View, TextInput,
+  Text,
+  View,
+  TextInput,
   TouchableOpacity,
   Pressable,
   ToastAndroid,
 } from 'react-native';
 import {connect, shallowEqual, useSelector} from 'react-redux';
-import {EyeClose,EyeOpen, Tick} from '../../assets/Icons';
+import {EyeClose, EyeOpen, Tick} from '../../assets/Icons';
 import {theme} from '../../constants';
 import {regularExp} from '../../Utils/regExp';
 import {SignIn} from '../../redux/Modules/auth/action.auth';
@@ -17,7 +19,7 @@ import {
 } from '../../redux/Modules/auth/selector.auth';
 import styles from './Styles';
 
-const Login = ({ navigation, SignInFunc }) => {
+const Login = ({navigation, SignInFunc}) => {
   const UserAuth = useSelector(Authorization, shallowEqual);
   const Loader = useSelector(isLoadingSelector, shallowEqual);
   const error = useSelector(errorSelector, shallowEqual);
@@ -44,10 +46,7 @@ const Login = ({ navigation, SignInFunc }) => {
   };
   const secureIt = Passward.secureTextEntry ? true : false;
   async function Login() {
-    if (
-      Email.checkEmailInputChange &&
-      Passward.Password.length >= 6
-    ) {
+    if (Email.checkEmailInputChange && Passward.Password.length >= 6) {
       const data = {
         email: Email.useremail,
         password: Passward.Password,
@@ -58,15 +57,11 @@ const Login = ({ navigation, SignInFunc }) => {
     }
   }
 
-
   React.useEffect(() => {
-    if (!Loader.isLoading && error.data)
-    {
-      console.log(error.data)
+    if (!Loader.isLoading && error.data) {
+      console.log(error.data);
     }
- 
-},[error.data,Loader.isLoading])
-
+  }, [error.data, Loader.isLoading]);
 
   return (
     <View style={styles.container}>
@@ -110,7 +105,7 @@ const Login = ({ navigation, SignInFunc }) => {
           value={Email.useremail}
           onChangeText={res => validateEmail(res)}
         />
-       {Email.checkEmailInputChange ? <Tick /> : null}
+        {Email.checkEmailInputChange ? <Tick /> : null}
       </View>
       <View style={styles.inputOuterContainer}>
         <TextInput
@@ -121,7 +116,7 @@ const Login = ({ navigation, SignInFunc }) => {
           value={Passward.Password}
           onChangeText={res => HandlePasswordChange(res)}
         />
-       <TouchableOpacity
+        <TouchableOpacity
           onPress={() => updateSecuretextEntry()}
           style={{zIndex: 10}}>
           {Passward.secureTextEntry === true ? <EyeOpen /> : <EyeClose />}

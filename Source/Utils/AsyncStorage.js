@@ -1,30 +1,32 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-export async function storeDataSingleValue(key, value) {//This one to set single Value to LocalStorage
-	try {
-		await AsyncStorage.setItem(key, value);
-	} catch (e) {
-		throw new Error(JSON.stringify(e));
-	}
+export async function storeDataSingleValue(key, value) {
+  //This one to set single Value to LocalStorage
+  try {
+    await AsyncStorage.setItem(key, value);
+  } catch (e) {
+    throw new Error(JSON.stringify(e));
+  }
 }
-export async function ReadDataSingleString(key) {//This one to remove single Value from LocalStorage
-	try {
-		const value = await AsyncStorage.getItem(key);
-		if (value !== null) {
-			return value;
-		}
-	} catch (e) {
-		throw new Error(JSON.stringify(e));
-	}
+export async function ReadDataSingleString(key) {
+  //This one to remove single Value from LocalStorage
+  try {
+    const value = await AsyncStorage.getItem(key);
+    if (value !== null) {
+      return value;
+    }
+  } catch (e) {
+    throw new Error(JSON.stringify(e));
+  }
 }
 
-export async function clearAll() {//This one to clear all Values from LocalStorage
-	try {
-		await AsyncStorage.clear();
-	} catch (e) {
-		throw new Error(JSON.stringify(e));
-	}
-
+export async function clearAll() {
+  //This one to clear all Values from LocalStorage
+  try {
+    await AsyncStorage.clear();
+  } catch (e) {
+    throw new Error(JSON.stringify(e));
+  }
 }
 
 // export function* storeDataSingleObject(key, value) {

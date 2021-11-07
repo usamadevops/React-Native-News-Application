@@ -85,22 +85,23 @@ const Signup = ({navigation, signupFunc}) => {
     }
   }
   React.useEffect(() => {
-    if (!confirm.isUserConfirmed && !Loader.isLoading && error.data.name === undefined)
-    {
+    if (
+      !confirm.isUserConfirmed &&
+      !Loader.isLoading &&
+      error.data.name === undefined
+    ) {
       navigation.navigate('ConfirmUser', {
-        Email:Email.useremail
+        Email: Email.useremail,
       });
     }
-    if (!Loader.isLoading && error.data.name === 'UsernameExistsException')
-    {
-      alert('error exist')
-      }
-  },[Loader.isLoading,confirm.isUserConfirmed])
-  return (<>
- 
-    <View style={styles.container}>
-    {Loader.isLoading && <GifLoader />
+    if (!Loader.isLoading && error.data.name === 'UsernameExistsException') {
+      alert('error exist');
     }
+  }, [Loader.isLoading, confirm.isUserConfirmed]);
+  return (
+    <>
+      <View style={styles.container}>
+        {Loader.isLoading && <GifLoader />}
         <View
           style={{
             backgroundColor: theme.colors.Blue,
@@ -129,7 +130,7 @@ const Signup = ({navigation, signupFunc}) => {
           <View>
             <Text style={styles.headerText}>Signup Now</Text>
           </View>
-          <View style={{ flexWrap: 'nowrap', marginTop: 5 }}>
+          <View style={{flexWrap: 'nowrap', marginTop: 5}}>
             <Text style={styles.subHeaderText}>
               To Track your Reading Progress😉
             </Text>
@@ -140,8 +141,7 @@ const Signup = ({navigation, signupFunc}) => {
             placeholder="NickName"
             placeholderTextColor={theme.colors.MediumGray}
             style={styles.inputInnerContainer}
-          value={NickName.nickname}
-          
+            value={NickName.nickname}
             onChangeText={res => NickNameChange(res)}
           />
           {NickName.checknickNameInputChange ? <Tick /> : null}
@@ -167,7 +167,7 @@ const Signup = ({navigation, signupFunc}) => {
           />
           <TouchableOpacity
             onPress={() => updateSecuretextEntry()}
-            style={{ zIndex: 10 }}>
+            style={{zIndex: 10}}>
             {Passward.secureTextEntry === true ? <EyeOpen /> : <EyeClose />}
           </TouchableOpacity>
         </View>
@@ -235,7 +235,6 @@ const Signup = ({navigation, signupFunc}) => {
           </Pressable>
         </View>
       </View>
-    
     </>
   );
 };

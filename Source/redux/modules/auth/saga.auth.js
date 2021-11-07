@@ -1,5 +1,5 @@
 import {Auth} from 'aws-amplify';
-import { put, takeLatest} from 'redux-saga/effects';
+import {put, takeLatest} from 'redux-saga/effects';
 import * as auth from './constant.auth';
 import Session from '../../utils/Session';
 
@@ -47,18 +47,16 @@ function* Register({payload}) {
     yield put({type: auth.AUTH_ERROR, error: err});
   }
 }
-function* ConfirmUserAccount({ payload })
-{
+function* ConfirmUserAccount({payload}) {
   const username = payload.username;
   const code = payload.Code;
   try {
-    const res=yield Auth.confirmSignUp(username,code);
+    const res = yield Auth.confirmSignUp(username, code);
     yield put({
       type: auth.ACCOUNT_CONFIRMED,
-      payload: res
+      payload: res,
     });
-  }
-  catch(err){
+  } catch (err) {
     yield put({
       type: auth.AUTH_ERROR,
       error: err,

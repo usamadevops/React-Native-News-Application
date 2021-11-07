@@ -17,12 +17,9 @@ export const isConfirmed = createSelector(auth, data => ({
   isUserConfirmed: data?.get('isConfirm'),
 }));
 
-export const authSelector = createSelector(
-  auth,
-  data => ({
-    fullName: data?.get('name'),
-    email: data?.get('username'),
-    password: data?.get('password'),
-    userId: data.get('userId'),
-  }),
-);
+export const authSelector = createSelector(auth, data => ({
+  fullName: data?.get('name'),
+  email: data?.get('username'),
+  password: data?.get('password'),
+  userId: data.get('userId'),
+}));

@@ -133,16 +133,16 @@ export default function BottomTab() {
           position: 'absolute',
           bottom: 80,
           right: 30,
-          borderWidth: 0.5,
           borderRadius: 1000,
-          width: 44,
-          height: 44,
+          width: 50,
+          height: 50,
           alignItems: 'center',
           justifyContent: 'center',
-          backgroundColor: theme.colors.Blue,
+          backgroundColor: theme.colors.Red,
+          elevation:2,
         }}>
         <Pressable onPress={() => navigation.push('NewsEditor')}>
-          <Text style={{fontSize: 28, color: theme.colors.White}}>+</Text>
+          <Text style={{fontSize: 32, color: theme.colors.White}}>+</Text>
         </Pressable>
       </View>
       <Animated.View

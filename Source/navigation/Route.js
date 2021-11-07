@@ -2,11 +2,9 @@ import React from 'react';
 import {shallowEqual, useSelector} from 'react-redux';
 import AuthStack from './AuthStack';
 import MainStack from './MainStack';
-import { Splash } from '../Screens';
-import { ReadDataSingleString } from '../Utils/AsyncStorage';
-import {
-  Authorization,
-} from '../redux/Modules/auth/selector.auth';
+import {Splash} from '../Screens';
+import {ReadDataSingleString} from '../Utils/AsyncStorage';
+import {Authorization} from '../redux/Modules/auth/selector.auth';
 import {NavigationContainer} from '@react-navigation/native';
 const Route = () => {
   const Authenticated = useSelector(Authorization, shallowEqual);
@@ -22,7 +20,6 @@ const Route = () => {
       loadApp;
     };
   }, [AsyncToken, Authenticated]);
-  
 
   if (!isReady) {
     return <Splash />;
@@ -32,8 +29,7 @@ const Route = () => {
         {!Authenticated.User ? <AuthStack /> : <MainStack />}
       </NavigationContainer>
     );
-  
-  };
-}
+  }
+};
 
 export default Route;

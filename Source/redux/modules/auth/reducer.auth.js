@@ -17,7 +17,7 @@ const initialState = fromJS({
   error: Map(),
   data: Map(),
   isAuthenticated: false,
-  isConfirm:true,
+  isConfirm: true,
 });
 
 const AuthenticationReducer = (state = initialState, action = {}) => {
@@ -50,10 +50,19 @@ const AuthenticationReducer = (state = initialState, action = {}) => {
       return state.set('isLoading', true).set('error', Map());
 
     case CONFIRM_ACCOUNT:
-      return state.set('isLoading', true).set('data', fromJS(payload)).set('error', Map()).set('isConfirm', false);
-    
+      return state
+        .set('isLoading', true)
+        .set('data', fromJS(payload))
+        .set('error', Map())
+        .set('isConfirm', false);
+
     case ACCOUNT_CONFIRMED:
-      return state.set('isLoading',false).set('data', fromJS(payload)).set('isAuthenticated', false).set('error',Map()).set('isConfirm,true')
+      return state
+        .set('isLoading', false)
+        .set('data', fromJS(payload))
+        .set('isAuthenticated', false)
+        .set('error', Map())
+        .set('isConfirm,true');
     case SIGNOUT_SUCCESS:
       return state.set('isLoading', false).set('isAuthenticated', false);
     case AUTH_ERROR:

@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     width: theme.constants.screenWidth - 80,
     borderWidth: 0.4,
     backgroundColor: '#E8E8E825',
-   
+
     borderRadius: 10,
     height: 55,
     flexDirection: 'row',
@@ -43,10 +43,10 @@ const styles = StyleSheet.create({
     fontSize: theme.sizes.h2,
     borderRadius: 10,
     height: 55,
-    width: theme.constants.screenWidth - 120  ,
+    width: theme.constants.screenWidth - 120,
     color: theme.colors.Blue,
   },
-  
+
   semiText: {
     fontFamily: fontFamily.Bozon_Demi_Bold,
     fontSize: theme.sizes.header,
@@ -101,12 +101,11 @@ const styles = StyleSheet.create({
     fontSize: theme.sizes.header,
     color: theme.colors.Blue,
   },
-  ErrorText:{
+  ErrorText: {
     fontFamily: fontFamily.Bozon_Regular,
     fontSize: theme.sizes.body,
     color: theme.colors.Red,
-   
-  }
+  },
 });
 
 export default styles;

@@ -3,8 +3,7 @@ import {
   SIGN_UP,
   SIGN_OUT,
   AUTH_ERROR,
-CONFIRM_ACCOUNT
-
+  CONFIRM_ACCOUNT,
 } from './constant.auth.js';
 
 export const SignIn = payload => {
