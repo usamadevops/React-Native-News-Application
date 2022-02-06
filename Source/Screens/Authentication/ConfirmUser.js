@@ -15,6 +15,9 @@ import {
   errorSelector,
   isLoadingSelector,
 } from '../../redux/Modules/auth/selector.auth';
+
+import GifLoader from '../../Components/Loader';
+
 const ConfirmUser = ({confirmUserFunc, route}) => {
   const {Email} = route.params;
   const Error = useSelector(errorSelector, shallowEqual);

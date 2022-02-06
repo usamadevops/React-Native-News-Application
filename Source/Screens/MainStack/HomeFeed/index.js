@@ -8,31 +8,31 @@ import {
   SmallCard,
 } from '../../../Components';
 import {theme} from '../../../constants';
-// import axios from 'axios';
+import API from '../../../../ApiKey';
+import axios from 'axios';
 import articles from '../../../assets/data';
 const Home = () => {
-  // React.useEffect(() => {
-  //   let dataget=() =>{
-  //     var config = {
-  //       method: 'GET',
-  //       url: 'https://saurav.tech/NewsAPI/top-headlines/category/health/in.json',
-  //       headers: {
+  const [Articles, setArticles] = React.useState([])
+  React.useEffect(() => {
+    console.log('in effect');
+    var config = {
+      method: 'GET',
+      url: `https://newsapi.org/v2/everything?q=Apple&from=2021-11-19&sortBy=popularity&apiKey=${API}`,
+      headers: {
 
-  //       }
-  //     };
-
-  //     axios(config)
-  //   .then(function (response) {
-  //       console.log(JSON.stringify(response.data));
-  //     })
-  //       .catch(function (error) {
-  //         console.log(error);
-  //       });
-  //   }
-  //   return () => {
-  //     dataget();
-  //   }
-  // }, [])
+      }
+    };
+    let temparr = [];
+    axios(config)
+      .then(function (response) {
+       temparr.push(response.data)
+        setArticles(temparr);
+        console.log(response.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }, []);
   return (
     <View style={styles.container}>
       <Header />
@@ -46,9 +46,9 @@ const Home = () => {
             borderColor: theme.colors.LightGray,
           }}
         />
-        {articles.map(items => {
+        {Articles.map((items,index) => {
           return (
-            <View key={items.source.id}>
+            <View key={index}>
               <SmallCard
                 title={items.title}
                 NewsChannel={items.source.name}

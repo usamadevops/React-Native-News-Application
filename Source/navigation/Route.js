@@ -14,6 +14,7 @@ const Route = () => {
   React.useEffect(() => {
     const loadApp = (async () => {
       AsyncToken = await ReadDataSingleString('@Token');
+      console.log(AsyncToken);
       setisReady(true);
     })();
     return () => {
@@ -26,7 +27,7 @@ const Route = () => {
   } else {
     return (
       <NavigationContainer>
-        {!Authenticated.User ? <AuthStack /> : <MainStack />}
+        {AsyncToken===null ? <AuthStack /> : <MainStack />}
       </NavigationContainer>
     );
   }
