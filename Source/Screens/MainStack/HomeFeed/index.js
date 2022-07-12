@@ -10,35 +10,57 @@ import {
 import {theme} from '../../../constants';
 import API from '../../../../ApiKey';
 import axios from 'axios';
-import articles from '../../../assets/data';
+
 const Home = () => {
-  const [Articles, setArticles] = React.useState([])
-  React.useEffect(() => {
-    console.log('in effect');
+  const [Articles, setArticles] = React.useState([]);
+  const [TopNews, setTopNews] = React.useState([]);
+  const [isLoading, setisLoading] = React.useState(false);
+  const GetTopNews=async()=>{
+    setisLoading(true);
     var config = {
       method: 'GET',
-      url: `https://newsapi.org/v2/everything?q=Apple&from=2021-11-19&sortBy=popularity&apiKey=${API}`,
-      headers: {
-
-      }
+      url: `https://newsapi.org/v2/top-headlines?country=us&apiKey=${API}`,
     };
-    let temparr = [];
-    axios(config)
+    await axios(config)
       .then(function (response) {
-       temparr.push(response.data)
-        setArticles(temparr);
-        console.log(response.data);
+        setTopNews(response.data.articles);
+        console.log(response.data.articles)
+        setisLoading(false);
       })
       .catch(function (error) {
-        console.log(error);
+      console.log(error);
       });
+  }
+  const GetArticles=async()=>{
+    setisLoading(true);
+    var config = {
+      method: 'GET',
+      url: `https://newsapi.org/v2/everything?q=Pak&apiKey=${API}`,
+    };
+    await axios(config)
+      .then(function (response) {
+        setArticles(response.data.articles);
+        console.log(response.data.articles)
+        setisLoading(false);
+      })
+      .catch(function (error) {
+      console.log(error);
+      });
+  }
+  React.useEffect(() => {
+    const posts=GetArticles();
+    const TopNews=GetTopNews();
+    return()=>{
+posts;
+TopNews;
+    }
   }, []);
   return (
     <View style={styles.container}>
       <Header />
       <ScrollView horizontal={false}>
         <ImportantNewsCard />
-        <TopNewsCard />
+        <TopNewsCard TopNews={TopNews}/>
         <View
           style={{
             borderWidth: 0.4,
@@ -46,11 +68,12 @@ const Home = () => {
             borderColor: theme.colors.LightGray,
           }}
         />
-        {Articles.map((items,index) => {
+        {!isLoading && Articles?.map((items, index) => {
           return (
             <View key={index}>
               <SmallCard
                 title={items.title}
+                newsurl={items.url}
                 NewsChannel={items.source.name}
                 PostedTime={items.publishedAt}
                 image={items.urlToImage.toString()}

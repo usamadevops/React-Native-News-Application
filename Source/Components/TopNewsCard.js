@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text, FlatList, Image, Animated} from 'react-native';
 import styles from './styles';
 import {mock} from '../constants';
-const TopNewsCard = () => {
+const TopNewsCard = ({TopNews}) => {
   const AnimatedFlatlist = Animated.createAnimatedComponent(FlatList);
   return (
     <View style={styles.Maincontainer}>
@@ -13,26 +13,26 @@ const TopNewsCard = () => {
       </View>
 
       <AnimatedFlatlist
-        data={mock.TopNews}
+        data={TopNews}
         horizontal={true}
         scrollEventThrottle={16}
         showsHorizontalScrollIndicator={false}
         bounces={true}
-        keyExtractor={item => item.id}
+        keyExtractor={item => item.title}
         renderItem={({item, index}) => (
-          <View style={styles.CardContainer}>
-            <View style={styles.ImageContainer}>
+          <View style={styles.CardContainer} key={index}>
+            <View >
               <Image
-                source={item.image}
+                source={{uri:item?.urlToImage?.toString()}}
                 style={{width: '100%', height: 150, borderRadius: 10}}
               />
             </View>
             <View style={styles.TitleContainer}>
-              <Text style={styles.headerText}>{item.title}</Text>
+              <Text style={styles.headerText} textBreakStrategy="balanced">{item?.description?.slice(0,125)}</Text>
             </View>
             <View style={styles.BottomContainer}>
-              <Text style={styles.timeText}>{item.postedTime}</Text>
-              <Text style={styles.categoryText}>{item.category}</Text>
+              <Text style={styles.timeText}>{item?.publishedAt?.slice(0, 10)}</Text>
+              <Text style={styles.categoryText}>{item.source.name}</Text>
             </View>
           </View>
         )}

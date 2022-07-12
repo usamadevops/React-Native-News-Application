@@ -16,9 +16,9 @@ const Splash = ({navigation}) => {
         }}>
         <Image source={App_Icon} style={{width: 200, height: 200}} />
         <Text style={[styles.appTitle]}>StrikeNews</Text>
-        <View style={{marginTop: 20}}>
+        {/* <View style={{marginTop: 20}}>
          <GifLoader/>
-        </View>
+        </View> */}
       </View>
     </View>
   );

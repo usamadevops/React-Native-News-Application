@@ -9,12 +9,12 @@ import {
 } from 'react-native';
 import styles from './Styles';
 import {connect, shallowEqual, useSelector} from 'react-redux';
-import {confirmUser} from '../../redux/Modules/auth/action.auth';
+import {confirmUser} from '../../redux/modules/auth/action.auth';
 import {theme} from '../../constants';
 import {
   errorSelector,
   isLoadingSelector,
-} from '../../redux/Modules/auth/selector.auth';
+} from '../../redux/modules/auth/selector.auth';
 
 import GifLoader from '../../Components/Loader';
 
