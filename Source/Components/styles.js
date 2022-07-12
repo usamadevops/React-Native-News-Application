@@ -15,6 +15,7 @@ export default styles = StyleSheet.create({
     marginVertical: 25,
   },
   Maincontainer: {
+    marginVertical:8,
     width: theme.constants.screenWidth,
     justifyContent: 'center',
     alignItems: 'center',

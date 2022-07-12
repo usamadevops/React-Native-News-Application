@@ -64,7 +64,8 @@ TopNews;
         <View
           style={{
             borderWidth: 0.4,
-            marginHorizontal: 20,
+            marginHorizontal: 24,
+            marginVertical:16,
             borderColor: theme.colors.LightGray,
           }}
         />
