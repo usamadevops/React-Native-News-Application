@@ -8,7 +8,7 @@ const MainStack = () => {
   return (
     <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen name="Tab" component={BottomTab} />
-      <Stack.Screen name="Post" component={Main.Post} />
+      <Stack.Screen name="Post" component={Main.Post}  options={{headerShown:true,headerBackTitle:'Go Back'}}/>
       <Stack.Screen name="Settings" component={Main.Settings} />
       <Stack.Screen name="TopicProfile" component={Main.Profile} />
     </Stack.Navigator>

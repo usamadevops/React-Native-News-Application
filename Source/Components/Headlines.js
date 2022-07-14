@@ -4,6 +4,7 @@ import { SmallCard} from '../Components';
 import {theme} from '../constants';
 import API from '../../ApiKey';
 import axios from 'axios';
+import articles from '../assets/data';
 
 const Latest = () => {
   const [Articles, setArticles] = React.useState([]);

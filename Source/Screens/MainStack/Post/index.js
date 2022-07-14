@@ -1,54 +1,52 @@
-import {cos} from 'prelude-ls';
+
+import { a } from 'aws-amplify';
 import React from 'react';
-
-import {
-  View,
-  Text,
-  Image,
-  Animated,
-  StyleSheet,
-  Pressable,
-  Screen,
-} from 'react-native';
-import {BackButton, Bookmark} from '../../../assets/Icons';
-import {theme} from '../../../constants';
-import {fontFamily} from '../../../constants/Fonts';
-
+import { ActivityIndicator,View ,Alert} from 'react-native';
+import {WebView} from 'react-native-webview';
 import styles from '../../Style';
 
-const Image1 = require('../../../assets/images/TopNews/card1.png');
 
 
-const Post = ({navigation,route}) => {
+const Post = ({route,navigation}) => {
+  const {url,title}=route.params;
+  const [isLoading, setisLoading] = React.useState(false)
+  React.useLayoutEffect(() => {
+  navigation.setOptions({
+    title:title,
+  });
+  }, [navigation])
 
-  const {url}=route.params;
-  return (
-   <View>
-    <Text>{url}</Text>
-   </View>
-  );
+  return <WebView 
+  source={{ uri: `${url}` }}
+  originWhitelist={['*']}
+  onMessage={(event) => {
+    alert(event.nativeEvent.data);
+  }}
+  onLoadStart={(syntheticEvent) => {
+    const { nativeEvent } = syntheticEvent;
+  setisLoading(nativeEvent.loading);
+  console.log('started',isLoading);
+  
+  }}
+  onLoad={(syntheticEvent)=>{
+    const { nativeEvent } = syntheticEvent;
+    setisLoading(nativeEvent.loading)
+    console.log('ended',isLoading);
+    return(
+      <View style={{flex:1,justifyContent:'center',alignItems:'center',backgroundColor:'#fff'}}>
+      <ActivityIndicator size={'large'} color="#000"/>
+    </View>
+    );
+  }}
+  onError={(syntheticEvent) => {
+    const { nativeEvent } = syntheticEvent;
+    alert('WebView error: ', nativeEvent);
+  }}
+   />;
 };
 
 export default Post;
 
-const styles2 = StyleSheet.create({
-  BottomContainer: {
-    flex: 1,
-    flexDirection: 'row',
-  },
-  timeText: {
-    fontFamily: fontFamily.Bozon_Demi_Bold,
-    fontSize: theme.fonts.body.fontSize,
-    lineHeight: 22,
-    letterSpacing: 0.34,
-    color: theme.colors.MediumGray,
-  },
-  categoryText: {
-    fontFamily: fontFamily.Bozon_Demi_Bold,
-    fontSize: theme.fonts.body.fontSize,
-    lineHeight: 22,
-    letterSpacing: 0.34,
-    color: theme.colors.MediumGray,
-    marginLeft: 30,
-  },
-});
+
+  
+

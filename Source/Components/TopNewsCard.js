@@ -1,9 +1,10 @@
 import React from 'react';
 import {View, Text, FlatList, Image, Animated} from 'react-native';
 import styles from './styles';
-import {mock} from '../constants';
+
 const TopNewsCard = ({TopNews}) => {
   const AnimatedFlatlist = Animated.createAnimatedComponent(FlatList);
+
   return (
     <View style={styles.Maincontainer}>
       <View

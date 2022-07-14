@@ -1,16 +1,18 @@
 import React from 'react';
-import {View, Text, Image, Pressable} from 'react-native';
+import {View, Text, Image, Pressable, ScrollView} from 'react-native';
 import styles from './styles';
 import {useNavigation} from '@react-navigation/native';
 
 const SmallCard = ({NewsChannel, title, image, PostedTime,newsurl}) => {
   const navigation = useNavigation();
   const SlashIndex = title.indexOf('-');
+
   return (
     <Pressable
       onPress={() => {
         navigation.navigate('Post',{
-          url:newsurl
+          url:newsurl,
+          title:title.slice(0,SlashIndex)
         });
       }}>
       <View style={styles.Maincontainer}>

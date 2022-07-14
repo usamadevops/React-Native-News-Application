@@ -10,13 +10,17 @@ import {
 import {theme} from '../../../constants';
 import API from '../../../../ApiKey';
 import axios from 'axios';
+import HeadlinesSK from '../../../assets/Skeletons/HeadlinesSk'
+import SmallCardSK from '../../../assets/Skeletons/SmallCardSK'
 
 const Home = () => {
   const [Articles, setArticles] = React.useState([]);
   const [TopNews, setTopNews] = React.useState([]);
-  const [isLoading, setisLoading] = React.useState(false);
+  const [isLoading1, setisLoading1] = React.useState(false);
+  const [isLoading2, setisLoading2] = React.useState(false);
+  const [error, seterror] = React.useState('')
   const GetTopNews=async()=>{
-    setisLoading(true);
+    setisLoading1(true);
     var config = {
       method: 'GET',
       url: `https://newsapi.org/v2/top-headlines?country=us&apiKey=${API}`,
@@ -24,15 +28,15 @@ const Home = () => {
     await axios(config)
       .then(function (response) {
         setTopNews(response.data.articles);
-        console.log(response.data.articles)
-        setisLoading(false);
+        setisLoading1(false);
       })
       .catch(function (error) {
-      console.log(error);
+   seterror(error);
+   setisLoading1(false);
       });
   }
   const GetArticles=async()=>{
-    setisLoading(true);
+    setisLoading2(true);
     var config = {
       method: 'GET',
       url: `https://newsapi.org/v2/everything?q=Pak&apiKey=${API}`,
@@ -40,11 +44,11 @@ const Home = () => {
     await axios(config)
       .then(function (response) {
         setArticles(response.data.articles);
-        console.log(response.data.articles)
-        setisLoading(false);
+        setisLoading2(false);
       })
       .catch(function (error) {
-      console.log(error);
+        seterror(error);
+        setisLoading2(false);
       });
   }
   React.useEffect(() => {
@@ -60,7 +64,18 @@ TopNews;
       <Header />
       <ScrollView horizontal={false}>
         <ImportantNewsCard />
-        <TopNewsCard TopNews={TopNews}/>
+      {
+        isLoading1?(
+<View style={styles.Maincontainer}>
+  <HeadlinesSK/>
+</View>
+        ):(
+          <TopNewsCard TopNews={TopNews} />
+        )
+      }
+       
+        
+      
         <View
           style={{
             borderWidth: 0.4,
@@ -69,7 +84,22 @@ TopNews;
             borderColor: theme.colors.LightGray,
           }}
         />
-        {!isLoading && Articles?.map((items, index) => {
+         
+          {
+            isLoading2?(
+    <View style={styles.Maincontainer}>
+      <View style={{marginVertical:16}}>
+      <SmallCardSK/>
+      </View>
+      <View style={{marginVertical:16}}>
+      <SmallCardSK/>
+      </View>
+      <View style={{marginVertical:16}}>
+      <SmallCardSK/>
+      </View>
+    </View>
+            ):(
+        Articles?.map((items, index) => {
           return (
             <View key={index}>
               <SmallCard
@@ -81,7 +111,9 @@ TopNews;
               />
             </View>
           );
-        })}
+        })
+      )
+}
       </ScrollView>
     </View>
   );
