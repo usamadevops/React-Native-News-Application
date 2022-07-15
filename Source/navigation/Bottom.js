@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Animated, Pressable, Text} from 'react-native';
+import {View, Animated} from 'react-native';
 
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {Main} from '../Screens';
@@ -128,23 +128,6 @@ export default function BottomTab() {
           })}
         />
       </Tab.Navigator>
-      <View
-        style={{
-          position: 'absolute',
-          bottom: 80,
-          right: 30,
-          borderRadius: 1000,
-          width: 50,
-          height: 50,
-          alignItems: 'center',
-          justifyContent: 'center',
-          backgroundColor: theme.colors.Red,
-          elevation:2,
-        }}>
-        <Pressable onPress={() => navigation.push('NewsEditor')}>
-          <Text style={{fontSize: 32, color: theme.colors.White}}>+</Text>
-        </Pressable>
-      </View>
       <Animated.View
         style={{
           width: theme.constants.screenWidth / 4,
