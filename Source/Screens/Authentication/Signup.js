@@ -13,12 +13,12 @@ import {theme} from '../../constants';
 import {fontFamily} from '../../constants/Fonts';
 import styles from './Styles';
 import {regularExp} from '../../Utils/regExp';
-import {SignUp} from '../../redux/modules/auth/action.auth';
+import {SignUp} from '../../redux/Modules/auth/action.auth';
 import {
   isConfirmed,
   isLoadingSelector,
   errorSelector,
-} from '../../redux/modules/auth/selector.auth';
+} from '../../redux/Modules/auth/selector.auth';
 
 import GifLoader from '../../Components/Loader';
 const Signup = ({navigation, signupFunc}) => {

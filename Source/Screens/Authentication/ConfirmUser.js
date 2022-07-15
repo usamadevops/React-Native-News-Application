@@ -1,20 +1,18 @@
 import React from 'react';
 import {
-  StyleSheet,
   Text,
   View,
   TextInput,
-  ToastAndroid,
   Pressable,
 } from 'react-native';
 import styles from './Styles';
 import {connect, shallowEqual, useSelector} from 'react-redux';
-import {confirmUser} from '../../redux/modules/auth/action.auth';
+import {confirmUser} from '../../redux/Modules/auth/selector.auth'
 import {theme} from '../../constants';
 import {
   errorSelector,
   isLoadingSelector,
-} from '../../redux/modules/auth/selector.auth';
+} from '../../redux/Modules/auth/selector.auth';
 
 import GifLoader from '../../Components/Loader';
 

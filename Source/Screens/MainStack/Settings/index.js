@@ -12,7 +12,7 @@ import {shallowEqual, useSelector} from 'react-redux';
 import {Header2} from '../../../Components';
 import {theme} from '../../../constants';
 import {fontFamily} from '../../../constants/Fonts';
-import {Authorization} from '../../../redux/modules/auth/selector.auth';
+import {Authorization} from '../../../redux/Modules/auth/selector.auth';
 
 const Settings = () => {
   const isAuthenticated = useSelector(Authorization, shallowEqual);

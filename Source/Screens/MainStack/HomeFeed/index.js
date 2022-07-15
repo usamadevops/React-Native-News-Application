@@ -39,7 +39,7 @@ const Home = () => {
     setisLoading2(true);
     var config = {
       method: 'GET',
-      url: `https://newsapi.org/v2/everything?q=Pak&apiKey=${API}`,
+      url: `https://newsapi.org/v2/everything?q=World&apiKey=${API}`,
     };
     await axios(config)
       .then(function (response) {
@@ -72,10 +72,7 @@ TopNews;
         ):(
           <TopNewsCard TopNews={TopNews} />
         )
-      }
-       
-        
-      
+        }
         <View
           style={{
             borderWidth: 0.4,
@@ -105,9 +102,9 @@ TopNews;
               <SmallCard
                 title={items.title}
                 newsurl={items.url}
-                NewsChannel={items.source.name}
-                PostedTime={items.publishedAt}
-                image={items.urlToImage.toString()}
+                NewsChannel={items?.source.name}
+                PostedTime={items?.publishedAt}
+                image={items?.urlToImage.toString()}
               />
             </View>
           );

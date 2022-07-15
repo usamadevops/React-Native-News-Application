@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, FlatList, Image, Animated} from 'react-native';
+import {View, Text, FlatList, Image, Animated, ActivityIndicator} from 'react-native';
 import styles from './styles';
 
 const TopNewsCard = ({TopNews}) => {
@@ -24,7 +24,11 @@ const TopNewsCard = ({TopNews}) => {
           <View style={styles.CardContainer} key={index}>
             <View >
               <Image
-                source={{uri:item?.urlToImage?.toString()}}
+                onLoadStart={() => {
+                  return (
+                  <ActivityIndicator size={'small'}/>
+                )}}
+                source={{uri:item?.urlToImage.toString()}}
                 style={{width: '100%', height: 150, borderRadius: 10}}
               />
             </View>
