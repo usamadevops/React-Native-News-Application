@@ -11,4 +11,10 @@ export default styles = StyleSheet.create({
     fontSize: 36,
     fontFamily: fontFamily.BRFirma_Medium,
   },
+  Maincontainer: {
+    marginVertical:8,
+    width: theme.constants.screenWidth,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
 });

@@ -1,29 +1,33 @@
 import React from 'react';
-import {View, Text, Image, Pressable} from 'react-native';
+import {View, Text, Image, Pressable, ScrollView} from 'react-native';
 import styles from './styles';
 import {useNavigation} from '@react-navigation/native';
 
-const SmallCard = ({NewsChannel, title, image, PostedTime}) => {
+const SmallCard = ({NewsChannel, title, image, PostedTime,newsurl}) => {
   const navigation = useNavigation();
   const SlashIndex = title.indexOf('-');
+
   return (
     <Pressable
       onPress={() => {
-        navigation.navigate('Post');
+        navigation.navigate('Post',{
+          url:newsurl,
+          title:title.slice(0,SlashIndex)
+        });
       }}>
       <View style={styles.Maincontainer}>
         <View style={styles.SmallCardContainer}>
           <View style={styles.CardLeftContainer}>
             <Text style={styles.headerText}>
-              {title.slice(0, SlashIndex) ||
-                'This is where you need to put some title'}
+              {title.slice(0, SlashIndex)  }
+               { `...Read more`}
             </Text>
             <View style={styles.BottomContainer}>
               <Text style={styles.timeText}>
-                {PostedTime.slice(5, 10) || '08-12'}
+                {PostedTime.slice(5, 10)}
               </Text>
               <Text style={styles.categoryText}>
-                {NewsChannel || 'CNN News'}
+                {NewsChannel }
               </Text>
             </View>
           </View>

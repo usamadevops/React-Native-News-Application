@@ -1,11 +1,36 @@
 import React from 'react';
 import {StyleSheet, Text, View, ScrollView} from 'react-native';
-import styles from '../Screens/Style';
-import {ImportantNewsCard, TopNewsCard, SmallCard} from '../Components';
+import { SmallCard} from '../Components';
 import {theme} from '../constants';
-// import axios from 'axios';
+import API from '../../ApiKey';
+import axios from 'axios';
 import articles from '../assets/data';
+
 const Latest = () => {
+  const [Articles, setArticles] = React.useState([]);
+  const [isLoading, setisLoading] = React.useState(false);
+  const GetArticles=async()=>{
+    setisLoading(true);
+    var config = {
+      method: 'GET',
+      url: `https://newsapi.org/v2/top-headlines?country=us&apiKey=${API}`,
+    };
+    await axios(config)
+      .then(function (response) {
+        setArticles(response.data.articles);
+        console.log(response.data.articles)
+        setisLoading(false);
+      })
+      .catch(function (error) {
+      console.log(error);
+      });
+  }
+  React.useEffect(() => {
+    const posts=GetArticles();
+    return()=>{
+posts;
+    }
+  }, []);
   return (
     <View
       style={{
@@ -22,14 +47,15 @@ const Latest = () => {
             borderColor: theme.colors.LightGray,
           }}
         />
-        {articles.map(items => {
+        {!isLoading && Articles?.map(items => {
           return (
             <View key={items.source.id}>
               <SmallCard
-                title={items.title}
-                NewsChannel={items.source.name}
-                PostedTime={items.publishedAt}
-                image={items.urlToImage.toString()}
+                title={items?.title}
+                newsurl={items?.url}
+                NewsChannel={items?.source.name}
+                PostedTime={items?.publishedAt}
+                image={items?.urlToImage?.toString()}
               />
             </View>
           );

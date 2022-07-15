@@ -11,12 +11,12 @@ import {connect, shallowEqual, useSelector} from 'react-redux';
 import {EyeClose, EyeOpen, Tick} from '../../assets/Icons';
 import {theme} from '../../constants';
 import {regularExp} from '../../Utils/regExp';
-import {SignIn} from '../../redux/Modules/auth/action.auth';
+import {SignIn} from '../../redux/modules/auth/action.auth';
 import {
   Authorization,
   isLoadingSelector,
   errorSelector,
-} from '../../redux/Modules/auth/selector.auth';
+} from '../../redux/modules/auth/selector.auth';
 import styles from './Styles';
 
 const Login = ({navigation, SignInFunc}) => {
