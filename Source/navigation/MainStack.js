@@ -11,7 +11,7 @@ const MainStack = () => {
       <Stack.Screen name="Post" component={Main.Post}  options={{headerShown:true,headerBackTitle:'Go Back'}}/>
       <Stack.Screen name="Settings" component={Main.Settings} />
       <Stack.Screen name="TopicProfile" component={Main.Profile} />
- 
+      <Stack.Screen name="Newslist" component={Main.Newslist} options={{headerShown:true,headerBackTitle:'Go Back'}}/>
     </Stack.Navigator>
   );
 };

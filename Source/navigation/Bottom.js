@@ -77,7 +77,7 @@ export default function BottomTab() {
           })}
         />
         <Tab.Screen
-          name="Notifications"
+          name="Explore Channels"
           component={Main.Notification}
           options={{
             tabBarBadge: 8,

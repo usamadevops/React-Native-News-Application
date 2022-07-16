@@ -5,5 +5,6 @@ import Search from './Search';
 import Stats from './Stats';
 import Profile from './Profile';
 import Post from './Post';
+import Newslist from './Newslist';
 
-export {Homefeed, Notification, Search, Settings, Stats, Profile, Post};
+export {Homefeed, Notification, Search, Settings, Stats, Profile, Post,Newslist};

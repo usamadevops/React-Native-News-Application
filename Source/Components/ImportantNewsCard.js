@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import {View, Text, Image, TouchableWithoutFeedback} from 'react-native';
 import {theme} from '../constants';
@@ -5,10 +6,11 @@ import {fontFamily} from '../constants/Fonts';
 import {sizes} from '../constants/theme';
 const right = require('../assets/Icons/right.png');
 const ImportantNewsCard = () => {
+  const navigation=useNavigation();
   return (
     <TouchableWithoutFeedback
       style={{width: theme.constants.screenWidth}}
-      onPress={() => console.log('Pressed')}>
+      onPress={() => navigation.navigate('Newslist')}>
       <View
         style={{
           height: 85,

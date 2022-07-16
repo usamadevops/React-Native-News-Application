@@ -104,7 +104,7 @@ TopNews;
                 newsurl={items.url}
                 NewsChannel={items?.source.name}
                 PostedTime={items?.publishedAt}
-                image={items?.urlToImage.toString()}
+                image={items?.urlToImage}
               />
             </View>
           );

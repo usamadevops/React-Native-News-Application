@@ -1,14 +1,17 @@
 import React from 'react';
-import {View, Text, Image, Pressable, ScrollView} from 'react-native';
+import {View, Text, Image, Pressable, useWindowDimensions} from 'react-native';
 import styles from './styles';
 import {useNavigation} from '@react-navigation/native';
+import { theme } from '../constants';
 
 const SmallCard = ({NewsChannel, title, image, PostedTime,newsurl}) => {
+  const{width,height}=useWindowDimensions();
   const navigation = useNavigation();
   const SlashIndex = title.indexOf('-');
 
   return (
     <Pressable
+    style={{elevation:3,marginVertical:5,marginHorizontal:5,width:width.toString()-10,alignSelf:'center',backgroundColor:theme.colors.White,borderRadius:10,}}
       onPress={() => {
         navigation.navigate('Post',{
           url:newsurl,
@@ -33,8 +36,10 @@ const SmallCard = ({NewsChannel, title, image, PostedTime,newsurl}) => {
           </View>
           <View style={styles.CardRightContainer}>
             <Image
-              source={{uri: image} || require('../assets/images/news-icon.png')}
+            progressiveRenderingEnabled={true}
+              source={image!==null?{uri:image.toString()}: require('../assets/images/news-icon.png')}
               style={{width: 85, height: 85, borderRadius: 10}}
+              // onError={({nativeEvent})=>alert(nativeEvent.error)}
             />
           </View>
         </View>
