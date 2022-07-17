@@ -31,6 +31,7 @@ export default styles = StyleSheet.create({
     flexDirection: 'row',
     paddingVertical: 10,
     paddingHorizontal: 20,
+    
   },
   CardLeftContainer: {
     width: theme.constants.screenWidth - 125,

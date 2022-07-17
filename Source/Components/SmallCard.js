@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 import {View, Text, Image, Pressable, useWindowDimensions} from 'react-native';
 import styles from './styles';
 import {useNavigation} from '@react-navigation/native';
@@ -22,12 +23,12 @@ const SmallCard = ({NewsChannel, title, image, PostedTime,newsurl}) => {
         <View style={styles.SmallCardContainer}>
           <View style={styles.CardLeftContainer}>
             <Text style={styles.headerText}>
-              {title.slice(0, SlashIndex)  }
-               { `...Read more`}
+              {title  }
+               { `...`}
             </Text>
             <View style={styles.BottomContainer}>
               <Text style={styles.timeText}>
-                {PostedTime.slice(5, 10)}
+                {moment(PostedTime).fromNow()}
               </Text>
               <Text style={styles.categoryText}>
                 {NewsChannel }

@@ -5,14 +5,14 @@ import {
   Header,
   ImportantNewsCard,
   TopNewsCard,
-  SmallCard,
+  // SmallCard,
 } from '../../../Components';
 import {theme} from '../../../constants';
 import API from '../../../../ApiKey';
 import axios from 'axios';
 import HeadlinesSK from '../../../assets/Skeletons/HeadlinesSk'
-import SmallCardSK from '../../../assets/Skeletons/SmallCardSK'
-
+// import SmallCardSK from '../../../assets/Skeletons/SmallCardSK'
+import {NewsList} from '../../../Components';
 const Home = () => {
   const [Articles, setArticles] = React.useState([]);
   const [TopNews, setTopNews] = React.useState([]);
@@ -35,27 +35,11 @@ const Home = () => {
    setisLoading1(false);
       });
   }
-  const GetArticles=async()=>{
-    setisLoading2(true);
-    var config = {
-      method: 'GET',
-      url: `https://newsapi.org/v2/everything?q=World&apiKey=${API}`,
-    };
-    await axios(config)
-      .then(function (response) {
-        setArticles(response.data.articles);
-        setisLoading2(false);
-      })
-      .catch(function (error) {
-        seterror(error);
-        setisLoading2(false);
-      });
-  }
+  
   React.useEffect(() => {
-    const posts=GetArticles();
+    
     const TopNews=GetTopNews();
     return()=>{
-posts;
 TopNews;
     }
   }, []);
@@ -81,36 +65,7 @@ TopNews;
             borderColor: theme.colors.LightGray,
           }}
         />
-         
-          {
-            isLoading2?(
-    <View style={styles.Maincontainer}>
-      <View style={{marginVertical:16}}>
-      <SmallCardSK/>
-      </View>
-      <View style={{marginVertical:16}}>
-      <SmallCardSK/>
-      </View>
-      <View style={{marginVertical:16}}>
-      <SmallCardSK/>
-      </View>
-    </View>
-            ):(
-        Articles?.map((items, index) => {
-          return (
-            <View key={index}>
-              <SmallCard
-                title={items.title}
-                newsurl={items.url}
-                NewsChannel={items?.source.name}
-                PostedTime={items?.publishedAt}
-                image={items?.urlToImage}
-              />
-            </View>
-          );
-        })
-      )
-}
+         <NewsList queryString={'Pakistan'}/>
       </ScrollView>
     </View>
   );

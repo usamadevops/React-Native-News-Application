@@ -9,7 +9,7 @@ import styles from '../../Style';
 const Search = () => {
   return (
     <View style={styles.container}>
-      <Header2 title="Headlines" />
+      <Header2 title="Search" />
       <Searchbar />
       <View style={{flex: 1}}>
         <Tab />

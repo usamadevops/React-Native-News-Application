@@ -24,6 +24,7 @@
     "axios": "^0.21.1",
     "faker": "^5.5.3",
     "immutable": "^4.0.0",
+    "moment": "^2.29.4",
     "newsapi": "^2.4.1",
     "react": "17.0.1",
     "react-content-loader": "^6.2.0",

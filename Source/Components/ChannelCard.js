@@ -3,24 +3,34 @@ import {Text, View, FlatList, Image, Pressable} from 'react-native';
 import styles from './styles';
 import {theme} from '../constants';
 import {fontFamily} from '../constants/Fonts';
-import {DotsIcon} from '../assets/Icons';
+import {BackButton} from '../assets/Icons';
 import {useNavigation} from '@react-navigation/native';
-const ChannelCard = () => {
+const ChannelCard = ({ name, description, category, country, language, url }) => {
+  function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    while (true) {
+      var colorpattern = '#';
+      for (var i = 0; i < 6; i++) {
+        colorpattern += letters[Math.floor(Math.random() * 12)];
+      }
+      return colorpattern;
+    }
+  }
   const navigation = useNavigation();
   return (
-    <Pressable onPress={() => navigation.navigate('TopicProfile')}>
-      <View
-        style={{
-          width: theme.constants.screenWidth,
-        }}>
+    <Pressable android_ripple={{ color: '#FFFAF8', borderless: false, radius: theme.constants.screenWidth - 20 }} onPress={() => navigation.navigate('TopicProfile')} style={{
+      width: theme.constants.screenWidth-20,
+      backgroundColor: theme.colors.White,
+      elevation:1,
+      borderRadius: 10,
+      marginVertical:10,
+   paddingVertical:10
+    }}>
+      <View >
         <View style={styles.SmallCardContainer}>
-          <View style={{flex: 1}}>
-            <Image
-              source={require('../assets/images/TopNews/card1.png')}
-              style={{width: 60, height: 60, borderRadius: 10}}
-            />
-          </View>
-          <View style={{flex: 3}}>
+        
+          <View style={{ flex: 3,flexDirection:'row' }}>
+               
             <View
               style={{
                 flexDirection: 'column',
@@ -30,35 +40,63 @@ const ChannelCard = () => {
               <Text
                 style={{
                   fontFamily: fontFamily.Bozon_Demi_Bold,
-                  fontSize: theme.fonts.subTitle.fontSize,
+                  fontSize: theme.fonts.header.fontSize,
                   lineHeight: 22,
                   letterSpacing: 0.5,
-                  color: theme.colors.Black,
+                  color: theme.colors.Blue,
                 }}>
-                CNN Posts New News
+                {name}
               </Text>
+              <View style={{flexDirection:'row',marginTop:8}}>
               <Text
                 style={{
                   fontFamily: fontFamily.Bozon_Demi_Bold,
-                  fontSize: theme.fonts.body.fontSize,
+                  fontSize: theme.fonts.subTitle.fontSize,
                   lineHeight: 22,
                   letterSpacing: 0.34,
                   color: theme.colors.MediumGray,
                 }}>
-                From subscribe
+                 {country.toUpperCase()}
+                </Text>
+               
+                <Text style={{
+                  fontFamily: fontFamily.Bozon_Demi_Bold,
+                  fontSize: theme.fonts.caption.fontSize,
+                  lineHeight: 22,
+                  letterSpacing: 0.34,
+                  color: theme.colors.MediumGray,
+                }}>
+                  {'   '}
+                  ▪
+                  {'   '}
+                </Text>
+                <Text
+                style={{
+                  fontFamily: fontFamily.Bozon_Demi_Bold,
+                  fontSize: theme.fonts.subTitle.fontSize,
+                  lineHeight: 22,
+                  letterSpacing: 0.34,
+                  color: theme.colors.MediumGray,
+                }}>
+              {country}
               </Text>
+              </View>
+              
             </View>
           </View>
           <Pressable
             android_ripple={{color: '#c4c4c4', borderless: true, radius: 20}}>
             <View
               style={{
-                flex: 0.5,
+                flex: 1,
                 alignItems: 'center',
                 justifyContent: 'center',
-                transform: [{rotate: '90deg'}],
+                paddingHorizontal: 15,
+            paddingVertical:5,
+                borderRadius:20,
+                transform: [{rotate: '180deg'},{scale:0.7}],
               }}>
-              <DotsIcon color={theme.colors.LightGray} />
+              <BackButton color={theme.colors.Blue} />
             </View>
           </Pressable>
         </View>

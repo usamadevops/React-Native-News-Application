@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text, View, ScrollView} from 'react-native';
+import { View, ScrollView} from 'react-native';
 import { SmallCard} from '../Components';
 import {theme} from '../constants';
 import API from '../../ApiKey';
@@ -55,7 +55,7 @@ posts;
                 newsurl={items?.url}
                 NewsChannel={items?.source.name}
                 PostedTime={items?.publishedAt}
-                image={items?.urlToImage?.toString()}
+                image={items?.urlToImage}
               />
             </View>
           );

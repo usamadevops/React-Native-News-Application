@@ -8,6 +8,8 @@ import ChannelCard from './ChannelCard';
 import HeaderText from './HeaderText';
 import Statscard from './Stats';
 import TopicsCard from './TopicsCard';
+import NewsList from './NewsList';
+import ChannelsList from './ChannelsList';
 export {
   Header,
   Searchbar,
@@ -18,5 +20,7 @@ export {
   SmallCard,
   HeaderText,
   Statscard,
+  NewsList,
+  ChannelsList,
   TopicsCard,
 };
