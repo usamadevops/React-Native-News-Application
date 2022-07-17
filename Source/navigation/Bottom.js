@@ -80,7 +80,7 @@ export default function BottomTab() {
           name="Explore Channels"
           component={Main.Notification}
           options={{
-            tabBarBadge: 8,
+            tabBarBadge: '',
             tabBarBadgeStyle: {
               backgroundColor: '#2CD483',
               color: theme.colors.White,

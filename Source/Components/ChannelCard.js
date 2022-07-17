@@ -6,25 +6,23 @@ import {fontFamily} from '../constants/Fonts';
 import {BackButton} from '../assets/Icons';
 import {useNavigation} from '@react-navigation/native';
 const ChannelCard = ({ name, description, category, country, language, url }) => {
-  function getRandomColor() {
-    var letters = '0123456789ABCDEF';
-    while (true) {
-      var colorpattern = '#';
-      for (var i = 0; i < 6; i++) {
-        colorpattern += letters[Math.floor(Math.random() * 12)];
-      }
-      return colorpattern;
-    }
-  }
+
   const navigation = useNavigation();
   return (
-    <Pressable android_ripple={{ color: '#FFFAF8', borderless: false, radius: theme.constants.screenWidth - 20 }} onPress={() => navigation.navigate('TopicProfile')} style={{
-      width: theme.constants.screenWidth-20,
+    <Pressable android_ripple={{ color: '#FFFAFB', borderless: false, radius: theme.constants.screenWidth  }} onPress={() => navigation.navigate('TopicProfile', {
+      channelName: name,
+      channelDesc: description,
+      channelCategory: category,
+      channelCountry: country,
+      channelLang: language,
+      channelUrl:url
+    })} style={{
+      width: theme.constants.screenWidth,
       backgroundColor: theme.colors.White,
-      elevation:1,
+     
       borderRadius: 10,
       marginVertical:10,
-   paddingVertical:10
+ 
     }}>
       <View >
         <View style={styles.SmallCardContainer}>
@@ -56,7 +54,7 @@ const ChannelCard = ({ name, description, category, country, language, url }) =>
                   letterSpacing: 0.34,
                   color: theme.colors.MediumGray,
                 }}>
-                 {country.toUpperCase()}
+                 {language.toUpperCase()}
                 </Text>
                
                 <Text style={{
@@ -78,7 +76,7 @@ const ChannelCard = ({ name, description, category, country, language, url }) =>
                   letterSpacing: 0.34,
                   color: theme.colors.MediumGray,
                 }}>
-              {country}
+              {country.toUpperCase()}
               </Text>
               </View>
               

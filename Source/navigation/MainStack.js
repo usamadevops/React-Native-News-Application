@@ -10,7 +10,7 @@ const MainStack = () => {
       <Stack.Screen name="Tab" component={BottomTab} />
       <Stack.Screen name="Post" component={Main.Post}  options={{headerShown:true,headerBackTitle:'Go Back'}}/>
       <Stack.Screen name="Settings" component={Main.Settings} />
-      <Stack.Screen name="TopicProfile" component={Main.Profile} />
+      <Stack.Screen name="TopicProfile" component={Main.Profile}  />
       <Stack.Screen name="NewsListScreen" component={Main.NewsListScreen} options={{headerShown:true,headerBackTitle:'Go Back'}}/>
     </Stack.Navigator>
   );

@@ -23,7 +23,7 @@ const SmallCard = ({NewsChannel, title, image, PostedTime,newsurl}) => {
         <View style={styles.SmallCardContainer}>
           <View style={styles.CardLeftContainer}>
             <Text style={styles.headerText}>
-              {title  }
+              {title}
                { `...`}
             </Text>
             <View style={styles.BottomContainer}>
