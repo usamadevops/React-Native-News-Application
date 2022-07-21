@@ -23,11 +23,11 @@ export default function BottomTab() {
           headerShown: false,
           tabBarShowLabel: false,
           tabBarActiveBackgroundColor: `${theme.colors.LightGray}50`,
-          keyboardHidesTabBar: true,
-
+tabBarHideOnKeyboard:true,
           tabBarStyle: {
             backgroundColor: theme.colors.White,
             height: 60,
+         
           },
         }}>
         <Tab.Screen

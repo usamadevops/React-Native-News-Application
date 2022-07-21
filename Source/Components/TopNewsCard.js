@@ -21,6 +21,8 @@ const TopNewsCard = ({TopNews}) => {
         scrollEventThrottle={16}
         showsHorizontalScrollIndicator={false}
         bounces={true}
+        automaticallyAdjustsScrollIndicatorInsets
+        legacyImplementation={false}
         keyExtractor={item => item.title}
         renderItem={({item, index}) => (
           <View style={styles.CardContainer} key={index}>

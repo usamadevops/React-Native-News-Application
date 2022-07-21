@@ -8,7 +8,7 @@ import { theme } from '../constants';
 const SmallCard = ({NewsChannel, title, image, PostedTime,newsurl}) => {
   const{width,height}=useWindowDimensions();
   const navigation = useNavigation();
-  const SlashIndex = title.indexOf('-');
+
 
   return (
     <Pressable
@@ -16,7 +16,7 @@ const SmallCard = ({NewsChannel, title, image, PostedTime,newsurl}) => {
       onPress={() => {
         navigation.navigate('Post',{
           url:newsurl,
-          title:title.slice(0,SlashIndex)
+          title:title
         });
       }}>
       <View style={styles.Maincontainer}>

@@ -8,7 +8,7 @@ const NewsListScreen = ({ navigation, route }) => {
       },[navigation]);
   return (
     <View style={{flex:1}}>
-    <NewsList queryString={datasearch}/>
+    <NewsList queryString={datasearch} insearch={false}/>
     </View>
   )
 }

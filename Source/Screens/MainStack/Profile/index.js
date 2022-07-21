@@ -63,18 +63,19 @@ const TopicProfile = ({ route,navigation }) => {
         <Text
                 style={{
                   fontFamily: fontFamily.Bozon_Demi_Bold,
-                  fontSize: theme.fonts.subTitle.fontSize,
+                  fontSize: theme.fonts.h3.fontSize,
                   lineHeight: 22,
                   letterSpacing: 0.34,
               color: theme.colors.Black,
-              marginHorizontal: 16,
-                  marginVertical:16
+             paddingHorizontal: 16,
+             paddingVertical: 16,
+                  backgroundColor:theme.colors.White
                 }}>
-               All Articles by {channelName}
+               All News Articles by {channelName}
                 </Text>
         </View>
         <View style={{ flex:1, marginTop: 20 }}>
-       <NewsList queryString={null} domainurl={channelUrl}/>
+       <NewsList queryString={null} domainurl={channelUrl} insearch={false}/>
         </View>
         </ScrollView>
     </View>

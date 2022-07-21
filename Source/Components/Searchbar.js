@@ -1,13 +1,17 @@
 import React from 'react';
-import {StyleSheet, Text, TextInput, View} from 'react-native';
+import {StyleSheet, Text,Keyboard , TextInput, View} from 'react-native';
 import {theme} from '../constants';
 import {fontFamily} from '../constants/Fonts';
-const Searchbar = () => {
+const Searchbar = ({ text, onpress }) => {
+
   return (
     <View style={styles.container}>
       <TextInput
         style={styles.input}
         placeholder="Search"
+        value={text}
+        onChangeText={onpress}
+        onKeyPress={()=>Keyboard.dismiss()}
         placeholderTextColor={theme.colors.LightGray}
       />
     </View>
@@ -24,8 +28,8 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   input: {
-    textAlign: 'center',
-    width: theme.constants.screenWidth,
+    width: theme.constants.screenWidth - 40,
+    paddingHorizontal:15,
     fontFamily: fontFamily.Bozon_Demi_Bold,
     fontSize: theme.fonts.h3.fontSize,
     color: theme.colors.Blue,
