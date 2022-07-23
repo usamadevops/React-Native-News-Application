@@ -53,16 +53,15 @@ const AuthenticationReducer = (state = initialState, action = {}) => {
       return state
         .set('isLoading', true)
         .set('data', fromJS(payload))
-        .set('error', Map())
-        .set('isConfirm', false);
+        .set('error', Map());
 
     case ACCOUNT_CONFIRMED:
       return state
         .set('isLoading', false)
         .set('data', fromJS(payload))
-        .set('isAuthenticated', false)
+        .set('isAuthenticated', true)
         .set('error', Map())
-        .set('isConfirm,true');
+        .set('isConfirm',true);
     case SIGNOUT_SUCCESS:
       return state.set('isLoading', false).set('isAuthenticated', false);
     case AUTH_ERROR:

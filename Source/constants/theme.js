@@ -33,7 +33,7 @@ const sizes = {
   padding: 25,
 
   // font sizes
-
+largeTitle:32,
   h1: 23,
   h2: 20,
   h3: 18,

@@ -1,10 +1,11 @@
 import React from "react"
 import ContentLoader, { Rect, Circle, Path } from "react-content-loader/native"
-
+import { Dimensions } from "react-native"
+const {width, height} =Dimensions.get("screen");
 const HeadlinesSk = (props) => (
   <ContentLoader 
     speed={0.2}
-    width={360}
+    width={width-20}
     height={215}
     viewBox="0 0 360 215"
     backgroundColor="#babdb6"

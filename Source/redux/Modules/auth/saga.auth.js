@@ -2,8 +2,10 @@ import {Auth} from 'aws-amplify';
 import {put, takeLatest} from 'redux-saga/effects';
 import * as auth from './constant.auth';
 import Session from '../../utils/Session';
+import { errorSelector } from './selector.auth';
+import { useSelector } from 'react-redux';
 
-function* Login({payload}) {
+function* Login({ payload }) {
   try {
     const email = payload.email;
     const password = payload.password;
@@ -12,15 +14,24 @@ function* Login({payload}) {
     console.log('Refresh Token =', user.signInUserSession.refreshToken.token);
     console.log(payload);
     yield Session();
+
+  
+   
     yield put({
       type: auth.SIGN_IN_RECIEVED,
       payload: payload,
     });
+  
+   
   } catch (err) {
     yield put({
       type: auth.AUTH_ERROR,
       error: err,
     });
+    if (err.code === 'UserNotConfirmedException') {
+      yield Auth.resendSignUp(payload.email);
+      console.log('code resent successfully');
+    }
   }
 }
 
@@ -29,13 +40,15 @@ function* Register({payload}) {
   const password = payload.password;
   const name = payload.Fullname;
   try {
+    //kiyorah205@logodez.com
+    //00000000
     const Response = yield Auth.signUp({
       username,
       password,
       attributes: {
         name,
       },
-    });
+    });z``
     payload.userId = Response.userSub;
     yield put({
       type: auth.SIGN_UP_RECIEVED,
@@ -52,10 +65,21 @@ function* ConfirmUserAccount({payload}) {
   const code = payload.Code;
   try {
     const res = yield Auth.confirmSignUp(username, code);
-    yield put({
-      type: auth.ACCOUNT_CONFIRMED,
-      payload: res,
-    });
+    if (res == '200')
+    {
+      yield put({
+        type: auth.ACCOUNT_CONFIRMED,
+        payload: res,
+      });
+    }
+    else{
+      yield put({
+        type: auth.AUTH_ERROR,
+        error: res,
+      });
+    }
+
+  
   } catch (err) {
     yield put({
       type: auth.AUTH_ERROR,

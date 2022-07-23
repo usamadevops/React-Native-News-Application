@@ -17,12 +17,12 @@ const styles = StyleSheet.create({
   },
   headerText: {
     fontFamily: fontFamily.Bozon_Bold,
-    fontSize: theme.sizes.h1,
+    fontSize: theme.sizes.largeTitle,
     color: theme.colors.Black,
   },
   subHeaderText: {
     fontFamily: fontFamily.Bozon_Demi_Bold,
-    fontSize: theme.sizes.subTitle,
+    fontSize: theme.sizes.header,
     color: theme.colors.MediumGray,
     letterSpacing: 0.3,
   },

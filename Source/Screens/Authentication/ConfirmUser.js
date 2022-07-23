@@ -7,7 +7,7 @@ import {
 } from 'react-native';
 import styles from './Styles';
 import {connect, shallowEqual, useSelector} from 'react-redux';
-import {confirmUser} from '../../redux/Modules/auth/selector.auth'
+import {confirmUser} from '../../redux/Modules/auth/action.auth'
 import {theme} from '../../constants';
 import {
   errorSelector,
@@ -45,12 +45,13 @@ const ConfirmUser = ({confirmUserFunc, route}) => {
       if (error != '') {
         setError('');
       }
-      console.log(Email);
+    
       const payload = {
         username: Email,
         Code: code,
       };
-      await confirmUserFunc(payload);
+      console.log(payload);
+      confirmUserFunc(payload);
     } else {
       setErrorExist(true);
       setError('Code Contain only Numbers 0-9');

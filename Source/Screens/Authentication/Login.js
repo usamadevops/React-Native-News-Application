@@ -20,7 +20,7 @@ import {
 import styles from './Styles';
 
 const Login = ({navigation, SignInFunc}) => {
-  const UserAuth = useSelector(Authorization, shallowEqual);
+
   const Loader = useSelector(isLoadingSelector, shallowEqual);
   const error = useSelector(errorSelector, shallowEqual);
   const [Email, setEmail] = useState({
@@ -58,8 +58,11 @@ const Login = ({navigation, SignInFunc}) => {
   }
 
   React.useEffect(() => {
-    if (!Loader.isLoading && error.data) {
-      console.log(error.data);
+  
+    if (!Loader.isLoading && error.data.name==='UserNotConfirmedException') {
+      navigation.navigate('ConfirmUser', {
+        Email: Email.useremail,
+      });
     }
   }, [error.data, Loader.isLoading]);
 
@@ -91,15 +94,15 @@ const Login = ({navigation, SignInFunc}) => {
       />
       <View style={styles.InnerContainer}>
         <View>
-          <Text style={styles.headerText}>Login Now</Text>
+          <Text style={styles.headerText}>Get back to Reading</Text>
         </View>
         <View style={{flexWrap: 'nowrap', marginTop: 5}}>
-          <Text style={styles.subHeaderText}>Where were you Gone?😉</Text>
+          <Text style={styles.subHeaderText}>Detox your Mind😉</Text>
         </View>
       </View>
       <View style={styles.inputOuterContainer}>
         <TextInput
-          placeholder="Email"
+          placeholder="Enter your Email"
           placeholderTextColor={theme.colors.MediumGray}
           style={styles.inputInnerContainer}
           value={Email.useremail}
@@ -109,7 +112,7 @@ const Login = ({navigation, SignInFunc}) => {
       </View>
       <View style={styles.inputOuterContainer}>
         <TextInput
-          placeholder="Password"
+          placeholder="Enter your Password"
           placeholderTextColor={theme.colors.MediumGray}
           style={styles.inputInnerContainer}
           secureTextEntry={secureIt}
@@ -125,7 +128,8 @@ const Login = ({navigation, SignInFunc}) => {
       <View
         style={{
           width: theme.constants.screenWidth - 80,
-          paddingBottom: 40,
+          marginTop:16,
+          marginBottom: 48,
         }}>
         <TouchableOpacity>
           <Text style={styles.semiText}>Forgot your Password?</Text>

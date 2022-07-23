@@ -10,12 +10,13 @@ import {
 } from 'react-native';
 import {shallowEqual, useSelector} from 'react-redux';
 import {Header2} from '../../../Components';
+import { Auth } from 'aws-amplify';
 import {theme} from '../../../constants';
 import {fontFamily} from '../../../constants/Fonts';
-import {Authorization} from '../../../redux/Modules/auth/selector.auth';
+
 
 const Settings = () => {
-  const isAuthenticated = useSelector(Authorization, shallowEqual);
+  let currentUser;
   const [CoronaisEnabled, setIsCoronaEnabled] = React.useState(false);
   const [LatestisEnabled, setIsLatestEnabled] = React.useState(false);
   const [AnonomousisEnabled, setIsAnonomousEnabled] = React.useState(false);
@@ -27,11 +28,21 @@ const Settings = () => {
   const toggleSwitch3 = () =>
     setIsAnonomousEnabled(previousState => !previousState);
   const toggleSwitch4 = () => setIsHideEnabled(previousState => !previousState);
-
+ const [userData, setuserData] = React.useState('')
+  React.useEffect(() => {
+    const getCredentials = (async () => {
+      let data = await Auth.currentUserInfo();
+      console.log(data.attributes)
+setuserData(data.attributes);
+    })();
+    return () => {
+      getCredentials;
+    };
+  }, [userData]);
   return (
     <ScrollView style={styles.Container}>
       <Header2 title="Settings" backButton={true} />
-      {!isAuthenticated.User ? (
+      { userData==={}? (
         <>
           <View style={styles.HeaderView}>
             <Text style={styles.HeaderText}>ACCOUNT</Text>
@@ -62,8 +73,31 @@ const Settings = () => {
       ) : (
         <>
           <View style={styles.HeaderView}>
-            <Text style={styles.HeaderText}>Profile</Text>
+            <Text style={styles.HeaderText}>PROFILE</Text>
           </View>
+          <Pressable
+            style={styles.buttonView}
+            android_ripple={{
+              color: theme.colors.LightGray,
+              borderless: false,
+              radius: 300,
+            }}>
+            <View>
+              <Text style={styles.BtnTitle}>{"👤 "+userData.name} </Text>
+            </View>
+          </Pressable>
+          <Pressable
+            style={styles.buttonView}
+            android_ripple={{
+              color: theme.colors.LightGray,
+              borderless: false,
+              radius: 300,
+            }}>
+            <View>
+              <Text style={styles.BtnTitle}>{"📪 "+userData.email} </Text>
+            </View>
+          </Pressable>
+    
           <Image />
         </>
       )}
@@ -168,7 +202,7 @@ const Settings = () => {
         style={{
           position: 'relative',
           alignSelf: 'center',
-          paddingVertical: 100,
+          marginTop: 60,
         }}>
         <Text style={styles.VersionText}>VERSION 1.0</Text>
       </View>
