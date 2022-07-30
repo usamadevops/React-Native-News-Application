@@ -4,7 +4,7 @@ import {
   SIGN_UP_RECIEVED,
   SIGN_IN,
   SIGN_IN_RECIEVED,
-  GET_AUTHENTICATION,
+GET_AUTH,GET_AUTHRECIEVED,
   SIGN_OUT,
   SIGNOUT_SUCCESS,
   AUTH_ERROR,
@@ -23,7 +23,13 @@ const initialState = fromJS({
 const AuthenticationReducer = (state = initialState, action = {}) => {
   const {type, payload, error} = action;
   switch (type) {
-    case GET_AUTHENTICATION:
+    case GET_AUTH:
+      return state.set('isLoading', true).set('error', Map());
+      case GET_AUTHRECIEVED:
+        return state
+      .set('isLoading', false)
+      .set('error', Map()).
+      set('isAuthenticated',true);
     case SIGN_IN:
       return state.set('isLoading', true).set('error', Map());
     case SIGN_IN_RECIEVED:
@@ -48,7 +54,9 @@ const AuthenticationReducer = (state = initialState, action = {}) => {
 
     case SIGN_OUT:
       return state.set('isLoading', true).set('error', Map());
-
+      
+    case SIGNOUT_SUCCESS:
+        return state.set('isLoading', false).set('isAuthenticated', Authorization).set('error', Map());
     case CONFIRM_ACCOUNT:
       return state
         .set('isLoading', true)
@@ -62,8 +70,6 @@ const AuthenticationReducer = (state = initialState, action = {}) => {
         .set('isAuthenticated', true)
         .set('error', Map())
         .set('isConfirm',true);
-    case SIGNOUT_SUCCESS:
-      return state.set('isLoading', false).set('isAuthenticated', false);
     case AUTH_ERROR:
       return state.set('isLoading', false).set('error', fromJS(error));
     default:
