@@ -1,11 +1,11 @@
 import React from 'react';
-import {View, Text, Pressable} from 'react-native';
+import {View, Text, Pressable, Button} from 'react-native';
 import {theme} from '../constants';
 import styles from './styles';
 import {BackButton, DotsIcon, SearchIcon} from '../assets/Icons';
 import {fontFamily} from '../constants/Fonts';
 import {useNavigation} from '@react-navigation/native';
-const Header2 = ({title, backButton, icon}) => {
+const Header2 = ({title, backButton, icon,onPress}) => {
   const navigation = useNavigation();
   return (
     <View
@@ -38,14 +38,22 @@ const Header2 = ({title, backButton, icon}) => {
             hitSlop={25}
             android_ripple={{
               color: theme.colors.LightGray,
-              borderless: true,
-              radius: 25,
+              borderless: false,
+              radius: 50,
             }}
-            onPress={() => alert('dots clicked')}>
+            onPress={onPress}>
             {icon === 'search' ? (
               <SearchIcon color={theme.colors.DarkGray} />
-            ) : (
-              <DotsIcon color="#000" />
+            ) : icon ==='Logout' ?(
+                <Text style={{
+                  borderWidth: 1,
+                  padding:8,
+                color: theme.colors.Red,
+                fontFamily: fontFamily.Bozon_Demi_Bold,
+                fontSize: theme.fonts.body.fontSize,
+              }}>Logout</Text>
+            ):(
+            null
             )}
           </Pressable>
         </View>

@@ -6,13 +6,11 @@ export const errorSelector = createSelector(auth, data => ({
   data: data?.get('error'),
 }));
 
-export const isLoadingSelector = createSelector(auth, data => ({
-  isLoading: data?.get('isLoading'),
-}));
 
-export const Authorization = createSelector(auth, data => ({
-  User: data?.get('isAuthenticated'),
-}));
+
+export const isLoadingSelector = createSelector(auth, data => (data?.get('isLoading')));
+
+export const Authorization = createSelector(auth, data => (   data?.get('isAuthenticated')));
 export const isConfirmed = createSelector(auth, data => ({
   isUserConfirmed: data?.get('isConfirm'),
 }));

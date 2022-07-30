@@ -2,9 +2,42 @@ import {Auth} from 'aws-amplify';
 import {put, takeLatest} from 'redux-saga/effects';
 import * as auth from './constant.auth';
 import Session from '../../utils/Session';
-import { errorSelector } from './selector.auth';
-import { useSelector } from 'react-redux';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
+function* getdata({}) {
+  try {
+    let sessionisValid;
+    let accessToken = yield AsyncStorage.getItem('@Token');
+   yield Auth.currentSession().then(res => {
+     sessionisValid = res.isValid();
+     if (sessionisValid && accessToken === null || accessToken == undefined)
+     {
+       accessToken=res.getAccessToken();
+       }
+   }).catch(() => {
+     AsyncStorage.clear();
+    })
+    if (accessToken!=null || undefined )
+    {
+      yield put({
+        type: auth.GET_AUTHRECIEVED,
+        payload:accessToken
+      });
+    }
+    else{
+      yield put({
+        type: auth.AUTH_ERROR,
+        error: err,
+      });
+    }
+ 
+      } catch (err) {
+        yield put({
+          type: auth.AUTH_ERROR,
+          error: err,
+        });
+}
+}
 function* Login({ payload }) {
   try {
     const email = payload.email;
@@ -91,6 +124,8 @@ function* ConfirmUserAccount({payload}) {
 function* signoutUser({payload}) {
   try {
     yield Auth.signOut();
+    yield AsyncStorage.clear();
+ 
     yield put({
       type: auth.SIGN_OUT_SUCCESS,
       payload: payload,
@@ -109,6 +144,9 @@ function* watchmanoflogin() {
 function* watchmanofsignn() {
   yield takeLatest(auth.SIGN_UP, Register);
 }
+function* watchmanofgetAuth() {
+  yield takeLatest(auth.GET_AUTH, getdata);
+}
 function* watchmanofsignout() {
   yield takeLatest(auth.SIGN_OUT, signoutUser);
 }
@@ -119,6 +157,7 @@ function* watchmanofConfirmation() {
 export const authsaga = [
   watchmanoflogin(),
   watchmanofsignn(),
+  watchmanofgetAuth(),
   watchmanofsignout(),
   watchmanofConfirmation(),
 ];

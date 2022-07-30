@@ -10,7 +10,7 @@ const NewsList = ({ queryString,domainurl,insearch }) => {
   const [Articles, setArticles] = React.useState([]);
   const [isLoading2, setisLoading2] = React.useState(false);
   const [error, seterror] = React.useState('');
-  const [query, setquery] = React.useState(`https://newsapi.org/v2/everything?q=world&apiKey=${API}`)
+  const [query, setquery] = React.useState(``);
   const GetArticles=async()=>{
     setisLoading2(true);
     var config = {
@@ -28,21 +28,23 @@ const NewsList = ({ queryString,domainurl,insearch }) => {
         setisLoading2(false);
       });
   }
-  React.useEffect(() => {
-    console.log('domain', domainurl);
-  
-    if ( !insearch) {
-      setquery(`https://newsapi.org/v2/everything?domains=${domainurl}&apiKey=${API}`);
-      GetArticles();
-    }
- else{
-      setquery(`https://newsapi.org/v2/everything?q=${queryString}&apiKey=${API}`);
-     GetArticles();
- }
+  React.useCallback(
+  () => {
    
+  if ( !insearch && domainurl!==null) {
+    setquery(`https://newsapi.org/v2/everything?domains=${domainurl}&apiKey=${API}`);
+    GetArticles();
+  }
+else{
+    setquery(`https://newsapi.org/v2/everything?q=${queryString}&apiKey=${API}`);
+   GetArticles();
+}
+  },
+  [queryString],
+)
+
  
-  }, [queryString]);
- 
+
 
   return (
     <View style={styles.container}>

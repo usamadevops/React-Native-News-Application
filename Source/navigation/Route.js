@@ -1,44 +1,36 @@
 import React from 'react';
-import {shallowEqual, useSelector} from 'react-redux';
 import AuthStack from './AuthStack';
 import MainStack from './MainStack';
-import {Splash} from '../Screens';
-import {clearAll, ReadDataSingleString} from '../Utils/AsyncStorage';
-
 import {NavigationContainer} from '@react-navigation/native';
-import {Auth} from 'aws-amplify';
-const Route = () => {
-  const [isReady, setisReady] = React.useState(false);
+import { Splash } from '../Screens';
+import { useSelector,connect, shallowEqual} from 'react-redux';
+import {GetData} from '../redux/Modules/auth/action.auth';
+import {Authorization,isLoadingSelector} from '../redux/Modules/auth/selector.auth'
 
-  let AsyncToken=null;
-  let validity;
-  React.useEffect(() => {
-    const loadApp = (async () => {
-      let session = Auth.currentSession();
-      validity  = (await session).isValid();
-     if(validity){
-      AsyncToken = await ReadDataSingleString('@Token');
-     }
-     else {
-       clearAll();
-     }
-      console.log('token', AsyncToken,validity);
-      setisReady(true);
-    })();
-    return () => {
-      loadApp;
-    };
-  }, [AsyncToken]);
+const Route = ({GetDataFunc}) => {
+  const Auth=useSelector(Authorization,shallowEqual)
+  const loading =useSelector(isLoadingSelector,shallowEqual);
+  
+    React.useEffect(() => {
+   GetDataFunc();
+    }, [Auth]);
 
-  if (!isReady) {
+  if (loading) {
     return <Splash />;
   } else {
     return (
       <NavigationContainer>
-        {AsyncToken === '' &&  !validity  ? <AuthStack /> : <MainStack />}
+        {Auth===false? <AuthStack /> : <MainStack />}
       </NavigationContainer>
     );
   }
 };
 
-export default Route;
+const mapDispatchToProps = dispatch => {
+  return {
+    // dispatching Login action to update State
+    GetDataFunc: event => dispatch(GetData(event)),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(Route);

@@ -13,7 +13,6 @@ import {theme} from '../../constants';
 import {regularExp} from '../../Utils/regExp';
 import {SignIn} from '../../redux/Modules/auth/action.auth';
 import {
-  Authorization,
   isLoadingSelector,
   errorSelector,
 } from '../../redux/Modules/auth/selector.auth';

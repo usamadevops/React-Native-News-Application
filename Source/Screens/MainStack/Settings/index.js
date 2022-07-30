@@ -7,16 +7,18 @@ import {
   Switch,
   ScrollView,
   Image,
+  Button,
 } from 'react-native';
-import {shallowEqual, useSelector} from 'react-redux';
+import {shallowEqual, useSelector,connect} from 'react-redux';
 import {Header2} from '../../../Components';
 import { Auth } from 'aws-amplify';
+import { SignOut } from '../../../redux/Modules/auth/action.auth';
 import {theme} from '../../../constants';
 import {fontFamily} from '../../../constants/Fonts';
 
 
-const Settings = () => {
-  let currentUser;
+const Settings = ({SignOutFunc}) => {
+ 
   const [CoronaisEnabled, setIsCoronaEnabled] = React.useState(false);
   const [LatestisEnabled, setIsLatestEnabled] = React.useState(false);
   const [AnonomousisEnabled, setIsAnonomousEnabled] = React.useState(false);
@@ -30,6 +32,7 @@ const Settings = () => {
   const toggleSwitch4 = () => setIsHideEnabled(previousState => !previousState);
  const [userData, setuserData] = React.useState('')
   React.useEffect(() => {
+
     const getCredentials = (async () => {
       let data = await Auth.currentUserInfo();
       console.log(data.attributes)
@@ -39,9 +42,13 @@ setuserData(data.attributes);
       getCredentials;
     };
   }, [userData]);
+  const SignoutUser = () => {
+    SignOutFunc();
+}
+
   return (
     <ScrollView style={styles.Container}>
-      <Header2 title="Settings" backButton={true} />
+      <Header2 title="Settings" backButton={true} icon="Logout" onPress={SignoutUser} />
       { userData==={}? (
         <>
           <View style={styles.HeaderView}>
@@ -210,7 +217,14 @@ setuserData(data.attributes);
   );
 };
 
-export default Settings;
+const mapDispatchToProps = dispatch => {
+  return {
+    SignOutFunc: event => dispatch(SignOut(event)),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(Settings);
+
 
 const styles = StyleSheet.create({
   Container: {

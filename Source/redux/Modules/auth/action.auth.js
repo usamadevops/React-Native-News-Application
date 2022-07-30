@@ -2,6 +2,7 @@ import {
   SIGN_IN,
   SIGN_UP,
   SIGN_OUT,
+  GET_AUTH,
   AUTH_ERROR,
   CONFIRM_ACCOUNT,
 } from './constant.auth.js';
@@ -28,7 +29,7 @@ export const confirmUser = payload => {
 
 export const GetData = payload => {
   return {
-    type: GET_AUTHENTICATION,
+    type: GET_AUTH  ,
     payload: payload,
   };
 };

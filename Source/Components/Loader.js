@@ -6,7 +6,7 @@ const GifLoader = () => {
     <View style={styles.contaienr}>
       <Image
         source={require('../assets/SNLoader.gif')}
-        style={{width: 400, height: 400}}
+        style={{width: 40, height: 40}}
       />
     </View>
   );

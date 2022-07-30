@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from 'react-native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {Main} from '../Screens';
 import BottomTab from './Bottom';
@@ -9,7 +10,7 @@ const MainStack = () => {
     <Stack.Navigator screenOptions={{headerShown: false,}}>
       <Stack.Screen name="Tab" component={BottomTab} />
       <Stack.Screen name="Post" component={Main.Post}  options={{headerShown:true,headerBackTitle:'Go Back'}}/>
-      <Stack.Screen name="Settings" component={Main.Settings} />
+      <Stack.Screen name="Settings" component={Main.Settings}/>
       <Stack.Screen name="TopicProfile" component={Main.Profile}  />
       <Stack.Screen name="NewsListScreen" component={Main.NewsListScreen} options={{headerShown:true,headerBackTitle:'Go Back'}}/>
     </Stack.Navigator>
