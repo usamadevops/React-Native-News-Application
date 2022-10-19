@@ -5,7 +5,7 @@ import styles from './styles';
 import {BackButton, DotsIcon, SearchIcon} from '../assets/Icons';
 import {fontFamily} from '../constants/Fonts';
 import {useNavigation} from '@react-navigation/native';
-const Header2 = ({title, backButton, icon,onPress}) => {
+const Header2 = ({title, backButton, icon,onPress,language}) => {
   const navigation = useNavigation();
   return (
     <View
@@ -52,8 +52,16 @@ const Header2 = ({title, backButton, icon,onPress}) => {
                 fontFamily: fontFamily.Bozon_Demi_Bold,
                 fontSize: theme.fonts.body.fontSize,
               }}>Logout</Text>
+            ):icon==='lang'?(
+            <Text style={{
+                  borderWidth: 1,
+                  padding:8,
+                color: theme.colors.Red,
+                fontFamily: fontFamily.Bozon_Demi_Bold,
+                fontSize: theme.fonts.body.fontSize,
+              }}>{language}</Text>
             ):(
-            null
+              null
             )}
           </Pressable>
         </View>

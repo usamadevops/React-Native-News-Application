@@ -11,12 +11,14 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		CA1A747EC5BF44399E01E15F /* Bozon-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7BB7FA0AA20147239ADE4366 /* Bozon-Bold.ttf */; };
-		A72941A8146049AB9B36A620 /* Bozon-DemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 30928C3E5449428785696888 /* Bozon-DemiBold.ttf */; };
-		E7A2F7D97B274AE28BC50414 /* Bozon-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F75455644DC148218259F319 /* Bozon-Regular.ttf */; };
 		1E24C665DFC44F3F943141C7 /* BRFirma-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 851033A2656D4380BEF7EC1C /* BRFirma-Bold.ttf */; };
+		2BE53F0059B0ECB7AAEDE139 /* libPods-StrikeNews-StrikeNewsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F003557A3478E03A95DFD9E /* libPods-StrikeNews-StrikeNewsTests.a */; };
+		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		A6B004015E844F27A4BD1D0D /* BRFirma-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A306C9B8C9604375A508EEA6 /* BRFirma-Medium.ttf */; };
+		A72941A8146049AB9B36A620 /* Bozon-DemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 30928C3E5449428785696888 /* Bozon-DemiBold.ttf */; };
+		BF76DBD966E3644793322AFA /* libPods-StrikeNews.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C95F5ACE0649BAAF2A1F593 /* libPods-StrikeNews.a */; };
+		CA1A747EC5BF44399E01E15F /* Bozon-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7BB7FA0AA20147239ADE4366 /* Bozon-Bold.ttf */; };
+		E7A2F7D97B274AE28BC50414 /* Bozon-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F75455644DC148218259F319 /* Bozon-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,19 +35,25 @@
 		00E356EE1AD99517003FC87E /* StrikeNewsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StrikeNewsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* StrikeNewsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StrikeNewsTests.m; sourceTree = "<group>"; };
+		0301CFE43A085901C32A24A0 /* Pods-StrikeNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StrikeNews.debug.xcconfig"; path = "Target Support Files/Pods-StrikeNews/Pods-StrikeNews.debug.xcconfig"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* StrikeNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StrikeNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = StrikeNews/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = StrikeNews/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = StrikeNews/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = StrikeNews/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = StrikeNews/main.m; sourceTree = "<group>"; };
+		1E6143A04E0554C95BA1DEFF /* Pods-StrikeNews-StrikeNewsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StrikeNews-StrikeNewsTests.release.xcconfig"; path = "Target Support Files/Pods-StrikeNews-StrikeNewsTests/Pods-StrikeNews-StrikeNewsTests.release.xcconfig"; sourceTree = "<group>"; };
+		30928C3E5449428785696888 /* Bozon-DemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Bozon-DemiBold.ttf"; path = "../Source/assets/fonts/Bozon-DemiBold.ttf"; sourceTree = "<group>"; };
+		5F003557A3478E03A95DFD9E /* libPods-StrikeNews-StrikeNewsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StrikeNews-StrikeNewsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7BB7FA0AA20147239ADE4366 /* Bozon-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Bozon-Bold.ttf"; path = "../Source/assets/fonts/Bozon-Bold.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = StrikeNews/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		851033A2656D4380BEF7EC1C /* BRFirma-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "BRFirma-Bold.ttf"; path = "../Source/assets/fonts/BRFirma-Bold.ttf"; sourceTree = "<group>"; };
+		8C95F5ACE0649BAAF2A1F593 /* libPods-StrikeNews.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StrikeNews.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		90D6740CA39F5E0542487FA2 /* Pods-StrikeNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StrikeNews.release.xcconfig"; path = "Target Support Files/Pods-StrikeNews/Pods-StrikeNews.release.xcconfig"; sourceTree = "<group>"; };
+		A306C9B8C9604375A508EEA6 /* BRFirma-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "BRFirma-Medium.ttf"; path = "../Source/assets/fonts/BRFirma-Medium.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		7BB7FA0AA20147239ADE4366 /* Bozon-Bold.ttf */ = {isa = PBXFileReference; name = "Bozon-Bold.ttf"; path = "../Source/assets/fonts/Bozon-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		30928C3E5449428785696888 /* Bozon-DemiBold.ttf */ = {isa = PBXFileReference; name = "Bozon-DemiBold.ttf"; path = "../Source/assets/fonts/Bozon-DemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		F75455644DC148218259F319 /* Bozon-Regular.ttf */ = {isa = PBXFileReference; name = "Bozon-Regular.ttf"; path = "../Source/assets/fonts/Bozon-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		851033A2656D4380BEF7EC1C /* BRFirma-Bold.ttf */ = {isa = PBXFileReference; name = "BRFirma-Bold.ttf"; path = "../Source/assets/fonts/BRFirma-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		A306C9B8C9604375A508EEA6 /* BRFirma-Medium.ttf */ = {isa = PBXFileReference; name = "BRFirma-Medium.ttf"; path = "../Source/assets/fonts/BRFirma-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F75455644DC148218259F319 /* Bozon-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Bozon-Regular.ttf"; path = "../Source/assets/fonts/Bozon-Regular.ttf"; sourceTree = "<group>"; };
+		FF39A11CE943ADA15E9F9BB9 /* Pods-StrikeNews-StrikeNewsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StrikeNews-StrikeNewsTests.debug.xcconfig"; path = "Target Support Files/Pods-StrikeNews-StrikeNewsTests/Pods-StrikeNews-StrikeNewsTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BE53F0059B0ECB7AAEDE139 /* libPods-StrikeNews-StrikeNewsTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF76DBD966E3644793322AFA /* libPods-StrikeNews.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,10 +106,37 @@
 			name = StrikeNews;
 			sourceTree = "<group>";
 		};
+		14994B42223C4911B4408E89 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7BB7FA0AA20147239ADE4366 /* Bozon-Bold.ttf */,
+				30928C3E5449428785696888 /* Bozon-DemiBold.ttf */,
+				F75455644DC148218259F319 /* Bozon-Regular.ttf */,
+				851033A2656D4380BEF7EC1C /* BRFirma-Bold.ttf */,
+				A306C9B8C9604375A508EEA6 /* BRFirma-Medium.ttf */,
+			);
+			name = Resources;
+			path = "";
+			sourceTree = "<group>";
+		};
+		1707B93F626457BB2A40AF71 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0301CFE43A085901C32A24A0 /* Pods-StrikeNews.debug.xcconfig */,
+				90D6740CA39F5E0542487FA2 /* Pods-StrikeNews.release.xcconfig */,
+				FF39A11CE943ADA15E9F9BB9 /* Pods-StrikeNews-StrikeNewsTests.debug.xcconfig */,
+				1E6143A04E0554C95BA1DEFF /* Pods-StrikeNews-StrikeNewsTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
+				8C95F5ACE0649BAAF2A1F593 /* libPods-StrikeNews.a */,
+				5F003557A3478E03A95DFD9E /* libPods-StrikeNews-StrikeNewsTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -120,6 +157,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				14994B42223C4911B4408E89 /* Resources */,
+				1707B93F626457BB2A40AF71 /* Pods */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -135,19 +173,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		14994B42223C4911B4408E89 /* Resources */ = {
-			isa = "PBXGroup";
-			children = (
-				7BB7FA0AA20147239ADE4366 /* Bozon-Bold.ttf */,
-				30928C3E5449428785696888 /* Bozon-DemiBold.ttf */,
-				F75455644DC148218259F319 /* Bozon-Regular.ttf */,
-				851033A2656D4380BEF7EC1C /* BRFirma-Bold.ttf */,
-				A306C9B8C9604375A508EEA6 /* BRFirma-Medium.ttf */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-			path = "";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -155,9 +180,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "StrikeNewsTests" */;
 			buildPhases = (
+				D96B0B92131FD68D3A9E4C6D /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
+				A1DB7C3F0E9311547328A649 /* [CP] Embed Pods Frameworks */,
+				7ED84022FDABE3237E0006CC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -173,11 +201,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "StrikeNews" */;
 			buildPhases = (
+				16EDADDF93485045642FD959 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				35DFDABD79B6E9F3B0062A53 /* [CP] Embed Pods Frameworks */,
+				28ECD4A20F2EC46005E1FFEB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -263,6 +294,118 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
+		16EDADDF93485045642FD959 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StrikeNews-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		28ECD4A20F2EC46005E1FFEB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StrikeNews/Pods-StrikeNews-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StrikeNews/Pods-StrikeNews-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StrikeNews/Pods-StrikeNews-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		35DFDABD79B6E9F3B0062A53 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StrikeNews/Pods-StrikeNews-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StrikeNews/Pods-StrikeNews-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StrikeNews/Pods-StrikeNews-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7ED84022FDABE3237E0006CC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StrikeNews-StrikeNewsTests/Pods-StrikeNews-StrikeNewsTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StrikeNews-StrikeNewsTests/Pods-StrikeNews-StrikeNewsTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StrikeNews-StrikeNewsTests/Pods-StrikeNews-StrikeNewsTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A1DB7C3F0E9311547328A649 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StrikeNews-StrikeNewsTests/Pods-StrikeNews-StrikeNewsTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StrikeNews-StrikeNewsTests/Pods-StrikeNews-StrikeNewsTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StrikeNews-StrikeNewsTests/Pods-StrikeNews-StrikeNewsTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D96B0B92131FD68D3A9E4C6D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StrikeNews-StrikeNewsTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -315,6 +458,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FF39A11CE943ADA15E9F9BB9 /* Pods-StrikeNews-StrikeNewsTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -341,6 +485,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E6143A04E0554C95BA1DEFF /* Pods-StrikeNews-StrikeNewsTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -364,6 +509,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0301CFE43A085901C32A24A0 /* Pods-StrikeNews.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -389,6 +535,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90D6740CA39F5E0542487FA2 /* Pods-StrikeNews.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -443,6 +590,7 @@
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "arm64 ";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -507,6 +655,7 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "arm64 ";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

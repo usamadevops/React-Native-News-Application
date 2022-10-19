@@ -8,11 +8,12 @@ import {
   ScrollView,
   Image,
   Button,
+  SafeAreaView,
 } from 'react-native';
-import {shallowEqual, useSelector,connect} from 'react-redux';
+// import {shallowEqual, useSelector,connect} from 'react-redux';
 import {Header2} from '../../../Components';
 import { Auth } from 'aws-amplify';
-import { SignOut } from '../../../redux/Modules/auth/action.auth';
+// import { SignOut } from '../../../redux/Modules/auth/action.auth';
 import {theme} from '../../../constants';
 import {fontFamily} from '../../../constants/Fonts';
 
@@ -30,26 +31,27 @@ const Settings = ({SignOutFunc}) => {
   const toggleSwitch3 = () =>
     setIsAnonomousEnabled(previousState => !previousState);
   const toggleSwitch4 = () => setIsHideEnabled(previousState => !previousState);
- const [userData, setuserData] = React.useState('')
-  React.useEffect(() => {
+//  const [userData, setuserData] = React.useState('')
+//   React.useEffect(() => {
 
-    const getCredentials = (async () => {
-      let data = await Auth.currentUserInfo();
-      console.log(data.attributes)
-setuserData(data.attributes);
-    })();
-    return () => {
-      getCredentials;
-    };
-  }, [userData]);
-  const SignoutUser = () => {
-    SignOutFunc();
-}
+//     const getCredentials = (async () => {
+//       let data = await Auth.currentUserInfo();
+//       console.log(data.attributes)
+// setuserData(data.attributes);
+//     })();
+//     return () => {
+//       getCredentials;
+//     };
+//   }, [userData]);
+//   const SignoutUser = () => {
+//     SignOutFunc();
+// }
 
   return (
-    <ScrollView style={styles.Container}>
-      <Header2 title="Settings" backButton={true} icon="Logout" onPress={SignoutUser} />
-      { userData==={}? (
+    <SafeAreaView style={styles.Container}>
+    <ScrollView >
+      <Header2 title="Settings" backButton={true}  />
+      {/* { userData==={}? (
         <>
           <View style={styles.HeaderView}>
             <Text style={styles.HeaderText}>ACCOUNT</Text>
@@ -107,7 +109,7 @@ setuserData(data.attributes);
     
           <Image />
         </>
-      )}
+      )} */}
       <View style={styles.HeaderView}>
         <Text style={styles.HeaderText}>NOTIFICATIONS</Text>
       </View>
@@ -214,16 +216,17 @@ setuserData(data.attributes);
         <Text style={styles.VersionText}>VERSION 1.0</Text>
       </View>
     </ScrollView>
+    </SafeAreaView>
   );
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    SignOutFunc: event => dispatch(SignOut(event)),
-  };
-};
+// const mapDispatchToProps = dispatch => {
+//   return {
+//     SignOutFunc: event => dispatch(SignOut(event)),
+//   };
+// };
 
-export default connect(null, mapDispatchToProps)(Settings);
+export default Settings
 
 
 const styles = StyleSheet.create({

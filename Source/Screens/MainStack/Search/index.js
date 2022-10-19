@@ -1,33 +1,26 @@
 import React from 'react';
-import {View,Text} from 'react-native';
+import {View,SafeAreaView} from 'react-native';
 import { NewsList } from '../../../Components';
 import Header2 from '../../../Components/Header2';
+import API from '../../../../ApiKey';
 import Searchbar from '../../../Components/Searchbar';
 import styles from '../../Style';
 
 const Search = () => {
   const [searchtext, setSearchtext] = React.useState(null);
-  function onChange(text) {
-    setSearchtext(text);
-  }
-  React.useEffect(() => {
-    console.log(searchtext);
+  const [search,setSearch]=React.useState(null);
 
-  },[searchtext])
+function onClick(){
+  setSearch(searchtext);
+}
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Header2 title="Search" />
-      <Searchbar text={searchtext} onpress={(text)=>onChange(text)}/>
-      <View style={{ flex: 1 }}>
- 
-        
-        
-          <NewsList queryString={searchtext} insearch={true}/>
-       
-      
-     
+      <Searchbar text={searchtext} onpress={setSearchtext} onClick={onClick}/>
+      <View style={{ flex: 1 }}>       
+          <NewsList queryString={`https://newsapi.org/v2/everything?q=${search}&apiKey=${API}`} insearch={true} /> 
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 

@@ -1,5 +1,6 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import { SafeAreaView } from 'react-native'
+import React from 'react';
+import API from '../../../../ApiKey';
 import { NewsList } from '../../../Components'
 const NewsListScreen = ({ navigation, route }) => {
     const { datasearch } = route.params;
@@ -7,9 +8,9 @@ const NewsListScreen = ({ navigation, route }) => {
         navigation.setOptions({title:'Latest MonkeyPox News'})
       },[navigation]);
   return (
-    <View style={{flex:1}}>
-    <NewsList queryString={datasearch} insearch={false}/>
-    </View>
+    <SafeAreaView style={{flex:1}}>
+    <NewsList queryString={`https://newsapi.org/v2/everything?q=${datasearch}&apiKey=${API}`} />
+    </SafeAreaView>
   )
 }
 

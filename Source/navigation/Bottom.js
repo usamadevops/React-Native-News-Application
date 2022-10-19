@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Animated} from 'react-native';
+import {View, Animated, Platform} from 'react-native';
 
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {Main} from '../Screens';
@@ -26,7 +26,7 @@ export default function BottomTab() {
 tabBarHideOnKeyboard:true,
           tabBarStyle: {
             backgroundColor: theme.colors.White,
-            height: 60,
+            height:Platform.OS==='ios'? 100:60,
          
           },
         }}>
@@ -134,7 +134,7 @@ tabBarHideOnKeyboard:true,
           height: 3,
           backgroundColor: theme.colors.Blue,
           position: 'absolute',
-          bottom: 60,
+          bottom: Platform.OS==='ios'? 100:60,
 
           transform: [{translateX: taboffSetValue}],
         }}

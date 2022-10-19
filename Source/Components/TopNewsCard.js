@@ -21,6 +21,7 @@ const TopNewsCard = ({TopNews}) => {
         scrollEventThrottle={16}
         showsHorizontalScrollIndicator={false}
         bounces={true}
+        pagingEnabled
         automaticallyAdjustsScrollIndicatorInsets
         legacyImplementation={false}
         keyExtractor={item => item.title}

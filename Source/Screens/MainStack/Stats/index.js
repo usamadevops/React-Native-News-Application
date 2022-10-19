@@ -1,11 +1,11 @@
 import React from 'react';
-import {View, Text, FlatList, ScrollView} from 'react-native';
+import {View, SafeAreaView, ScrollView} from 'react-native';
 import {Header2, HeaderText, Statscard, TopicsCard} from '../../../Components';
 import {Topics} from '../../../constants/mock';
 import styles from '../../Style';
 const Stats = () => {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Header2 title="Summary Stats" />
       <ScrollView>
         <HeaderText text="YOUR STATS" />
@@ -23,7 +23,7 @@ const Stats = () => {
         </View>
         <HeaderText text="SAVED NEWS" />
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 };
 

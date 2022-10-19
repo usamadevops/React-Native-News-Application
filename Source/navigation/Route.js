@@ -8,29 +8,29 @@ import {GetData} from '../redux/Modules/auth/action.auth';
 import {Authorization,isLoadingSelector} from '../redux/Modules/auth/selector.auth'
 
 const Route = ({GetDataFunc}) => {
-  const Auth=useSelector(Authorization,shallowEqual)
-  const loading =useSelector(isLoadingSelector,shallowEqual);
+  // const Auth=useSelector(Authorization,shallowEqual)
+  // const loading =useSelector(isLoadingSelector,shallowEqual);
   
-    React.useEffect(() => {
-   GetDataFunc();
-    }, [Auth]);
+  //   React.useEffect(() => {
+  //  GetDataFunc();
+  //   }, [Auth]);
 
-  if (loading) {
-    return <Splash />;
-  } else {
+  // if (loading) {
+  //   return <Splash />;
+  // } else {
     return (
       <NavigationContainer>
-        {Auth===false? <AuthStack /> : <MainStack />}
+         <MainStack />
       </NavigationContainer>
     );
-  }
+// }
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    // dispatching Login action to update State
-    GetDataFunc: event => dispatch(GetData(event)),
-  };
-};
+// const mapDispatchToProps = dispatch => {
+//   return {
+//     // dispatching Login action to update State
+//     GetDataFunc: event => dispatch(GetData(event)),
+//   };
+// };
 
-export default connect(null, mapDispatchToProps)(Route);
+export default Route;

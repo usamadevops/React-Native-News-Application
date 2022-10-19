@@ -5,17 +5,15 @@ import  SmallCard from './SmallCard';
 import API from '../../ApiKey';
 import axios from 'axios';
 import SmallCardSK from '../assets/Skeletons/SmallCardSK'
-const NewsList = ({ queryString,domainurl,insearch }) => {
- 
+const NewsList = ({ queryString }) => {
   const [Articles, setArticles] = React.useState([]);
   const [isLoading2, setisLoading2] = React.useState(false);
   const [error, seterror] = React.useState('');
-  const [query, setquery] = React.useState(``);
   const GetArticles=async()=>{
     setisLoading2(true);
     var config = {
       method: 'GET',
-      url:query
+      url:queryString
     };
     await axios(config)
       .then(function (response) {
@@ -24,24 +22,13 @@ const NewsList = ({ queryString,domainurl,insearch }) => {
       })
       .catch(function (error) {
         seterror(error);
-        console.log(error);
+        console.log('err',error);
         setisLoading2(false);
       });
   }
-  React.useCallback(
-  () => {
-   
-  if ( !insearch && domainurl!==null) {
-    setquery(`https://newsapi.org/v2/everything?domains=${domainurl}&apiKey=${API}`);
-    GetArticles();
-  }
-else{
-    setquery(`https://newsapi.org/v2/everything?q=${queryString}&apiKey=${API}`);
-   GetArticles();
-}
-  },
-  [queryString],
-)
+  React.useEffect(() => {
+GetArticles();
+    },  [queryString])
 
  
 
