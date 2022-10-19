@@ -14,7 +14,7 @@ const TopicProfile = ({ route,navigation }) => {
     channelCategory,
     channelCountry,
     channelLang } = route.params;
-    console.log(channelUrl.split('.').splice([1][2]))
+    console.log(channelUrl.slice(11,50))
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: theme.colors.White}}>
       <Header2 title={channelName} backButton={true} icon="lang" language={channelLang} />
@@ -77,7 +77,7 @@ const TopicProfile = ({ route,navigation }) => {
                 </Text>
         </View>
         <View style={{ flex:1, marginTop: 20 }}>
-       <NewsList queryString={`https://newsapi.org/v2/everything?domains=${channelUrl.slice(7,50)}&apiKey=${API}`} />
+       <NewsList queryString={`https://newsapi.org/v2/everything?domains=${channelUrl.slice(11,50)}&apiKey=${API}`} />
         </View>
         </ScrollView>
     </SafeAreaView>
