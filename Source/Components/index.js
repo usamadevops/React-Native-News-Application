@@ -10,6 +10,7 @@ import Statscard from './Stats';
 import TopicsCard from './TopicsCard';
 import NewsList from './NewsList';
 import ChannelsList from './ChannelsList';
+import Category from './Category';
 export {
   Header,
   Searchbar,
@@ -21,6 +22,7 @@ export {
   HeaderText,
   Statscard,
   NewsList,
+  Category,
   ChannelsList,
   TopicsCard,
 };

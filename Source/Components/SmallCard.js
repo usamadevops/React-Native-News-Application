@@ -38,9 +38,9 @@ const SmallCard = ({NewsChannel, title, image, PostedTime,newsurl}) => {
           <View style={styles.CardRightContainer}>
             <Image
             progressiveRenderingEnabled={true}
+            fadeDuration={100}
               source={image!==null?{uri:image.toString()}: require('../assets/images/news-icon.png')}
               style={{width: 85, height: 85, borderRadius: 10}}
-              // onError={({nativeEvent})=>alert(nativeEvent.error)}
             />
           </View>
         </View>
