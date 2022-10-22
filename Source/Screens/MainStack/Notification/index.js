@@ -1,13 +1,15 @@
 import React from 'react';
 import {SafeAreaView} from 'react-native';
-import {ChannelsList, Header2} from '../../../Components';
+import {ChannelsList, Header2, Searchbar} from '../../../Components';
 import styles from '../../Style';
 const Notification = () => {
-  console.log('chaneels')
+  const [searchtext, setSearchtext] = React.useState('')
+
   return (
     <SafeAreaView style={styles.container}>
       <Header2 title="Browse Channels" />
-      <ChannelsList />
+      <Searchbar text={searchtext} onpress={setSearchtext} placeholder={'Search Channels'}/>  
+      <ChannelsList searchtext={searchtext}/>
     </SafeAreaView>
   );
 };

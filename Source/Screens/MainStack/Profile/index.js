@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text, Image,SafeAreaView} from 'react-native';
 import {theme} from '../../../constants';
 import {fontFamily} from '../../../constants/Fonts';
-import {Header2, NewsList} from '../../../Components';
+import {Header2, NewsList, Searchbar} from '../../../Components';
 import {sizes} from '../../../constants/theme';
 import API from '../../../../ApiKey';
 import { ScrollView } from 'react-native-gesture-handler';
@@ -14,11 +14,10 @@ const TopicProfile = ({ route,navigation }) => {
     channelCategory,
     channelCountry,
     channelLang } = route.params;
-    console.log(channelUrl.slice(11,50))
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: theme.colors.White}}>
       <Header2 title={channelName} backButton={true} icon="lang" language={channelLang} />
-      <ScrollView style={{flex:1}} stickyHeaderHiddenOnScroll={false} stickyHeaderIndices={[1]}>
+          <ScrollView style={{flex:1}} stickyHeaderHiddenOnScroll={false} stickyHeaderIndices={[1]}>
       <View
         style={{
           flexDirection: 'row',
@@ -77,7 +76,7 @@ const TopicProfile = ({ route,navigation }) => {
                 </Text>
         </View>
         <View style={{ flex:1, marginTop: 20 }}>
-       <NewsList queryString={`https://newsapi.org/v2/everything?domains=${channelUrl.slice(11,50)}&apiKey=${API}`} />
+       <NewsList queryString={`https://newsapi.org/v2/everything?domains=${channelUrl}&apiKey=${API}`} />
         </View>
         </ScrollView>
     </SafeAreaView>

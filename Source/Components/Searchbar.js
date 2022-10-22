@@ -3,13 +3,13 @@ import {StyleSheet, Text,Keyboard , TextInput,Pressable, View} from 'react-nativ
 import { SearchIcon } from '../assets/Icons';
 import {theme} from '../constants';
 import {fontFamily} from '../constants/Fonts';
-const Searchbar = ({ text, onpress,onClick }) => {
+const Searchbar = ({ text, onpress,onClick,placeholder }) => {
 
   return (
     <View style={styles.container}>
       <TextInput
         style={styles.input}
-        placeholder="Search"
+        placeholder={placeholder || 'Search '}
         value={text}
         onChangeText={(text)=>onpress(text)}
         // onKeyPress={()=>onClick()}
