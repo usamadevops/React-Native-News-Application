@@ -19,12 +19,11 @@ import styles from '../../Style';
 import { ScrollView } from 'react-native-gesture-handler';
 
 const Search = () => {
-  const [selectedCategory, setselectedCategory] = React.useState('business')
-  const [searchtext, setSearchtext] = React.useState(null);
-  const [search, setSearch] = React.useState(null);
-
+  const [selectedCategory, setselectedCategory] = React.useState('')
+  const [searchtext, setSearchtext] = React.useState('');
+  const [search, setSearch] = React.useState(`https://newsapi.org/v2/everything?q=Inflation&sortBy=relevancy&apiKey=${API}`);
   function onClick() {
-    setSearch(searchtext);
+ setSearch(`https://newsapi.org/v2/everything?q=${search}&sortBy=relevancy&apiKey=${API}`)
   }
   return (
     <SafeAreaView style={styles.container}>
@@ -35,14 +34,14 @@ const Search = () => {
           {Categories.map((cat, index) => {
             return (
               <View style={{ marginRight: 8 }}>
-                <Category name={cat} key={index} selectedCategory={selectedCategory} setselectedCategory={setselectedCategory} />
+                <Category name={cat} key={index} selectedCategory={selectedCategory} setselectedCategory={setselectedCategory} setSearch={setSearch}/>
               </View>
             )
           })}
         </ScrollView>
       </View>
       <View style={{ flex: 1 }}>
-        <NewsList queryString={`https://newsapi.org/v2/everything?q=${search}&sortBy=relevancy&apiKey=${API}`} insearch={true} />
+        <NewsList queryString={search} insearch={true} />
       </View>
     </SafeAreaView>
   );

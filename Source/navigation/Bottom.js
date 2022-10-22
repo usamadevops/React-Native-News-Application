@@ -70,7 +70,7 @@ tabBarHideOnKeyboard:true,
           listeners={({navigation, route}) => ({
             tabPress: e => {
               Animated.spring(taboffSetValue, {
-                toValue: theme.constants.screenWidth / 4,
+                toValue: theme.constants.screenWidth / 3,
                 useNativeDriver: true,
               }).start();
             },
@@ -85,7 +85,7 @@ tabBarHideOnKeyboard:true,
               backgroundColor: '#2CD483',
               color: theme.colors.White,
             },
-            tabBarIcon: ({focused, size, color}) => {
+            tabBarIcon: ({focused}) => {
               return (
                 <View>
                   <NotificationIcon
@@ -98,13 +98,13 @@ tabBarHideOnKeyboard:true,
           listeners={({navigation, route}) => ({
             tabPress: e => {
               Animated.spring(taboffSetValue, {
-                toValue: (theme.constants.screenWidth / 4) * 2,
+                toValue: (theme.constants.screenWidth / 3) * 2,
                 useNativeDriver: true,
               }).start();
             },
           })}
         />
-        <Tab.Screen
+        {/* <Tab.Screen
           name="Stats"
           component={Main.Stats}
           options={{
@@ -126,11 +126,11 @@ tabBarHideOnKeyboard:true,
               }).start();
             },
           })}
-        />
+        /> */}
       </Tab.Navigator>
       <Animated.View
         style={{
-          width: theme.constants.screenWidth / 4,
+          width: theme.constants.screenWidth / 3,
           height: 3,
           backgroundColor: theme.colors.Blue,
           position: 'absolute',

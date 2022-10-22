@@ -1,12 +1,12 @@
 import React from 'react';
 import moment from 'moment';
-import {View, Text, Image, Pressable, useWindowDimensions} from 'react-native';
+import {View, Text, Image, Pressable, useWindowDimensions, ActivityIndicator} from 'react-native';
 import styles from './styles';
 import {useNavigation} from '@react-navigation/native';
 import { theme } from '../constants';
 
 const SmallCard = ({NewsChannel, title, image, PostedTime,newsurl}) => {
-  const{width,height}=useWindowDimensions();
+  const{width}=useWindowDimensions();
   const navigation = useNavigation();
 
 
@@ -38,8 +38,9 @@ const SmallCard = ({NewsChannel, title, image, PostedTime,newsurl}) => {
           <View style={styles.CardRightContainer}>
             <Image
             progressiveRenderingEnabled={true}
+            loadingIndicatorSource={require('../assets/images/news-icon.png')}
             fadeDuration={100}
-              source={image!==null?{uri:image.toString()}: require('../assets/images/news-icon.png')}
+              source={image?{uri:image?.toString()}: require('../assets/images/news-icon.png')}
               style={{width: 85, height: 85, borderRadius: 10}}
             />
           </View>

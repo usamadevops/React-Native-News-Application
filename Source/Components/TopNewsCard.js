@@ -1,12 +1,14 @@
 import React from 'react';
 import moment from 'moment';
-import {View, Text, FlatList, Image, Animated, ActivityIndicator} from 'react-native';
+import {View, Text, FlatList, Image, Animated, ActivityIndicator, Pressable} from 'react-native';
 import styles from './styles';
 import { theme } from '../constants';
+import { useNavigation } from '@react-navigation/native';
 
 const TopNewsCard = ({TopNews}) => {
+  console.log(TopNews);
   const AnimatedFlatlist = Animated.createAnimatedComponent(FlatList);
-
+const navigation =useNavigation();
   return (
     <View style={styles.Maincontainer}>
       <View
@@ -26,7 +28,12 @@ const TopNewsCard = ({TopNews}) => {
         legacyImplementation={false}
         keyExtractor={item => item.title}
         renderItem={({item, index}) => (
-          <View style={styles.CardContainer} key={index}>
+          <Pressable style={styles.CardContainer} key={index} onPress={()=>{
+            navigation.navigate('Post',{
+              url:item?.url,
+              title:item?.title
+            });
+          }}>
             <View >
               <Image
                   source={item?.urlToImage!==null?{uri:item?.urlToImage.toString()}: require('../assets/images/news-icon.png')}
@@ -40,7 +47,7 @@ const TopNewsCard = ({TopNews}) => {
               <Text style={styles.timeText}>{moment(item?.publishedAt).fromNow()}</Text>
               <Text style={styles.categoryText}>{item.source.name}</Text>
             </View>
-          </View>
+          </Pressable>
         )}
       />
     </View>
