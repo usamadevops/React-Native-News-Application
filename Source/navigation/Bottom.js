@@ -5,6 +5,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {Main} from '../Screens';
 import {theme} from '../constants';
 import {
+  Channels,
   HomeIcon,
   NotificationIcon,
   SearchIcon,
@@ -80,15 +81,10 @@ tabBarHideOnKeyboard:true,
           name="Explore Channels"
           component={Main.Notification}
           options={{
-            tabBarBadge: '',
-            tabBarBadgeStyle: {
-              backgroundColor: '#2CD483',
-              color: theme.colors.White,
-            },
             tabBarIcon: ({focused}) => {
               return (
                 <View>
-                  <NotificationIcon
+                  <Channels
                     color={focused ? theme.colors.Blue : theme.colors.LightGray}
                   />
                 </View>

@@ -11,7 +11,9 @@ import TopicsCard from './TopicsCard';
 import NewsList from './NewsList';
 import ChannelsList from './ChannelsList';
 import Category from './Category';
+import Filterpopup from './Filterpopup';
 export {
+  Filterpopup,
   Header,
   Searchbar,
   ChannelCard,

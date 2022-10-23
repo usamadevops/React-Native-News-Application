@@ -8,8 +8,12 @@ import BackButton from './BackButton';
 import EyeClose from './EyeClose';
 import EyeOpen from './EyeOpen';
 import Tick from './Tick';
+import Channels from './Channels';
+import Filter from './Filter';
 export {
   EyeClose,
+  Filter,
+  Channels,
   EyeOpen,
   Tick,
   Bookmark,

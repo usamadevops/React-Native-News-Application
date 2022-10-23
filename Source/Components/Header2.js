@@ -4,6 +4,7 @@ import {theme} from '../constants';
 import styles from './styles';
 import {BackButton, DotsIcon, SearchIcon} from '../assets/Icons';
 import {fontFamily} from '../constants/Fonts';
+import {Filter} from '../assets/Icons';
 import {useNavigation} from '@react-navigation/native';
 const Header2 = ({title, backButton, icon,onPress,language}) => {
   const navigation = useNavigation();
@@ -12,7 +13,7 @@ const Header2 = ({title, backButton, icon,onPress,language}) => {
       style={{
         alignItems: 'center',
         justifyContent: 'center',
-        paddingHorizontal: 15,
+        paddingHorizontal: 20,
       }}>
       <View style={styles.Header}>
         {backButton === true ? (
@@ -60,8 +61,10 @@ const Header2 = ({title, backButton, icon,onPress,language}) => {
                 fontFamily: fontFamily.Bozon_Demi_Bold,
                 fontSize: theme.fonts.body.fontSize,
               }}>{language}</Text>
+            ):icon==='filter'?(
+              <Filter/>
             ):(
-              null
+              <></>
             )}
           </Pressable>
         </View>

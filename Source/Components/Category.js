@@ -12,11 +12,12 @@ const Category = ({ name, selectedCategory, setselectedCategory, setSearch }) =>
       paddingVertical: 6, borderWidth: 1,
       borderRadius: 8,
       elevation: selectedCategory === name ? 2 : 0,
-      shadowOffset: {
-        width: 10,
-        height: 2,
+      shadowOpacity:0.3,
+      shadowColor:'#00000050',
+      shadowOffset:{
+          width:selectedCategory === name ?4:0,
+          height:selectedCategory === name ?-4:0,
       },
-      shadowColor: '#c4c4c4',
       borderColor: theme.colors.Blue,
 
       backgroundColor: selectedCategory === name ? theme.colors.Blue : theme.colors.White

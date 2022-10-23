@@ -1,10 +1,14 @@
 import React from 'react';
-import { View, SafeAreaView } from 'react-native';
+import { View, SafeAreaView,Dimensions,ScrollView } from 'react-native';
 import { NewsList, Category } from '../../../Components';
 import Header2 from '../../../Components/Header2';
 import API from '../../../../ApiKey';
 import Searchbar from '../../../Components/Searchbar';
 
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import {Filterpopup} from '../../../Components';
+import { useSharedValue, withSpring } from 'react-native-reanimated';
+const { height: SCREEN_HEIGHT } = Dimensions.get('window');
 let Categories = [
   'business',
   'entertainment',
@@ -16,25 +20,29 @@ let Categories = [
 ]
 
 import styles from '../../Style';
-import { ScrollView } from 'react-native-gesture-handler';
 
 const Search = () => {
   const [selectedCategory, setselectedCategory] = React.useState('')
   const [searchtext, setSearchtext] = React.useState('');
+  const translateY = useSharedValue(0);//Sheet height
+  function OpenSheet(){
+      translateY.value=withSpring(-SCREEN_HEIGHT/1.4,{damping:50})
+  }
   const [search, setSearch] = React.useState(`https://newsapi.org/v2/everything?q=Inflation&sortBy=relevancy&apiKey=${API}`);
   function onClick() {
  setSearch(`https://newsapi.org/v2/everything?q=${searchtext}&sortBy=relevancy&apiKey=${API}`)
   }
   return (
+    <GestureHandlerRootView style={{flex:1}}>
     <SafeAreaView style={styles.container}>
-      <Header2 title="Search any News" />
+      <Header2 title="Search any News" icon="filter" onPress={OpenSheet}/>
       <Searchbar text={searchtext} onpress={setSearchtext} onClick={onClick} />
       <View style={{ flex: 0.1, alignItems: 'center', justifyContent: 'center' }}>
         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} contentContainerStyle={{ height: 33, paddingLeft: 24, marginTop: 8, flexDirection: 'row' }}>
           {Categories.map((cat, index) => {
             return (
-              <View style={{ marginRight: 8 }}>
-                <Category name={cat} key={index} selectedCategory={selectedCategory} setselectedCategory={setselectedCategory} setSearch={setSearch}/>
+              <View style={{ marginRight: 8 }} key={index} >
+                <Category name={cat} selectedCategory={selectedCategory} setselectedCategory={setselectedCategory} setSearch={setSearch}/>
               </View>
             )
           })}
@@ -43,7 +51,10 @@ const Search = () => {
       <View style={{ flex: 1 }}>
         <NewsList queryString={search} insearch={true} />
       </View>
+      <Filterpopup translateY={translateY} />
     </SafeAreaView>
+    
+    </GestureHandlerRootView>
   );
 };
 
