@@ -14,10 +14,12 @@ const ChannelsList = ({searchtext}) => {
             <View key={index}>
               <ChannelCard
                 key={items.id}
+                source={items.id}
                 name={items?.name}
                 url={items?.url}
                 description={items?.description}
                 category={items?.category}
+                logo={items?.logo}
                 country={items?.country}
                 language={items?.language}
               />

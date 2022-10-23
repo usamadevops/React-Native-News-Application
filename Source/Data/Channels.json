@@ -2,6 +2,7 @@
     {
       "id": "abc-news-au",
       "name": "ABC News (AU)",
+      "logo":"data:image/jpeg;base64,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",
       "description": "Australia's most trusted source of local, national and world news. Comprehensive, independent, in-depth analysis, the latest business, sport, weather and more.",
       "url": "abc.net.au",
       "category": "general",
@@ -11,6 +12,7 @@
     {
       "id": "aftenposten",
       "name": "Aftenposten",
+       "logo":"https://i1.sndcdn.com/avatars-000215444925-exbfww-t240x240.jpg",
       "description": "Norges ledende nettavis med alltid oppdaterte nyheter innenfor innenriks, utenriks, sport og kultur.",
       "url": "aftenposten.no",
       "category": "general",
@@ -20,6 +22,7 @@
     {
       "id": "al-jazeera-english",
       "name": "Al Jazeera English",
+       "logo":"https://cdn.sat.tv/wp-content/uploads/2016/05/AlJazeeraEng.png",
       "description": "News, analysis from the Middle East and worldwide, multimedia and interactives, opinions, documentaries, podcasts, long reads and broadcast schedule.",
       "url": "aljazeera.com",
       "category": "general",
@@ -29,6 +32,7 @@
     {
       "id": "ansa",
       "name": "ANSA.it",
+       "logo":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSajo5-jM25eaCTMu7xPSqCtYM40nXqdjzozquxAVt05ZcJ9u-iaSlAgwNjRnXy6xmNeFE&usqp=CAU",
       "description": "Agenzia ANSA: ultime notizie, foto, video e approfondimenti su: cronaca, politica, economia, regioni, mondo, sport, calcio, cultura e tecnologia.",
       "url": "ansa.it",
       "category": "general",
@@ -38,6 +42,7 @@
     {
       "id": "ars-technica",
       "name": "Ars Technica",
+       "logo":"https://yt3.ggpht.com/ytc/AMLnZu9QpfX_iI1pkM2fsE1pWIcwzA75CPJlzcvCQQEv=s900-c-k-c0x00ffffff-no-rj",
       "description": "The PC enthusiast's resource. Power users and the tools they love, without computing religion.",
       "url": "arstechnica.com",
       "category": "technology",
@@ -47,6 +52,7 @@
     {
       "id": "ary-news",
       "name": "Ary News",
+        "logo":"https://upload.wikimedia.org/wikipedia/commons/2/2c/Arynews.jpg",
       "description": "ARY News is a Pakistani news channel committed to bring you up-to-the minute Pakistan news and featured stories from around Pakistan and all over the world.",
       "url": "arynews.tv",
       "category": "general",
@@ -56,6 +62,7 @@
     {
       "id": "associated-press",
       "name": "Associated Press",
+        "logo":"https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Associated_Press_logo_2012.svg/1200px-Associated_Press_logo_2012.svg.png",
       "description": "The AP delivers in-depth coverage on the international, politics, lifestyle, business, and entertainment news.",
       "url": "apnews.com",
       "category": "general",
@@ -65,6 +72,7 @@
     {
       "id": "australian-financial-review",
       "name": "Australian Financial Review",
+      "logo":"https://cdn.shopify.com/s/files/1/0080/4657/5673/articles/AFR_logo_300x300.png?v=1532492892",
       "description": "The Australian Financial Review reports the latest news from business, finance, investment and politics, updated in real time. It has a reputation for independent, award-winning journalism and is essential reading for the business and investor community.",
       "url": "afr.com",
       "category": "business",
@@ -74,6 +82,7 @@
     {
       "id": "axios",
       "name": "Axios",
+      "logo":"https://user-images.githubusercontent.com/16843090/101181820-f3a63780-3612-11eb-9d3a-05452f2b0ad8.png",
       "description": "Axios are a new media company delivering vital, trustworthy news and analysis in the most efficient, illuminating and shareable ways possible.",
       "url": "axios.com",
       "category": "general",
@@ -83,6 +92,7 @@
     {
       "id": "bbc-news",
       "name": "BBC News",
+      "logo":"https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/BBC_News_2019.svg/1024px-BBC_News_2019.svg.png",
       "description": "Use BBC News for up-to-the-minute news, breaking news, video, audio and feature stories. BBC News provides trusted World and UK news as well as local and regional perspectives. Also entertainment, business, science, technology and health news.",
       "url": "bbc.co.uk",
       "category": "general",
@@ -92,6 +102,7 @@
     {
       "id": "bbc-sport",
       "name": "BBC Sport",
+      "logo":"https://m.files.bbci.co.uk/modules/bbc-morph-sport-seo-meta/1.16.9/images/bbc-sport-logo.png",
       "description": "The home of BBC Sport online. Includes live sports coverage, breaking news, results, video, audio and analysis on Football, F1, Cricket, Rugby Union, Rugby League, Golf, Tennis and all the main world sports, plus major events such as the Olympic Games.",
       "url": "bbc.co.uk",
       "category": "sports",
@@ -101,6 +112,7 @@
     {
       "id": "bild",
       "name": "Bild",
+      "logo":"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Logo_BILD.svg/1200px-Logo_BILD.svg.png",
       "description": "Die Seite 1 für aktuelle Nachrichten und Themen, Bilder und Videos aus den Bereichen News, Wirtschaft, Politik, Show, Sport, und Promis.",
       "url": "bild.de",
       "category": "general",
@@ -110,6 +122,7 @@
     {
       "id": "blasting-news-br",
       "name": "Blasting News (BR)",
+      "logo":"https://s3-eu-west-1.amazonaws.com/tpd/logos/59479d8c0000ff0005a4e0d3/0x0.png",
       "description": "Descubra a seção brasileira da Blasting News, a primeira revista feita pelo  público, com notícias globais e vídeos independentes. Junte-se a nós e torne- se um repórter.",
       "url": "blastingnews.com",
       "category": "general",
@@ -119,6 +132,7 @@
     {
       "id": "bleacher-report",
       "name": "Bleacher Report",
+      "logo":"https://yt3.ggpht.com/ytc/AMLnZu8O7TSaGsCVhNricFmE652Xi5lC1i1OoQ7GHdA5=s900-c-k-c0x00ffffff-no-rj",
       "description": "Sports journalists and bloggers covering NFL, MLB, NBA, NHL, MMA, college football and basketball, NASCAR, fantasy sports and more. News, photos, mock drafts, game scores, player profiles and more!",
       "url": "bleacherreport.com",
       "category": "sports",
@@ -128,6 +142,7 @@
     {
       "id": "bloomberg",
       "name": "Bloomberg",
+      "logo":"https://assets.stickpng.com/thumbs/608ff6fc5d1f990004970e68.png",
       "description": "Bloomberg delivers business and markets news, data, analysis, and video to the world, featuring stories from Businessweek and Bloomberg News.",
       "url": "bloomberg.com",
       "category": "business",
@@ -137,6 +152,7 @@
     {
       "id": "breitbart-news",
       "name": "Breitbart News",
+      "logo":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKiDzIjHui9KDC4nEgw1tCUqT_WsHGX3utYH2PrbHVUogqD8fKYnrQVjzTpAN-Io8LuVM&usqp=CAU",
       "description": "Syndicated news and opinion website providing continuously updated headlines to top news and analysis sources.",
       "url": "breitbart.com",
       "category": "general",
@@ -146,6 +162,7 @@
     {
       "id": "business-insider",
       "name": "Business Insider",
+      "logo":"https://i.insider.com/628273a89147a30018b48c44?width=500&format=jpeg&auto=webp",
       "description": "Business Insider is a fast-growing business site with deep financial, media, tech, and other industry verticals. Launched in 2007, the site is now the largest business news site on the web.",
       "url": "businessinsider.com",
       "category": "business",
@@ -155,6 +172,7 @@
     {
       "id": "buzzfeed",
       "name": "Buzzfeed",
+      "logo":"https://www.buzzfeed.com/static-assets/img/buzzfeed_arrow.e86a786d9e5e2250e1ed3e0ec95ba42d.png",
       "description": "BuzzFeed is a cross-platform, global network for news and entertainment that generates seven billion views each month.",
       "url": "buzzfeed.com",
       "category": "entertainment",
@@ -164,6 +182,7 @@
     {
       "id": "cbs-news",
       "name": "CBS News",
+      "logo":"https://play-lh.googleusercontent.com/mMFzGrtH3ZEf0AM9wgumkkAM0hKrnAjwR_Ber0JMOeKvkZhgdj4IWe3b_szT_C--lA",
       "description": "CBS News: dedicated to providing the best in journalism under standards it pioneered at the dawn of radio and television and continue in the digital age.",
       "url": "cbsnews.com",
       "category": "general",
@@ -173,6 +192,7 @@
     {
       "id": "cnn",
       "name": "CNN",
+      "logo":"https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/CNN_International_logo.svg/1200px-CNN_International_logo.svg.png",
       "description": "View the latest news and breaking news today for U.S., world, weather, entertainment, politics and health at CNN",
       "url": "cnn.com",
       "category": "general",
@@ -182,6 +202,7 @@
     {
       "id": "crypto-coins-news",
       "name": "Crypto Coins News",
+      "logo":"https://www.coinpoint.net/wp-content/uploads/2017/11/CCN.png",
       "description": "Providing breaking cryptocurrency news - focusing on Bitcoin, Ethereum, ICOs, blockchain technology, and smart contracts.",
       "url": "cryptonews.com",
       "category": "technology",
@@ -191,6 +212,7 @@
     {
       "id": "der-tagesspiegel",
       "name": "Der Tagesspiegel",
+      "logo":"https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_170,w_170,f_auto,b_white,q_auto:eco,dpr_1/v1419224328/shs90uzkll6kcwim6vjl.png",
       "description": "Nachrichten, News und neueste Meldungen aus dem Inland und dem Ausland - aktuell präsentiert von tagesspiegel.de.",
       "url": "tagesspiegel.de",
       "category": "general",
@@ -200,6 +222,7 @@
     {
       "id": "die-zeit",
       "name": "Die Zeit",
+      "logo":"https://brandslogos.com/wp-content/uploads/images/large/die-zeit-logo.png",
       "description": "Aktuelle Nachrichten, Kommentare, Analysen und Hintergrundberichte aus Politik, Wirtschaft, Gesellschaft, Wissen, Kultur und Sport lesen Sie auf ZEIT ONLINE.",
       "url": "zeit.de",
       "category": "business",
@@ -209,6 +232,7 @@
     {
       "id": "el-mundo",
       "name": "El Mundo",
+      "logo":"https://e00-elmundo.uecdn.es/assets/v20/img/destacadas/elmundo__logo-generica.jpg",
       "description": "Noticias, actualidad, álbumes, debates, sociedad, servicios, entretenimiento y última hora English España y el mundo.",
       "url": "elmundo.es",
       "category": "general",
@@ -218,6 +242,7 @@
     {
       "id": "engadget",
       "name": "Engadget",
+      "logo":"https://yt3.ggpht.com/ytc/AMLnZu96F-zpakWX7KaFeM6EF1UuDVv4X24s69EwS0y4Pko=s900-c-k-c0x00ffffff-no-rj",
       "description": "Engadget is a web magazine with obsessive daily coverage of everything new in gadgets and consumer electronics.",
       "url": "engadget.com",
       "category": "technology",
@@ -227,6 +252,7 @@
     {
       "id": "entertainment-weekly",
       "name": "Entertainment Weekly",
+      "logo":"https://brookspr.com/wp-content/uploads/2021/06/Entertainment-Weekly-Logo-Square.png",
       "description": "Online version of the print magazine includes entertainment news, interviews, reviews of music, film, TV and books, and a special area for magazine subscribers.",
       "url": "ew.com",
       "category": "entertainment",
@@ -236,6 +262,7 @@
     {
       "id": "espn",
       "name": "ESPN",
+      "logo":"https://1000logos.net/wp-content/uploads/2021/05/ESPN-logo.png",
       "description": "ESPN has up-to-the-minute sports news coverage, scores, highlights and commentary for NFL, MLB, NBA, College Football, NCAA Basketball and more.",
       "url": "espn.com",
       "category": "sports",
@@ -245,6 +272,7 @@
     {
       "id": "espn-cric-info",
       "name": "ESPN Cric Info",
+      "logo":"https://www.espncricinfo.com/static/images/espncricinfo-og.png",
       "description": "ESPN Cricinfo provides the most comprehensive cricket coverage available including live ball-by-ball commentary, news, unparalleled statistics, quality editorial comment and analysis.",
       "url": "espncricinfo.com",
       "category": "sports",
@@ -254,6 +282,7 @@
     {
       "id": "financial-post",
       "name": "Financial Post",
+      "logo":"https://yt3.ggpht.com/ytc/AMLnZu82UGb9ewaofdmQDIYub6lbFr6uvm-GUkglGimBTlQ=s900-c-k-c0x00ffffff-no-rj",
       "description": "Find the latest happenings in the Canadian Financial Sector and stay up to date with changing trends in Business Markets. Read trading and investing advice from professionals.",
       "url": "financialpost.com",
       "category": "business",
@@ -263,6 +292,7 @@
     {
       "id": "focus",
       "name": "Focus",
+      "logo":"https://play-lh.googleusercontent.com/8qNtHlWEp0K6GvUoslKC6hoFjNSCs292sjZ_lkX8EExRg_OfE7eKmjn1Mm-J3kCxqg",
       "description": "Minutenaktuelle Nachrichten und Service-Informationen von Deutschlands modernem Nachrichtenmagazin.",
       "url": "focus.de",
       "category": "general",
@@ -272,6 +302,7 @@
     {
       "id": "football-italia",
       "name": "Football Italia",
+      "logo":"https://play-lh.googleusercontent.com/EmIxNuaV9asdhJVilaxxw-JT-cqVxvryPv5KGP88NQEQ7_4NJ2n7tx0wS_MUyayMJQ",
       "description": "Italian football news, analysis, fixtures and results for the latest from Serie A, Serie B and the Azzurri.",
       "url": "football-italia.net",
       "category": "sports",
@@ -281,6 +312,7 @@
     {
       "id": "fortune",
       "name": "Fortune",
+      "logo":"https://www.typeroom.eu/assets/original/photographs/scanner/835/201611/fortune_logo_typeroom.jpg",
       "description": "Fortune 500 Daily and Breaking Business News",
       "url": "fortune.com",
       "category": "business",
@@ -290,6 +322,7 @@
     {
       "id": "four-four-two",
       "name": "FourFourTwo",
+      "logo":"https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_256,w_256,f_auto,q_auto:eco,dpr_1/uwng4qbhzyutxblgj94p",
       "description": "The latest football news, in-depth features, tactical and statistical analysis from FourFourTwo, the UK&#039;s favourite football monthly.",
       "url": "fourfourtwo.com",
       "category": "sports",
@@ -299,6 +332,7 @@
     {
       "id": "fox-news",
       "name": "Fox News",
+      "logo":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSV_WOHhCdv0NKSivfseew5P3YQXACmQd4famhXrtHyKnJ-tycbDwzZ9bHtcwVKv27eqBo&usqp=CAU",
       "description": "Breaking News, Latest News and Current News from FOXNews.com. Breaking news and video. Latest Current News: U.S., World, Entertainment, Health, Business, Technology, Politics, Sports.",
       "url": "foxnews.com",
       "category": "general",
@@ -308,6 +342,7 @@
     {
       "id": "fox-sports",
       "name": "Fox Sports",
+      "logo":"https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/FOX_Sports_logo.svg/1200px-FOX_Sports_logo.svg.png",
       "description": "Find live scores, player and team news, videos, rumors, stats, standings, schedules and fantasy games on FOX Sports.",
       "url": "foxsports.com",
       "category": "sports",
@@ -317,6 +352,7 @@
     {
       "id": "globo",
       "name": "Globo",
+      "logo":"https://upload.wikimedia.org/wikipedia/en/thumb/b/b8/TV_Globo_Logo_2021.png/220px-TV_Globo_Logo_2021.png",
       "description": "Só na globo.com você encontra tudo sobre o conteúdo e marcas do Grupo Globo. O melhor acervo de vídeos online sobre entretenimento, esportes e jornalismo do Brasil.",
       "url": "globo.com",
       "category": "general",
@@ -326,6 +362,7 @@
     {
       "id": "il-sole-24-ore",
       "name": "Il Sole 24 Ore",
+      "logo":"https://nativalab.com/wp-content/uploads/2021/02/il-sole-24-ore-logo-e1553095911603.png",
       "description": "Notizie di economia, cronaca italiana ed estera, quotazioni borsa in tempo reale e di finanza, norme e tributi, fondi e obbligazioni, mutui, prestiti e lavoro a cura de Il Sole 24 Ore.",
       "url": "ilsole24ore.com",
       "category": "business",
@@ -335,6 +372,7 @@
     {
       "id": "independent",
       "name": "Independent",
+      "logo":"https://seeklogo.com/images/I/independent-truck-logo-21A39E39EC-seeklogo.com.png",
       "description": "National morning quality (tabloid) includes free online access to news and supplements. Insight by Robert Fisk and various other columnists.",
       "url": "independent.co.uk",
       "category": "general",
@@ -344,6 +382,7 @@
     {
       "id": "infobae",
       "name": "Infobae",
+      "logo":"https://play-lh.googleusercontent.com/aRhlAJmDLUcr0awiooFzB7a4RncajITPWRIwYSUogHJf37MYN2CLtnTyl3LV6mwzzQ",
       "description": "Noticias de Argentina y del mundo English tiempo real. Información, videos y fotos sobre los hechos más relevantes y sus protagonistas. Léelo antes English infobae.",
       "url": "infobae.com",
       "category": "general",
@@ -353,6 +392,7 @@
     {
       "id": "info-money",
       "name": "InfoMoney",
+      "logo":"data:image/png;base64,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",
       "description": "No InfoMoney você encontra tudo o que precisa sobre dinheiro. Ações, investimentos, bolsas de valores e muito mais. Aqui você encontra informação que vale dinheiro!",
       "url": "infomoney.com.br",
       "category": "business",
@@ -362,6 +402,7 @@
     {
       "id": "la-gaceta",
       "name": "La Gaceta",
+      "logo":"https://www.lagaceta.com.ar/images/ico-logo720.jpg",
       "description": "El diario de Tucumán, noticias 24 horas online - San Miguel de Tucumán - Argentina - Ultimo momento - Ultimas noticias.",
       "url": "lagaceta.com.ar",
       "category": "general",
@@ -371,6 +412,7 @@
     {
       "id": "la-nacion",
       "name": "La Nacion",
+      "logo":"data:image/jpeg;base64,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",
       "description": "Información confiable English Internet. Noticias de Argentina y del mundo - ¡Informate ya!",
       "url": "lanacion.com.ar",
       "category": "general",
@@ -380,6 +422,7 @@
     {
       "id": "la-repubblica",
       "name": "La Repubblica",
+      "logo":"https://yt3.ggpht.com/e_C0OFuZRnOq0eD8vdWKlTbOUn295hgE3YkqujRGToTKR5BgbBy9_xtOeD1n-n-pOfewf90psA=s900-c-k-c0x00ffffff-no-rj",
       "description": "Breaking News, Latest News and Current News from FOXNews.com. Breaking news and video. Latest Current News: U.S., World, Entertainment, Health, Business, Technology, Politics, Sports.",
       "url": "repubblica.it",
       "category": "general",
@@ -389,6 +432,7 @@
     {
       "id": "le-monde",
       "name": "Le Monde",
+      "logo":"https://play-lh.googleusercontent.com/aN_UGrgEUuShQGFMU1Kuhwy2cCU6CL9spKqAyP4MREEPzJuqrxvKQGPqPAyrshjmZM0",
       "description": "Les articles du journal et toute l'actualit&eacute; English continu : International, France, Soci&eacute;t&eacute;, Economie, Culture, Environnement, Blogs ...",
       "url": "lemonde.fr",
       "category": "general",
@@ -398,6 +442,7 @@
     {
       "id": "lenta",
       "name": "Lenta",
+      "logo":"https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_256,w_256,f_auto,q_auto:eco,dpr_1/v1427346751/vvtfupfquobtsxlnzofv.png",
       "description": "Новости, статьи, фотографии, видео. Семь дней в неделю, 24 часа в сутки.",
       "url": "lenta.ru",
       "category": "general",
@@ -407,6 +452,7 @@
     {
       "id": "lequipe",
       "name": "L'equipe",
+      "logo":"https://medias.lequipe.fr/img-photo-png/-/1500000000833469/0-0-0-70/0cb67.png",
       "description": "Le sport English direct sur L'EQUIPE.fr. Les informations, résultats et classements de tous les sports. Directs commentés, images et vidéos à regarder et à partager !",
       "url": "lequipe.fr",
       "category": "sports",
@@ -416,6 +462,7 @@
     {
       "id": "les-echos",
       "name": "Les Echos",
+      "logo":"https://hellowilla.co/wp-content/uploads/2020/06/les-echos.jpg",
       "description": "Toute l'actualité économique, financière et boursière française et internationale sur Les Echos.fr",
       "url": "lesechos.fr",
       "category": "business",
@@ -425,6 +472,7 @@
     {
       "id": "liberation",
       "name": "Libération",
+      "logo":"https://logos-download.com/wp-content/uploads/2019/07/Lib%C3%A9ration_Logo.png",
       "description": "Toute l'actualité English direct - photos et vidéos avec Libération",
       "url": "liberation.fr",
       "category": "general",
@@ -434,6 +482,7 @@
     {
       "id": "marca",
       "name": "Marca",
+      "logo":"https://e00-marca.uecdn.es/assets/v29/img/destacadas/marca__logo-generica.jpg",
       "description": "La mejor información deportiva English castellano actualizada minuto a minuto English noticias, vídeos, fotos, retransmisiones y resultados English directo.",
       "url": "marca.com",
       "category": "sports",
@@ -443,6 +492,7 @@
     {
       "id": "mashable",
       "name": "Mashable",
+      "logo":"https://mashable.com/images/mashable-logomark.png",
       "description": "Mashable is a global, multi-platform media and entertainment company.",
       "url": "mashable.com",
       "category": "entertainment",
@@ -452,6 +502,7 @@
     {
       "id": "medical-news-today",
       "name": "Medical News Today",
+      "logo":"https://tukuz.com/wp-content/uploads/2020/02/medical-news-today-mnt-logo-vector.png",
       "description": "Medical news and health news headlines posted throughout the day, every day.",
       "url": "medicalnewstoday.com",
       "category": "health",
@@ -461,6 +512,7 @@
     {
       "id": "msnbc",
       "name": "MSNBC",
+      "logo":"https://media1.s-nbcnews.com/j/newscms/2021_35/3502573/mslogo_f83d3079a263f4b5b2af77cd6cccfbcf.nbcnews-fp-1200-630.png",
       "description": "Breaking news and in-depth analysis of the headlines, as well as commentary and informed perspectives from The Rachel Maddow Show, Morning Joe & more.",
       "url": "msnbc.com",
       "category": "general",
@@ -470,6 +522,7 @@
     {
       "id": "mtv-news",
       "name": "MTV News",
+      "logo":"https://pbs.twimg.com/profile_images/1298941195381600257/ATc93--9_400x400.jpg",
       "description": "The ultimate news source for music, celebrity, entertainment, movies, and current events on the web. It's pop culture on steroids.",
       "url": "mtv.com",
       "category": "entertainment",
@@ -479,6 +532,7 @@
     {
       "id": "mtv-news-uk",
       "name": "MTV News (UK)",
+      "logo":"https://yt3.ggpht.com/qmjs2m2E8h-tdJzmiCF049h-_f-Aj0RYgvi5PeSk9LvOulJDaBKejUGFXIqfDXTag5EbfnA8vZ4=s900-c-k-c0x00ffffff-no-rj",
       "description": "All the latest celebrity news, gossip, exclusive interviews and pictures from the world of music and entertainment.",
       "url": "mtv.co.uk",
       "category": "entertainment",
@@ -488,6 +542,7 @@
     {
       "id": "national-geographic",
       "name": "National Geographic",
+      "logo":"https://www.ifia.com/wp-content/uploads/2020/05/seo.ngsversion.1565614141405.jpg",
       "description": "Reporting our world daily: original nature and science news from National Geographic.",
       "url": "news.nationalgeographic.com",
       "category": "science",
@@ -497,6 +552,7 @@
     {
       "id": "national-review",
       "name": "National Review",
+      "logo":"https://www.nationalreview.com/wp-content/themes/national-review/static/images/social.jpg",
       "description": "National Review: Conservative News, Opinion, Politics, Policy, & Current Events.",
       "url": "nationalreview.com",
       "category": "general",
@@ -506,6 +562,7 @@
     {
       "id": "nbc-news",
       "name": "NBC News",
+      "logo":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/NBC_News_2011.svg/1200px-NBC_News_2011.svg.png",
       "description": "Breaking news, videos, and the latest top stories in world news, business, politics, health and pop culture.",
       "url": "nbcnews.com",
       "category": "general",
@@ -515,6 +572,7 @@
     {
       "id": "news24",
       "name": "News24",
+      "logo":"https://yt3.ggpht.com/ytc/AMLnZu9Gh_5gln8reAF9-2_65R9dfSIKuEOihn4ap2VHaQ=s900-c-k-c0x00ffffff-no-rj",
       "description": "South Africa's premier news source, provides breaking news on national, world, Africa, sport, entertainment, technology and more.",
       "url": "news24.com",
       "category": "general",
@@ -524,6 +582,7 @@
     {
       "id": "new-scientist",
       "name": "New Scientist",
+      "logo":"https://play-lh.googleusercontent.com/3R-qOqABR_6D4KDmF9-hY-KSpLAEufEvuDyYhG4DhZoYNrjOP_wfyFLi2lj4CD-lOZA",
       "description": "Breaking science and technology news from around the world. Exclusive stories and expert analysis on space, technology, health, physics, life and Earth.",
       "url": "newscientist.com",
       "category": "science",
@@ -533,6 +592,7 @@
     {
       "id": "news-com-au",
       "name": "News.com.au",
+      "logo":"https://upload.wikimedia.org/wikipedia/en/thumb/c/c5/News-com-au_logo.svg/1200px-News-com-au_logo.svg.png",
       "description": "We say what people are thinking and cover the issues that get people talking balancing Australian and global moments — from politics to pop culture.",
       "url": "news.com.au",
       "category": "general",
@@ -542,6 +602,7 @@
     {
       "id": "newsweek",
       "name": "Newsweek",
+      "logo":"https://d.newsweek.com/en/full/2070634/newsweek-logo-social.png?w=1600&h=1600&l=48&t=53&q=88&f=a4e919b3453f517d15785223081d4a1a",
       "description": "Newsweek provides in-depth analysis, news and opinion about international issues, technology, business, culture and politics.",
       "url": "newsweek.com",
       "category": "general",
@@ -551,6 +612,7 @@
     {
       "id": "new-york-magazine",
       "name": "New York Magazine",
+      "logo":"https://assets.nymag.com/media/sites/nymag/icon.1500x1500.png",
       "description": "NYMAG and New York magazine cover the new, the undiscovered, the next in politics, culture, food, fashion, and behavior nationally, through a New York lens.",
       "url": "nymag.com",
       "category": "general",
@@ -560,6 +622,7 @@
     {
       "id": "next-big-future",
       "name": "Next Big Future",
+      "logo":"data:image/png;base64,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",
       "description": "Coverage of science and technology that have the potential for disruption, and analysis of plans, policies, and technology that enable radical improvement.",
       "url": "nextbigfuture.com",
       "category": "science",
@@ -569,6 +632,7 @@
     {
       "id": "nfl-news",
       "name": "NFL News",
+      "logo":"https://static.www.nfl.com/image/upload/v1554321393/league/nvfr7ogywskqrfaiu38m.svg",
       "description": "The official source for NFL news, schedules, stats, scores and more.",
       "url": "nfl.com",
       "category": "sports",
@@ -578,6 +642,7 @@
     {
       "id": "nhl-news",
       "name": "NHL News",
+      "logo":"https://logos-world.net/wp-content/uploads/2021/09/NHL-Logo.png",
       "description": "The most up-to-date breaking hockey news from the official source including interviews, rumors, statistics and schedules.",
       "url": "nhl.com",
       "category": "sports",
@@ -587,6 +652,7 @@
     {
       "id": "nrk",
       "name": "NRK",
+      "logo":"https://cdn.freebiesupply.com/logos/large/2x/nrk-logo-png-transparent.png",
       "description": "NRK er Norges største tilbud på nett: nyheter fra Norge og verden, lokalnyheter, radio- og tv-program, podcast, vær, helse-, kultur-, underholdning-, humor- og debattstoff.",
       "url": "nrk.no",
       "category": "general",
@@ -596,6 +662,7 @@
     {
       "id": "politico",
       "name": "Politico",
+      "logo":"https://static.politico.com/da/f5/44342c424c68b675719324b1106b/politico.jpg",
       "description": "Political news about Congress, the White House, campaigns, lobbyists and issues.",
       "url": "politico.com",
       "category": "general",
@@ -605,6 +672,7 @@
     {
       "id": "polygon",
       "name": "Polygon",
+      "logo":"data:image/png;base64,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",
       "description": "Polygon is a gaming website in partnership with Vox Media. Our culture focused site covers games, their creators, the fans, trending stories and entertainment news.",
       "url": "polygon.com",
       "category": "entertainment",
@@ -614,6 +682,7 @@
     {
       "id": "rbc",
       "name": "RBC",
+      "logo":"data:image/png;base64,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",
       "description": "Главные новости политики, экономики и бизнеса, комментарии аналитиков, финансовые данные с российских и мировых биржевых систем на сайте rbc.ru.",
       "url": "rbc.ru",
       "category": "general",
@@ -623,6 +692,7 @@
     {
       "id": "recode",
       "name": "Recode",
+      "logo":"http://cdn.shopify.com/s/files/1/0477/3327/6826/files/F49FB30A-8500-4467-A398-FB3B3C2EBCF4_998a3e66-5174-4204-896d-af47a024ed78.jpg?v=1627396348",
       "description": "Get the latest independent tech news, reviews and analysis from Recode with the most informed and respected journalists in technology and media.",
       "url": "recode.net",
       "category": "technology",
@@ -632,6 +702,7 @@
     {
       "id": "reddit-r-all",
       "name": "Reddit /r/all",
+      "logo":"",
       "description": "Reddit is an entertainment, social news networking service, and news website. Reddit's registered community members can submit content, such as text posts or direct links.",
       "url": "reddit.com",
       "category": "general",
@@ -641,6 +712,7 @@
     {
       "id": "reuters",
       "name": "Reuters",
+      "logo":"",
       "description": "Reuters.com brings you the latest news from around the world, covering breaking news in business, politics, entertainment, technology, video and pictures.",
       "url": "reuters.com",
       "category": "general",
@@ -650,6 +722,7 @@
     {
       "id": "rt",
       "name": "RT",
+      "logo":"",
       "description": "Актуальная картина дня на RT: круглосуточное ежедневное обновление новостей политики, бизнеса, финансов, спорта, науки, культуры. Онлайн-репортажи с места событий. Комментарии экспертов, актуальные интервью, фото и видео репортажи.",
       "url": "russian.rt.com",
       "category": "general",
@@ -659,6 +732,7 @@
     {
       "id": "rte",
       "name": "RTE",
+      "logo":"",
       "description": "Get all of the latest breaking local and international news stories as they happen, with up to the minute updates and analysis, from Ireland's National Broadcaster.",
       "url": "rte.ie",
       "category": "general",
@@ -668,6 +742,7 @@
     {
       "id": "rtl-nieuws",
       "name": "RTL Nieuws",
+      "logo":"",
       "description": "Volg het nieuws terwijl het gebeurt. RTL Nieuws informeert haar lezers op een onafhankelijke, boeiende English toegankelijke wijze over belangrijke ontwikkelingen in eigen land English de rest van de wereld.",
       "url": "rtlnieuws.nl",
       "category": "general",
@@ -677,6 +752,7 @@
     {
       "id": "sabq",
       "name": "SABQ",
+      "logo":"",
       "description": "صحيفة الكترونية سعودية هدفها السبق في نقل الحدث بمهنية ومصداقية خدمة للوطن والمواطن.",
       "url": "sabq.org",
       "category": "general",
@@ -686,6 +762,7 @@
     {
       "id": "spiegel-online",
       "name": "Spiegel Online",
+      "logo":"",
       "description": "Deutschlands führende Nachrichtenseite. Alles Wichtige aus Politik, Wirtschaft, Sport, Kultur, Wissenschaft, Technik und mehr.",
       "url": "spiegel.de",
       "category": "general",
@@ -695,6 +772,7 @@
     {
       "id": "svenska-dagbladet",
       "name": "Svenska Dagbladet",
+      "logo":"",
       "description": "Sveriges ledande mediesajt - SvD.se. Svenska Dagbladets nyhetssajt låter läsarna ta plats och fördjupar nyheterna.",
       "url": "svd.se",
       "category": "general",
@@ -704,6 +782,7 @@
     {
       "id": "t3n",
       "name": "T3n",
+      "logo":"",
       "description": "Das Online-Magazin bietet Artikel zu den Themen E-Business, Social Media, Startups und Webdesign.",
       "url": "t3n.de",
       "category": "technology",
@@ -713,6 +792,7 @@
     {
       "id": "talksport",
       "name": "TalkSport",
+      "logo":"",
       "description": "Tune in to the world's biggest sports radio station - Live Premier League football coverage, breaking sports news, transfer rumours &amp; exclusive interviews.",
       "url": "talksport.com",
       "category": "sports",
@@ -722,6 +802,7 @@
     {
       "id": "techcrunch",
       "name": "TechCrunch",
+      "logo":"",
       "description": "TechCrunch is a leading technology media property, dedicated to obsessively profiling startups, reviewing new Internet products, and breaking tech news.",
       "url": "techcrunch.com",
       "category": "technology",
@@ -731,6 +812,7 @@
     {
       "id": "techcrunch-cn",
       "name": "TechCrunch (CN)",
+      "logo":"",
       "description": "TechCrunch is a leading technology media property, dedicated to obsessively profiling startups, reviewing new Internet products, and breaking tech news.",
       "url": "techcrunch.cn",
       "category": "technology",
@@ -740,6 +822,7 @@
     {
       "id": "techradar",
       "name": "TechRadar",
+      "logo":"",
       "description": "The latest technology news and reviews, covering computing, home entertainment systems, gadgets and more.",
       "url": "techradar.com",
       "category": "technology",
@@ -749,6 +832,7 @@
     {
       "id": "the-american-conservative",
       "name": "The American Conservative",
+      "logo":"",
       "description": "Realism and reform. A new voice for a new generation of conservatives.",
       "url": "theamericanconservative.com/",
       "category": "general",
@@ -758,6 +842,7 @@
     {
       "id": "the-globe-and-mail",
       "name": "The Globe And Mail",
+      "logo":"",
       "description": "The Globe and Mail offers the most authoritative news in Canada, featuring national and international news.",
       "url": "theglobeandmail.com",
       "category": "general",
@@ -767,6 +852,7 @@
     {
       "id": "the-hill",
       "name": "The Hill",
+      "logo":"",
       "description": "The Hill is a top US political website, read by the White House and more lawmakers than any other site -- vital for policy, politics and election campaigns.",
       "url": "thehill.com",
       "category": "general",
@@ -776,6 +862,7 @@
     {
       "id": "the-hindu",
       "name": "The Hindu",
+      "logo":"",
       "description": "The Hindu. latest news, analysis, comment, in-depth coverage of politics, business, sport, environment, cinema and arts from India's national newspaper.",
       "url": "thehindu.com",
       "category": "general",
@@ -785,6 +872,7 @@
     {
       "id": "the-huffington-post",
       "name": "The Huffington Post",
+      "logo":"",
       "description": "The Huffington Post is a politically liberal American online news aggregator and blog that has both localized and international editions founded by Arianna Huffington, Kenneth Lerer, Andrew Breitbart, and Jonah Peretti, featuring columnists.",
       "url": "huffingtonpost.com",
       "category": "general",
@@ -794,6 +882,7 @@
     {
       "id": "the-irish-times",
       "name": "The Irish Times",
+      "logo":"",
       "description": "The Irish Times online. Latest news including sport, analysis, business, weather and more from the definitive brand of quality news in Ireland.",
       "url": "irishtimes.com",
       "category": "general",
@@ -803,6 +892,7 @@
     {
       "id": "the-jerusalem-post",
       "name": "The Jerusalem Post",
+      "logo":"",
       "description": "The Jerusalem Post is the leading online newspaper for English speaking Jewry since 1932, bringing news and updates from the Middle East and all over the Jewish world.",
       "url": "jpost.com/",
       "category": "general",
@@ -812,6 +902,7 @@
     {
       "id": "the-lad-bible",
       "name": "The Lad Bible",
+      "logo":"",
       "description": "The LAD Bible is one of the largest community for guys aged 16-30 in the world. Send USA your funniest pictures and videos!",
       "url": "theladbible.com",
       "category": "entertainment",
@@ -821,6 +912,7 @@
     {
       "id": "the-next-web",
       "name": "The Next Web",
+      "logo":"",
       "description": "The Next Web is one of the world’s largest online publications that delivers an international perspective on the latest news about Internet technology, business and culture.",
       "url": "thenextweb.com",
       "category": "technology",
@@ -830,6 +922,7 @@
     {
       "id": "the-sport-bible",
       "name": "The Sport Bible",
+      "logo":"",
       "description": "TheSPORTbible is one of the largest communities for sports fans across the world. Send USA your sporting pictures and videos!",
       "url": "thesportbible.com",
       "category": "sports",
@@ -839,6 +932,7 @@
     {
       "id": "the-times-of-india",
       "name": "The Times of India",
+      "logo":"",
       "description": "Times of India brings the Latest News and Top Breaking headlines on Politics and Current Affairs in India and around the World, Sports, Business, Bollywood News and Entertainment, Science, Technology, Health and Fitness news, Cricket and opinions from leading columnists.",
       "url": "timesofindia.indiatimes.com",
       "category": "general",
@@ -848,6 +942,7 @@
     {
       "id": "the-verge",
       "name": "The Verge",
+      "logo":"",
       "description": "The Verge covers the intersection of technology, science, art, and culture.",
       "url": "theverge.com",
       "category": "technology",
@@ -857,6 +952,7 @@
     {
       "id": "the-wall-street-journal",
       "name": "The Wall Street Journal",
+      "logo":"",
       "description": "WSJ online coverage of breaking news and current headlines from the US and around the world. Top stories, photos, videos, detailed analysis and in-depth reporting.",
       "url": "wsj.com",
       "category": "business",
@@ -866,6 +962,7 @@
     {
       "id": "the-washington-post",
       "name": "The Washington Post",
+      "logo":"",
       "description": "Breaking news and analysis on politics, business, world national news, entertainment more. In-depth DC, Virginia, Maryland news coverage including traffic, weather, crime, education, restaurant reviews and more.",
       "url": "washingtonpost.com",
       "category": "general",
@@ -875,6 +972,7 @@
     {
       "id": "the-washington-times",
       "name": "The Washington Times",
+      "logo":"",
       "description": "The Washington Times delivers breaking news and commentary on the issues that affect the future of our nation.",
       "url": "washingtontimes.com",
       "category": "general",
@@ -884,6 +982,7 @@
     {
       "id": "time",
       "name": "Time",
+      "logo":"",
       "description": "Breaking news and analysis from TIME.com. Politics, world news, photos, video, tech reviews, health, science and entertainment news.",
       "url": "time.com",
       "category": "general",
@@ -893,6 +992,7 @@
     {
       "id": "usa-today",
       "name": "USA Today",
+      "logo":"",
       "description": "Get the latest national, international, and political news at USATODAY.com.",
       "url": "usatoday.com",
       "category": "general",
@@ -902,6 +1002,7 @@
     {
       "id": "vice-news",
       "name": "Vice News",
+      "logo":"",
       "description": "Vice News is Vice Media, Inc.'s current affairs channel, producing daily documentary essays and video through its website and YouTube channel. It promotes itself on its coverage of \"under - reported stories\".",
       "url": "news.vice.com",
       "category": "general",
@@ -911,6 +1012,7 @@
     {
       "id": "wired",
       "name": "Wired",
+      "logo":"",
       "description": "Wired is a monthly American magazine, published in print and online editions, that focuses on how emerging technologies affect culture, the economy, and politics.",
       "url": "wired.com",
       "category": "technology",
@@ -920,6 +1022,7 @@
     {
       "id": "wired-de",
       "name": "Wired.de",
+      "logo":"",
       "description": "Wired reports on how emerging technologies affect culture, the economy and politics.",
       "url": "wired.de",
       "category": "technology",
@@ -929,6 +1032,7 @@
     {
       "id": "wirtschafts-woche",
       "name": "Wirtschafts Woche",
+      "logo":"",
       "description": "Das Online-Portal des führenden Wirtschaftsmagazins in Deutschland. Das Entscheidende zu Unternehmen, Finanzen, Erfolg und Technik.",
       "url": "wiwo.de",
       "category": "business",
@@ -938,6 +1042,7 @@
     {
       "id": "xinhua-net",
       "name": "Xinhua Net",
+      "logo":"",
       "description": "中国主要重点新闻网站,依托新华社遍布全球的采编网络,记者遍布世界100多个国家和地区,地方频道分布全国31个省市自治区,每天24小时同时使用6种语言滚动发稿,权威、准确、及时播发国内外重要新闻和重大突发事件,受众覆盖200多个国家和地区,发展论坛是全球知名的中文论坛。",
       "url": "xinhuanet.com",
       "category": "general",
@@ -947,6 +1052,7 @@
     {
       "id": "ynet",
       "name": "Ynet",
+        "logo":"https://www.ynetnews.com/images/news_defualt.jpg",
       "description": "ynet דף הבית: אתר החדשות המוביל בישראל מבית ידיעות אחרונות. סיקור מלא של חדשות מישראל והעולם, ספורט, כלכלה, תרבות, אוכל, מדע וטבע, כל מה שקורה וכל מה שמעניין ב ynet.",
       "url": "ynet.co.il",
       "category": "general",

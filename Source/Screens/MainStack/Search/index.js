@@ -23,7 +23,7 @@ const Search = () => {
   const [searchtext, setSearchtext] = React.useState('');
   const [search, setSearch] = React.useState(`https://newsapi.org/v2/everything?q=Inflation&sortBy=relevancy&apiKey=${API}`);
   function onClick() {
- setSearch(`https://newsapi.org/v2/everything?q=${search}&sortBy=relevancy&apiKey=${API}`)
+ setSearch(`https://newsapi.org/v2/everything?q=${searchtext}&sortBy=relevancy&apiKey=${API}`)
   }
   return (
     <SafeAreaView style={styles.container}>

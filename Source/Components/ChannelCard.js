@@ -5,12 +5,14 @@ import {theme} from '../constants';
 import {fontFamily} from '../constants/Fonts';
 import {BackButton} from '../assets/Icons';
 import {useNavigation} from '@react-navigation/native';
-const ChannelCard = ({ name, description, category, country, language, url }) => {
+const ChannelCard = ({ name,source, description, category, country, language, url,logo }) => {
 
   const navigation = useNavigation();
   return (
     <Pressable android_ripple={{ color: '#FFFAFB', borderless: false, radius: theme.constants.screenWidth  }} onPress={() => navigation.navigate('TopicProfile', {
       channelName: name,
+      channelLogo:logo,
+      source:source,
       channelDesc: description,
       channelCategory: category,
       channelCountry: country,
@@ -28,7 +30,12 @@ const ChannelCard = ({ name, description, category, country, language, url }) =>
         <View style={styles.SmallCardContainer}>
         
           <View style={{ flex: 3,flexDirection:'row' }}>
-               
+          <View style={{flexDirection: 'row', paddingRight: 15}}>
+            <Image
+              source={logo!==''? {uri:logo} : require('../assets/images/CNN.png')}
+              style={{width: 50, height: 50, borderRadius: 5}}
+            />
+          </View> 
             <View
               style={{
                 flexDirection: 'column',
@@ -49,7 +56,7 @@ const ChannelCard = ({ name, description, category, country, language, url }) =>
               <Text
                 style={{
                   fontFamily: fontFamily.Bozon_Demi_Bold,
-                  fontSize: theme.fonts.subTitle.fontSize,
+                  fontSize: theme.fonts.body.fontSize,
                   lineHeight: 22,
                   letterSpacing: 0.34,
                   color: theme.colors.MediumGray,
@@ -59,19 +66,19 @@ const ChannelCard = ({ name, description, category, country, language, url }) =>
                
                 <Text style={{
                   fontFamily: fontFamily.Bozon_Demi_Bold,
-                  fontSize: theme.fonts.caption.fontSize,
+                  fontSize: theme.fonts.body.fontSize,
                   lineHeight: 22,
                   letterSpacing: 0.34,
                   color: theme.colors.MediumGray,
                 }}>
                   {'   '}
-                  ▪
+                  •
                   {'   '}
                 </Text>
                 <Text
                 style={{
                   fontFamily: fontFamily.Bozon_Demi_Bold,
-                  fontSize: theme.fonts.subTitle.fontSize,
+                  fontSize: theme.fonts.body.fontSize,
                   lineHeight: 22,
                   letterSpacing: 0.34,
                   color: theme.colors.MediumGray,

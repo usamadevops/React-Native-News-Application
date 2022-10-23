@@ -5,18 +5,21 @@ import styles from './styles';
 import { theme } from '../constants';
 import { useNavigation } from '@react-navigation/native';
 
-const TopNewsCard = ({TopNews}) => {
+const TopNewsCard = ({TopNews,inProfile}) => {
   console.log(TopNews);
   const AnimatedFlatlist = Animated.createAnimatedComponent(FlatList);
 const navigation =useNavigation();
   return (
     <View style={styles.Maincontainer}>
-      <View
-        style={{alignSelf: 'flex-start', paddingLeft: 18, paddingVertical: 15}}>
-        <Text style={styles.titleText}>What's happening in the World?</Text>
-        <Text style={styles.subTitleText}>Here's You can see </Text>
-      </View>
-
+     
+          <View
+          style={{alignSelf: 'flex-start', paddingLeft: 18, paddingVertical: 15}}>
+          <Text style={styles.titleText}>{!inProfile?`What's happening in the World?`:'• Headlines'}</Text>
+          <Text style={styles.subTitleText}>{!inProfile?`Here's You can see`:`Scroll Right to see more«`} </Text>
+        </View>
+       
+      
+     
       <AnimatedFlatlist
         data={TopNews}
         horizontal={true}
