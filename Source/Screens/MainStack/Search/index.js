@@ -4,7 +4,6 @@ import { NewsList, Category } from '../../../Components';
 import Header2 from '../../../Components/Header2';
 import API from '../../../../ApiKey';
 import Searchbar from '../../../Components/Searchbar';
-
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import {Filterpopup} from '../../../Components';
 import { useSharedValue, withSpring } from 'react-native-reanimated';
@@ -25,13 +24,16 @@ const Search = () => {
   const [selectedCategory, setselectedCategory] = React.useState('')
   const [searchtext, setSearchtext] = React.useState('');
   const translateY = useSharedValue(0);//Sheet height
-  function OpenSheet(){
+  const OpenSheet=()=>{
       translateY.value=withSpring(-SCREEN_HEIGHT/1.4,{damping:50})
+      console.log(translateY,SCREEN_HEIGHT);
   }
   const [search, setSearch] = React.useState(`https://newsapi.org/v2/everything?q=Inflation&sortBy=relevancy&apiKey=${API}`);
   function onClick() {
+    if(searchtext!==''){  
  setSearch(`https://newsapi.org/v2/everything?q=${searchtext}&sortBy=relevancy&apiKey=${API}`)
-  }
+    }  
+}
   return (
     <GestureHandlerRootView style={{flex:1}}>
     <SafeAreaView style={styles.container}>
@@ -51,9 +53,8 @@ const Search = () => {
       <View style={{ flex: 1 }}>
         <NewsList queryString={search} insearch={true} />
       </View>
-      <Filterpopup translateY={translateY} />
     </SafeAreaView>
-    
+    <Filterpopup translateY={translateY}  />
     </GestureHandlerRootView>
   );
 };

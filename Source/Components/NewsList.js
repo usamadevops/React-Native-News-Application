@@ -32,7 +32,7 @@ const NewsList = ({ queryString }) => {
 
   return (
     <View style={styles.container}>
-      <ScrollView horizontal={false}>
+      <ScrollView horizontal={false} scrollToOverflowEnabled={true} bounces={true}>
         {
           isLoading2 ? (
             <View style={styles.Maincontainer}>

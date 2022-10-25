@@ -1,9 +1,10 @@
-import { View, Text, StyleSheet, Dimensions } from 'react-native'
+import { View, StyleSheet, Dimensions } from 'react-native'
 import React from 'react';
 import { Gesture, GestureDetector } from 'react-native-gesture-handler';
 const { height: SCREEN_HEIGHT } = Dimensions.get('window');
 import Animated, { useAnimatedStyle, useSharedValue, withSpring } from 'react-native-reanimated';
 const Filterpopup = ({ translateY }) => {
+    
     const context = useSharedValue(0);
     const gesture = Gesture.Pan().onStart(() => {
         context.value = { y: translateY.value };
@@ -46,9 +47,9 @@ const styles = StyleSheet.create({
 
         height: '100%',
         width: '100%',
-        backgroundColor: "#fff",
+        backgroundColor: "#000",
         position: 'absolute',
-        top: SCREEN_HEIGHT,
+        bottom: SCREEN_HEIGHT,
         elevation: -20,
         shadowOpacity: 0.8,
         shadowColor: '#00000040',
@@ -57,7 +58,7 @@ const styles = StyleSheet.create({
             height: -5,
         },
         borderRadius: 20,
-        zIndex: 1000,
+        
 
     },
     line: {

@@ -9,21 +9,28 @@ import {Authorization,isLoadingSelector} from '../redux/Modules/auth/selector.au
 
 const Route = ({GetDataFunc}) => {
   // const Auth=useSelector(Authorization,shallowEqual)
+  const [loading, setloading] = React.useState(false);
   // const loading =useSelector(isLoadingSelector,shallowEqual);
   
-  //   React.useEffect(() => {
+    React.useEffect(() => {
   //  GetDataFunc();
-  //   }, [Auth]);
+  setloading(true)
 
-  // if (loading) {
-  //   return <Splash />;
-  // } else {
+  setTimeout(() => {
+    setloading(false)
+
+  }, 2000);
+    }, []);
+
+  if (loading) {
+    return <Splash />;
+  } else {
     return (
       <NavigationContainer>
          <MainStack />
       </NavigationContainer>
     );
-// }
+}
 };
 
 // const mapDispatchToProps = dispatch => {

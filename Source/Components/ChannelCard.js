@@ -45,7 +45,7 @@ const ChannelCard = ({ name,source, description, category, country, language, ur
               <Text
                 style={{
                   fontFamily: fontFamily.Bozon_Demi_Bold,
-                  fontSize: theme.fonts.header.fontSize,
+                  fontSize: theme.fonts.body.fontSize,
                   lineHeight: 22,
                   letterSpacing: 0.5,
                   color: theme.colors.Blue,
@@ -56,7 +56,7 @@ const ChannelCard = ({ name,source, description, category, country, language, ur
               <Text
                 style={{
                   fontFamily: fontFamily.Bozon_Demi_Bold,
-                  fontSize: theme.fonts.body.fontSize,
+                  fontSize: theme.fonts.caption.fontSize,
                   lineHeight: 22,
                   letterSpacing: 0.34,
                   color: theme.colors.MediumGray,

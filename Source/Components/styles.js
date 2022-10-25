@@ -45,7 +45,7 @@ export default styles = StyleSheet.create({
   },
   headerText: {
     fontFamily: fontFamily.Bozon_Demi_Bold,
-    fontSize: theme.fonts.subTitle.fontSize,
+    fontSize: theme.fonts.body.fontSize,
     lineHeight: 25,
     letterSpacing: 0.34,
   },

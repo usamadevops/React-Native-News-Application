@@ -18,9 +18,9 @@ const Searchbar = ({ text, onpress,onClick,placeholder }) => {
        <Pressable
             hitSlop={25}
             android_ripple={{
-              color: theme.colors.LightGray,
-              borderless: false,
-              radius: 50,
+              color:theme.colors.LightGray,
+              borderless:true,
+              radius:25
             }}
             onPress={onClick}>
               <SearchIcon color={theme.colors.Blue} />

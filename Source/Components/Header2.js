@@ -18,6 +18,11 @@ const Header2 = ({title, backButton, icon,onPress,language}) => {
       <View style={styles.Header}>
         {backButton === true ? (
           <Pressable
+          android_ripple={{
+            color:theme.colors.LightGray,
+            borderless:true,
+            radius:25
+          }}
             style={{marginRight: 10}}
             onPress={() => navigation.goBack()}>
             <BackButton color="#000" />
@@ -38,9 +43,9 @@ const Header2 = ({title, backButton, icon,onPress,language}) => {
           <Pressable
             hitSlop={25}
             android_ripple={{
-              color: theme.colors.LightGray,
-              borderless: false,
-              radius: 50,
+              color:theme.colors.LightGray,
+              borderless:true,
+              radius:25
             }}
             onPress={onPress}>
             {icon === 'search' ? (

@@ -12,7 +12,7 @@ const SmallCard = ({NewsChannel, title, image, PostedTime,newsurl}) => {
 
   return (
     <Pressable
-    style={{elevation:3,marginVertical:5,marginHorizontal:5,width:width.toString()-10,alignSelf:'center',backgroundColor:theme.colors.White,borderRadius:10,}}
+    style={{elevation:1,marginVertical:5,marginHorizontal:5,width:width.toString()-10,alignSelf:'center',backgroundColor:theme.colors.White,borderRadius:10,}}
       onPress={() => {
         navigation.navigate('Post',{
           url:newsurl,
