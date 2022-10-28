@@ -4,7 +4,7 @@ import {View, Text, Image, Pressable} from 'react-native';
 import {theme} from '../constants';
 import styles from './styles';
 const App_Icon = require('../assets/Icons/App_Icon2.png');
-const profile = require('../assets/images/profile.jpg');
+import  Settings  from '../assets/Icons/Settings';
 const Header = () => {
   const navigation = useNavigation();
   return (
@@ -44,10 +44,7 @@ const Header = () => {
         </View>
         <View>
           <Pressable onPress={() => navigation.navigate('Settings')}>
-            <Image
-              source={profile}
-              style={{width: 35, height: 35, borderRadius: 40}}
-            />
+           <Settings/>
           </Pressable>
         </View>
       </View>

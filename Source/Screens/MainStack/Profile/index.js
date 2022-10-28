@@ -46,9 +46,9 @@ const TopicProfile = ({ route, navigation }) => {
     }
   }, []);
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: theme.colors.White }}>
+    <SafeAreaView style={{ flex:1,backgroundColor: theme.colors.White }}>
       <Header2 title={channelName} backButton={true} icon="lang" language={channelLang} />
-      <ScrollView style={{ flex: 1 }} stickyHeaderHiddenOnScroll={false} stickyHeaderIndices={[1]}>
+      <ScrollView horizontal={false} >
         <View
           style={{
             flexDirection: 'row',

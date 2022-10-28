@@ -12,7 +12,8 @@ const SmallCard = ({NewsChannel, title, image, PostedTime,newsurl}) => {
 
   return (
     <Pressable
-    style={{elevation:1,marginVertical:5,marginHorizontal:5,width:width.toString()-10,alignSelf:'center',backgroundColor:theme.colors.White,borderRadius:10,}}
+    android_ripple={{borderless:false,color:'#c4c4c4',radius:320,}}
+    style={{elevation:1,marginVertical:5,marginHorizontal:5,width:width.toString()-10,alignSelf:'center',backgroundColor:theme.colors.White,borderRadius:10,overflow:'hidden'}}
       onPress={() => {
         navigation.navigate('Post',{
           url:newsurl,

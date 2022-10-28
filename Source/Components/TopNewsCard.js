@@ -36,9 +36,14 @@ const navigation =useNavigation();
               url:item?.url,
               title:item?.title
             });
-          }}>
+          }}
+          android_ripple={{borderless:false,color:'#c4c4c4',radius:240,}}
+          >
             <View >
               <Image
+                          progressiveRenderingEnabled={true}
+              loadingIndicatorSource={require('../assets/images/news-icon.png')}
+              fadeDuration={100}
                   source={item?.urlToImage!==null?{uri:item?.urlToImage.toString()}: require('../assets/images/news-icon.png')}
                 style={{width: '100%', height: 150, borderRadius: 10}}
               />

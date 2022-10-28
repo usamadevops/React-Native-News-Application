@@ -110,7 +110,7 @@ const Settings = ({SignOutFunc}) => {
           <Image />
         </>
       )} */}
-      <View style={styles.HeaderView}>
+      {/* <View style={styles.HeaderView}>
         <Text style={styles.HeaderText}>NOTIFICATIONS</Text>
       </View>
       <View style={styles.NotificationsSwitchView}>
@@ -184,7 +184,7 @@ const Settings = ({SignOutFunc}) => {
       </View>
       <View style={styles.HeaderView}>
         <Text style={styles.HeaderText}>GENERAL</Text>
-      </View>
+      </View> */}
       <Pressable
         style={styles.buttonView}
         android_ripple={{
@@ -195,8 +195,12 @@ const Settings = ({SignOutFunc}) => {
         <View>
           <Text style={styles.BtnTitle}>Terms of Service</Text>
         </View>
+        <View>
+          <Image source={require('../../../assets/images/soon.png')}/>
+        </View>
       </Pressable>
       <Pressable
+disabled={true}
         style={styles.buttonView}
         android_ripple={{
           color: theme.colors.LightGray,
@@ -205,6 +209,9 @@ const Settings = ({SignOutFunc}) => {
         }}>
         <View>
           <Text style={styles.BtnTitle}>Send Feedback</Text>
+        </View>
+        <View>
+          <Image source={require('../../../assets/images/soon.png')}/>
         </View>
       </Pressable>
       <View
@@ -259,8 +266,10 @@ const styles = StyleSheet.create({
   buttonView: {
     width: theme.constants.screenWidth,
     alignItems: 'flex-start',
+  justifyContent:'space-between',
     paddingHorizontal: 20,
     paddingVertical: 15,
+    flexDirection:"row"
   },
   BtnTitle: {
     fontFamily: fontFamily.Bozon_Regular,
