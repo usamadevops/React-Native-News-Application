@@ -81,3 +81,5 @@ amplifytools.xcconfig
 #amplify-do-not-edit-end
 /android/java_pid7498.hprof
 /android/java_pid11081.hprof
+env/
+ApiKey.js/
