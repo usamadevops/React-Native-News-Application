@@ -2,10 +2,11 @@ import React from 'react';
 import { View, ScrollView } from 'react-native';
 import styles from '../../Source/Screens/Style';
 import SmallCard from './SmallCard';
-import API from '../../ApiKey';
+// import API from '../../ApiKey';
 import axios from 'axios';
 import SmallCardSK from '../assets/Skeletons/SmallCardSK'
 import { useNavigation } from '@react-navigation/native';
+import LargeCard from './LargeCard';
 const NewsList = ({ queryString }) => {
   const navigation=useNavigation();
   const [Articles, setArticles] = React.useState([]);

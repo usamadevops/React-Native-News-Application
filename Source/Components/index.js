@@ -12,6 +12,7 @@ import NewsList from './NewsList';
 import ChannelsList from './ChannelsList';
 import Category from './Category';
 import Filterpopup from './Filterpopup';
+import LargeCard from './LargeCard';
 export {
   Filterpopup,
   Header,
@@ -25,6 +26,7 @@ export {
   Statscard,
   NewsList,
   Category,
+  LargeCard,
   ChannelsList,
   TopicsCard,
 };
