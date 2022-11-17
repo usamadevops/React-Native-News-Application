@@ -16,7 +16,7 @@ const Home = () => {
 
   const [TopNews, setTopNews] = React.useState([]);
   const [isLoading1, setisLoading1] = React.useState(false);
-const random='World';
+const random='CryptoCurrency';
   const [error, seterror] = React.useState('');
 
   const GetTopNews = async () => {
@@ -37,10 +37,9 @@ const random='World';
   }
 
   React.useEffect(() => {
-
     const TopNews = GetTopNews();
     return () => {
-      TopNews;
+      TopNews.remove();
     }
   }, []);
   return (

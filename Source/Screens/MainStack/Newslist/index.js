@@ -5,11 +5,11 @@ import { NewsList } from '../../../Components'
 const NewsListScreen = ({ navigation, route }) => {
     const { datasearch } = route.params;
     React.useEffect(()=>{
-        navigation.setOptions({title:'Latest MonkeyPox News'})
+        navigation.setOptions({title:'CryptoCurrency News'})
       },[navigation]);
   return (
     <SafeAreaView style={{flex:1}}>
-    <NewsList queryString={`https://newsapi.org/v2/everything?q=${datasearch}&apiKey=${API}`} />
+    <NewsList queryString={`https://newsapi.org/v2/everything?q=${datasearch}&sortBy=publishedAt&apiKey=${API}`} />
     </SafeAreaView>
   )
 }

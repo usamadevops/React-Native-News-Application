@@ -11,7 +11,7 @@ const ImportantNewsCard = () => {
     <TouchableWithoutFeedback
       style={{width: theme.constants.screenWidth}}
       onPress={() => navigation.navigate('NewsListScreen', {
-        datasearch:'MonkeyPox'
+        datasearch:'CryptoCurrency'
       })}>
       <View
         style={{
@@ -39,9 +39,9 @@ const ImportantNewsCard = () => {
               style={{
                 color: theme.colors.Red,
               }}>
-              MonkeyPox News:
+              Crypto World:
             </Text>
-            The Latest coverage About Monkey Pox
+            The Latest coverage About CryptoCurrency
           </Text>
         </View>
         <View>

@@ -9,6 +9,7 @@ import HeaderText from './HeaderText';
 import Statscard from './Stats';
 import TopicsCard from './TopicsCard';
 import NewsList from './NewsList';
+import LargeCard from './LargeCard';
 import ChannelsList from './ChannelsList';
 import Category from './Category';
 import Filterpopup from './Filterpopup';
@@ -20,6 +21,7 @@ export {
   Header2,
   ImportantNewsCard,
   TopNewsCard,
+  LargeCard,
   SmallCard,
   HeaderText,
   Statscard,

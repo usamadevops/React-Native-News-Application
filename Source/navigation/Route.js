@@ -1,21 +1,13 @@
 import React from 'react';
-import AuthStack from './AuthStack';
 import MainStack from './MainStack';
 import {NavigationContainer} from '@react-navigation/native';
 import { Splash } from '../Screens';
-import { useSelector,connect, shallowEqual} from 'react-redux';
-import {GetData} from '../redux/Modules/auth/action.auth';
-import {Authorization,isLoadingSelector} from '../redux/Modules/auth/selector.auth'
 
-const Route = ({GetDataFunc}) => {
-  // const Auth=useSelector(Authorization,shallowEqual)
+const Route = () => {
   const [loading, setloading] = React.useState(false);
-  // const loading =useSelector(isLoadingSelector,shallowEqual);
   
     React.useEffect(() => {
-  //  GetDataFunc();
   setloading(true)
-
   setTimeout(() => {
     setloading(false)
 
@@ -33,11 +25,6 @@ const Route = ({GetDataFunc}) => {
 }
 };
 
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     // dispatching Login action to update State
-//     GetDataFunc: event => dispatch(GetData(event)),
-//   };
-// };
+
 
 export default Route;
