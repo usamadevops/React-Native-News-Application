@@ -11,7 +11,7 @@ const Route = () => {
   setTimeout(() => {
     setloading(false)
 
-  }, 2000);
+  }, 300);
     }, []);
 
   if (loading) {

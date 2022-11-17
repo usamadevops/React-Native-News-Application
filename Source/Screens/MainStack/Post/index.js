@@ -1,15 +1,13 @@
 
-import { a } from 'aws-amplify';
 import React from 'react';
-import { ActivityIndicator, View, Alert } from 'react-native';
+import { ActivityIndicator, View, } from 'react-native';
 import { WebView } from 'react-native-webview';
-import styles from '../../Style';
-
 
 
 const Post = ({ route, navigation }) => {
   const { url, title } = route.params;
   const [isLoading, setisLoading] = React.useState(false)
+
   React.useLayoutEffect(() => {
     navigation.setOptions({
       title: title,

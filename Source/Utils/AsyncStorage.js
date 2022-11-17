@@ -12,7 +12,7 @@ export async function ReadDataSingleString(key) {
   //This one to remove single Value from LocalStorage
   try {
     const value = await AsyncStorage.getItem(key);
-    if (value !== null) {
+    if (value !== null || value!=={} || value!==unde) {
       return value;
     }
   } catch (e) {

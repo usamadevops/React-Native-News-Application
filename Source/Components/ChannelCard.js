@@ -5,6 +5,7 @@ import {theme} from '../constants';
 import {fontFamily} from '../constants/Fonts';
 import {BackButton} from '../assets/Icons';
 import {useNavigation} from '@react-navigation/native';
+import FastImage from 'react-native-fast-image';
 const ChannelCard = ({ name,source, description, category, country, language, url,logo }) => {
 
   const navigation = useNavigation();
@@ -31,10 +32,19 @@ const ChannelCard = ({ name,source, description, category, country, language, ur
         
           <View style={{ flex: 3,flexDirection:'row' }}>
           <View style={{flexDirection: 'row', paddingRight: 15}}>
-            <Image
+            {/* <Image
               source={logo!==''? {uri:logo} : require('../assets/images/CNN.png')}
               style={{width: 50, height: 50, borderRadius: 5}}
-            />
+            /> */}
+            <FastImage
+                fallback={true}
+                style={{width: 50, height: 50, borderRadius: 5}}
+                source={{
+                  uri: logo,
+                  priority: FastImage.priority.high,
+                  cache: 'immutable'
+                }}
+              />
           </View> 
             <View
               style={{

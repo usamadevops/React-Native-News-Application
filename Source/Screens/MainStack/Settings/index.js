@@ -1,3 +1,4 @@
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import React from 'react';
 import {
   Pressable,
@@ -7,18 +8,51 @@ import {
   ScrollView,
   Image,
   SafeAreaView,
+  Switch,
 } from 'react-native';
 import {Header2} from '../../../Components';
 import {theme} from '../../../constants';
 import {fontFamily} from '../../../constants/Fonts';
-
+import { ReadDataSingleString, storeDataSingleValue } from '../../../Utils/AsyncStorage';
 
 const Settings = () => {
+const [Layout, setLayout] = React.useState(false);
+async function UpdateLayout(){
+  setLayout(!Layout);
+  console.log(Layout);
+  await AsyncStorage.setItem('Layout',Layout?'true':'false')
+}
+
+React.useEffect(()=>{
+ReadDataSingleString('Layout').then(res=>{
+setLayout(res=='true'?true:false); 
+})
+},[])
 
   return (
     <SafeAreaView style={styles.Container}>
     <ScrollView >
       <Header2 title="Settings" backButton={true}  />
+      <Pressable
+        style={styles.buttonView}
+        android_ripple={{
+          color: theme.colors.LightGray,
+          borderless: false,
+          radius: 300,
+        }}>
+        <View>
+          <Text style={styles.BtnTitle}>Vertical Cards Layout</Text>
+        </View>
+        <View>
+          <Switch
+          trackColor={{false: '#C0C0C0', true: '#00B4D8'}}
+          thumbColor={Layout ? '#0077B6' : '#0077B6'}
+          ios_backgroundColor="#3e3e3e"
+          onValueChange={()=>UpdateLayout()}
+          value={Layout}
+          />
+        </View>
+      </Pressable>
       <Pressable
         style={styles.buttonView}
         android_ripple={{
