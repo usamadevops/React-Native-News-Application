@@ -1,4 +1,5 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useIsFocused } from '@react-navigation/native';
 import React from 'react';
 import {
   Pressable,
@@ -13,22 +14,35 @@ import {
 import {Header2} from '../../../Components';
 import {theme} from '../../../constants';
 import {fontFamily} from '../../../constants/Fonts';
-import { ReadDataSingleString, storeDataSingleValue } from '../../../Utils/AsyncStorage';
+import { ReadDataSingleString } from '../../../Utils/AsyncStorage';
 
 const Settings = () => {
 const [Layout, setLayout] = React.useState(false);
+const [loading, setloading] = React.useState(false)
 async function UpdateLayout(){
-  setLayout(!Layout);
-  console.log(Layout);
-  await AsyncStorage.setItem('Layout',Layout?'true':'false')
+  if(Layout){
+    setLayout(false);
+    await AsyncStorage.setItem('Layout','false');
+  }
+  else{    
+    setLayout(true);
+    await AsyncStorage.setItem('Layout','true');
+  }
 }
 
-React.useEffect(()=>{
-ReadDataSingleString('Layout').then(res=>{
-setLayout(res=='true'?true:false); 
-})
-},[])
 
+React.useEffect(() => {
+  setloading(true);
+  ReadDataSingleString('Layout').then(res=>{
+setLayout(res==='true'?true:false);
+console.log('is re',Layout);
+
+  }).catch(err=>{
+    console.log(err);
+    setloading(false);
+  })
+  setloading(false);
+}, []);
   return (
     <SafeAreaView style={styles.Container}>
     <ScrollView >
@@ -41,9 +55,10 @@ setLayout(res=='true'?true:false);
           radius: 300,
         }}>
         <View>
-          <Text style={styles.BtnTitle}>Vertical Cards Layout</Text>
+          <Text style={styles.BtnTitle}>Horizontal News Cards Layout</Text>
         </View>
         <View>
+          {!loading &&
           <Switch
           trackColor={{false: '#C0C0C0', true: '#00B4D8'}}
           thumbColor={Layout ? '#0077B6' : '#0077B6'}
@@ -51,6 +66,7 @@ setLayout(res=='true'?true:false);
           onValueChange={()=>UpdateLayout()}
           value={Layout}
           />
+}
         </View>
       </Pressable>
       <Pressable
@@ -129,7 +145,7 @@ const styles = StyleSheet.create({
   },
   buttonView: {
     width: theme.constants.screenWidth,
-    alignItems: 'flex-start',
+    alignItems: 'center',
   justifyContent:'space-between',
     paddingHorizontal: 20,
     paddingVertical: 15,

@@ -6,18 +6,20 @@ import axios from 'axios';
 import SmallCardSK from '../assets/Skeletons/SmallCardSK'
 import { ReadDataSingleString } from '../Utils/AsyncStorage';
 import LargeCard from './LargeCard';
-import { useNavigation } from '@react-navigation/native';
+import { useIsFocused, useNavigation } from '@react-navigation/native';
 const NewsList = ({ queryString }) => {
   const navigation=useNavigation();
+  const focused=useIsFocused();
   const [Articles, setArticles] = React.useState([]);
   const [Layout, setLayout] = React.useState()
   const [isLoading2, setisLoading2] = React.useState(false);
   const [error, seterror] = React.useState('');
   React.useEffect(()=>{
-    ReadDataSingleString('Layout').then(res=>{
-    setLayout(res=='true'?true:false); 
+     ReadDataSingleString('Layout').then(res=>{
+    setLayout(res==='true'?true:false); 
+    console.log('fresh',Layout);
     })
-    },[navigation])
+    },[focused])
   const GetArticles = async () => {
     setisLoading2(true);
     var config = {

@@ -5,8 +5,11 @@ import {theme} from '../constants';
 import styles from './styles';
 const App_Icon = require('../assets/Icons/App_Icon2.png');
 import  Settings  from '../assets/Icons/Settings';
+import { ReadDataSingleString } from '../Utils/AsyncStorage';
 const Header = () => {
+
   const navigation = useNavigation();
+
   return (
     <View
       style={{
