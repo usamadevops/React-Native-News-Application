@@ -44,6 +44,7 @@ console.log('is re',Layout);
   setloading(false);
 }, []);
   return (
+    
     <SafeAreaView style={styles.Container}>
     <ScrollView >
       <Header2 title="Settings" backButton={true}  />
