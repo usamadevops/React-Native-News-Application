@@ -1,9 +1,9 @@
 import React from 'react';
-import {View, Animated, Platform} from 'react-native';
+import { View, Animated, Platform } from 'react-native';
 
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {Main} from '../Screens';
-import {theme} from '../constants';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { Main } from '../Screens';
+import { theme } from '../constants';
 import {
   Channels,
   HomeIcon,
@@ -11,31 +11,35 @@ import {
   SearchIcon,
   StatsIcon,
 } from '../assets/Icons';
-import {useNavigation} from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 
 const Tab = createBottomTabNavigator();
 export default function BottomTab() {
   const navigation = useNavigation();
   const taboffSetValue = React.useRef(new Animated.Value(0)).current;
   return (
-    <Animated.View style={{flex: 1}}>
+    <Animated.View style={{ flex: 1 }}>
       <Tab.Navigator
         screenOptions={{
           headerShown: false,
-          tabBarShowLabel: false,
-          tabBarActiveBackgroundColor: `${theme.colors.LightGray}50`,
-tabBarHideOnKeyboard:true,
+          tabBarShowLabel: true,
+          tabBarLabelStyle: {
+            fontSize: 14,
+            marginBottom: 10
+          },
+          tabBarActiveBackgroundColor: `${theme.colors.Blue}20`,
+          tabBarHideOnKeyboard: true,
           tabBarStyle: {
             backgroundColor: theme.colors.White,
-            height:Platform.OS==='ios'? 100:60,
-         
+            height: Platform.OS === 'ios' ? 100 : 60,
+
           },
         }}>
         <Tab.Screen
           name="Home"
           component={Main.Homefeed}
           options={{
-            tabBarIcon: ({focused}) => {
+            tabBarIcon: ({ focused }) => {
               return (
                 <View>
                   <HomeIcon
@@ -44,8 +48,9 @@ tabBarHideOnKeyboard:true,
                 </View>
               );
             },
+
           }}
-          listeners={({navigation, route}) => ({
+          listeners={({ navigation, route }) => ({
             tabPress: e => {
               Animated.spring(taboffSetValue, {
                 toValue: 0,
@@ -58,7 +63,7 @@ tabBarHideOnKeyboard:true,
           name="Search"
           component={Main.Search}
           options={{
-            tabBarIcon: ({focused}) => {
+            tabBarIcon: ({ focused }) => {
               return (
                 <View>
                   <SearchIcon
@@ -68,7 +73,7 @@ tabBarHideOnKeyboard:true,
               );
             },
           }}
-          listeners={({navigation, route}) => ({
+          listeners={({ navigation, route }) => ({
             tabPress: e => {
               Animated.spring(taboffSetValue, {
                 toValue: theme.constants.screenWidth / 3,
@@ -81,7 +86,7 @@ tabBarHideOnKeyboard:true,
           name="Explore Channels"
           component={Main.Notification}
           options={{
-            tabBarIcon: ({focused}) => {
+            tabBarIcon: ({ focused }) => {
               return (
                 <View>
                   <Channels
@@ -91,7 +96,7 @@ tabBarHideOnKeyboard:true,
               );
             },
           }}
-          listeners={({navigation, route}) => ({
+          listeners={({ navigation, route }) => ({
             tabPress: e => {
               Animated.spring(taboffSetValue, {
                 toValue: (theme.constants.screenWidth / 3) * 2,
@@ -130,9 +135,9 @@ tabBarHideOnKeyboard:true,
           height: 3,
           backgroundColor: theme.colors.Blue,
           position: 'absolute',
-          bottom: Platform.OS==='ios'? 100:60,
+          bottom: Platform.OS === 'ios' ? 100 : 60,
 
-          transform: [{translateX: taboffSetValue}],
+          transform: [{ translateX: taboffSetValue }],
         }}
       />
     </Animated.View>

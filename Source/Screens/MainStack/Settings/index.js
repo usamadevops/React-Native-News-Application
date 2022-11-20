@@ -16,7 +16,7 @@ import {theme} from '../../../constants';
 import {fontFamily} from '../../../constants/Fonts';
 import { ReadDataSingleString } from '../../../Utils/AsyncStorage';
 
-const Settings = () => {
+const Settings = ({navigation}) => {
 const [Layout, setLayout] = React.useState(false);
 const [loading, setloading] = React.useState(false)
 async function UpdateLayout(){
@@ -71,6 +71,7 @@ console.log('is re',Layout);
         </View>
       </Pressable>
       <Pressable
+      onPress={()=>navigation.navigate('Aboutus')}
         style={styles.buttonView}
         android_ripple={{
           color: theme.colors.LightGray,
@@ -78,14 +79,13 @@ console.log('is re',Layout);
           radius: 300,
         }}>
         <View>
-          <Text style={styles.BtnTitle}>Terms of Service</Text>
+          <Text style={styles.BtnTitle}>About Us</Text>
         </View>
-        <View>
-          <Image source={require('../../../assets/images/soon.png')}/>
-        </View>
+       
       </Pressable>
       <Pressable
-disabled={true}
+onPress={()=>navigation.navigate('Gettouch')}
+
         style={styles.buttonView}
         android_ripple={{
           color: theme.colors.LightGray,
@@ -93,11 +93,9 @@ disabled={true}
           radius: 300,
         }}>
         <View>
-          <Text style={styles.BtnTitle}>Send Feedback</Text>
+          <Text style={styles.BtnTitle}>Get In Touch</Text>
         </View>
-        <View>
-          <Image source={require('../../../assets/images/soon.png')}/>
-        </View>
+       
       </Pressable>
       <View
         style={{
@@ -105,7 +103,7 @@ disabled={true}
           alignSelf: 'center',
           marginTop: 60,
         }}>
-        <Text style={styles.VersionText}>VERSION 1.0</Text>
+        <Text style={styles.VersionText}>VERSION 1.1</Text>
       </View>
     </ScrollView>
     </SafeAreaView>

@@ -5,5 +5,6 @@ import Search from './Search';
 import Profile from './Profile';
 import Post from './Post';
 import NewsListScreen from './Newslist';
-
-export {Homefeed, Notification, Search, Settings, Profile, Post,NewsListScreen};
+import Getintotouch from './Getintotouch';
+import Aboutus from './Aboutus';
+export {Homefeed, Notification,Getintotouch,Aboutus, Search, Settings, Profile, Post,NewsListScreen};

@@ -21,9 +21,10 @@ const Header2 = ({title, backButton, icon,onPress,language}) => {
           android_ripple={{
             color:theme.colors.LightGray,
             borderless:true,
-            radius:25
+            radius:25,
+            
           }}
-            style={{marginRight: 10}}
+            style={{paddingVertical:10,paddingRight:10}}
             onPress={() => navigation.goBack()}>
             <BackButton color="#000" />
           </Pressable>

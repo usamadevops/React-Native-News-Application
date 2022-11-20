@@ -46,7 +46,7 @@ const Header = () => {
           </Text>
         </View>
         <View>
-          <Pressable onPress={() => navigation.navigate('Settings')}>
+          <Pressable onPress={() => navigation.navigate('Settings')} style={{paddingVertical:10,paddingLeft:10}}>
            <Settings/>
           </Pressable>
         </View>

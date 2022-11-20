@@ -12,6 +12,8 @@ const MainStack = () => {
       <Stack.Screen name="Settings" component={Main.Settings}/>
       <Stack.Screen name="TopicProfile" component={Main.Profile}  />
       <Stack.Screen name="NewsListScreen" component={Main.NewsListScreen} options={{headerShown:true,headerBackTitle:'Go Back'}}/>
+      <Stack.Screen name="Aboutus" component={Main.Aboutus}/>
+      <Stack.Screen name='Gettouch' component={Main.Getintotouch}/>
     </Stack.Navigator>
   );
 };
