@@ -38,27 +38,34 @@ const Home = () => {
     }
   };
   
-  const GetTopNews = async () => {
-    setisLoading1(true);
-    var config = {
-      method: 'GET',
-      url: `https://newsapi.org/v2/top-headlines?country=us&apiKey=${API}`,
-    };
-    await axios(config)
-      .then(function (response) {
-        setTopNews(response.data.articles);
-        setisLoading1(false);
-      })
-      .catch(function (error) {
-        seterror(error);
-        setisLoading1(false);
-      });
-  };
-
   useEffect(() => {
-    const TopNews = GetTopNews();
+    let isCancelled = false;
+  
+    const GetTopNews = async () => {
+      setisLoading1(true);
+      var config = {
+        method: 'GET',
+        url: `https://newsapi.org/v2/top-headlines?country=us&apiKey=${API}`,
+      };
+      await axios(config)
+        .then(function (response) {
+          if (!isCancelled) {
+            setTopNews(response.data.articles);
+            setisLoading1(false);
+          }
+        })
+        .catch(function (error) {
+          if (!isCancelled) {
+            seterror(error);
+            setisLoading1(false);
+          }
+        });
+    };
+  
+    GetTopNews();
+  
     return () => {
-      TopNews.remove();
+      isCancelled = true;
     };
   }, []);
 

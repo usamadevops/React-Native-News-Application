@@ -16,27 +16,44 @@ const NewsList = ({ queryString }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
 
-  const getArticles = useCallback(async () => {
-    setIsLoading(true);
-    try {
-      const response = await axios.get(queryString);
-      setArticles(response.data.articles);
-      setIsLoading(false);
-    } catch (error) {
-      setError(error);
-      setIsLoading(false);
-    }
-  }, [queryString]);
 
+  
   useEffect(() => {
+    let isCancelled = false;
+  
     ReadDataSingleString('Layout').then((res) => {
-      setLayout(res === 'true');
+      if (!isCancelled) {
+        setLayout(res === 'true');
+      }
     });
+  
+    return () => {
+      isCancelled = true;
+    };
   }, [focused]);
-
+  
   useEffect(() => {
+    let isCancelled = false;
+    const getArticles = async () => {
+      setIsLoading(true);
+      try {
+        const response = await axios.get(queryString);
+        if (!isCancelled) {
+          setArticles(response.data.articles);
+          setIsLoading(false);
+        }
+      } catch (error) {
+        if (!isCancelled) {
+          setError(error);
+          setIsLoading(false);
+        }
+      }
+    };
     getArticles();
-  }, [getArticles]);
+    return () => {
+      isCancelled = true;
+    };
+  }, [queryString]);
 
   const renderItem = useCallback(({ item, index }) => {
     return (

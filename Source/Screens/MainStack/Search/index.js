@@ -28,10 +28,10 @@ const Search = () => {
       translateY.value=withSpring(-SCREEN_HEIGHT/1.4,{damping:50})
       console.log(translateY,SCREEN_HEIGHT);
   }
-  const [search, setSearch] = React.useState(`https://newsapi.org/v2/everything?q=AI&sortBy=recent&apiKey=${API}`);
+  const [search, setSearch] = React.useState(`https://newsapi.org/v2/everything?q=AI&sortBy=latest&apiKey=${API}`);
   function onClick() {
     if(searchtext!==''){  
- setSearch(`https://newsapi.org/v2/everything?q=${searchtext}&sortBy=recent`)
+ setSearch(`https://newsapi.org/v2/everything?q=${searchtext}&sortBy=latest&apiKey=${API}`)
     }  
 }
 const renderCategory = ({ item, index }) => (
