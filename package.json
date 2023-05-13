@@ -1,6 +1,6 @@
 {
   "name": "StrikeNews",
-  "version": "0.0.1",
+  "version": "1.1.0",
   "private": true,
   "scripts": {
     "android": "react-native run-android",
@@ -24,7 +24,7 @@
     "react-native-fast-image": "^8.6.3",
     "react-native-gesture-handler": "~2.5.0",
     "react-native-pager-view": "^5.4.0",
-    "react-native-reanimated": "~2.9.1",
+    "react-native-reanimated": "2.12.0",
     "react-native-safe-area-context": "^3.2.0",
     "react-native-screens": "~3.10.2",
     "react-native-shared-element": "^0.7.0",
