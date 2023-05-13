@@ -6,7 +6,7 @@ import { fontFamily } from '../constants/Fonts';
 const Searchbar = ({ text, onpress, onClick, placeholder }) => {
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container,{alignSelf: 'center'}]}>
       <TextInput
         style={styles.input}
         placeholder={placeholder || 'Search '}
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     width: theme.constants.screenWidth - 100,
     paddingHorizontal: 15,
     height: 60,
-    fontFamily: fontFamily.Bozon_Regular,
+    fontFamily: fontFamily.Bozon_Demi_Bold,
     fontSize: theme.fonts.h3.fontSize,
     color: theme.colors.Blue,
   },

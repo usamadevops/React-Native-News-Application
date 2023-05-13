@@ -1,16 +1,17 @@
-import React from 'react';
-import {Text, View, FlatList, Image, Pressable} from 'react-native';
+import React, {useCallback} from 'react';
+import {Text, View, Pressable} from 'react-native';
 import styles from './styles';
 import {theme} from '../constants';
 import {fontFamily} from '../constants/Fonts';
 import {BackButton} from '../assets/Icons';
 import {useNavigation} from '@react-navigation/native';
 import FastImage from 'react-native-fast-image';
-const ChannelCard = ({ name,source, description, category, country, language, url,logo }) => {
 
+const ChannelCard = React.memo(({ name,source, description, category, country, language, url,logo }) => {
   const navigation = useNavigation();
-  return (
-    <Pressable android_ripple={{ color: '#FFFAFB', borderless: false, radius: theme.constants.screenWidth  }} onPress={() => navigation.navigate('TopicProfile', {
+
+  const handlePress = useCallback(() => {
+    navigation.navigate('TopicProfile', {
       channelName: name,
       channelLogo:logo,
       source:source,
@@ -19,36 +20,33 @@ const ChannelCard = ({ name,source, description, category, country, language, ur
       channelCountry: country,
       channelLang: language,
       channelUrl:url
-    })} style={{
+    });
+  }, [navigation, name, source, description, category, country, language, url, logo]);
+
+  return (
+    <Pressable android_ripple={{ color: '#FFFAFB', borderless: false, radius: theme.constants.screenWidth  }} onPress={handlePress} style={{
       width: theme.constants.screenWidth,
       backgroundColor: theme.colors.White,
-     
       borderRadius: 10,
       marginVertical:10,
- 
     }}>
       <View >
         <View style={styles.SmallCardContainer}>
-        
           <View style={{ flex: 3,flexDirection:'row' }}>
-          <View style={{flexDirection: 'row', paddingRight: 15}}>
-            {/* <Image
-              source={logo!==''? {uri:logo} : require('../assets/images/CNN.png')}
-              style={{width: 50, height: 50, borderRadius: 5}}
-            /> */}
-            <FastImage
+            <View style={{flexDirection: 'row', paddingRight: 15}}>
+              <FastImage
                 fallback={true}
                 style={{width: 50, height: 50, borderRadius: 5}}
                 source={{
                   uri: logo,
-                  priority: FastImage.priority.high,
-                  cache: 'immutable'
-                }}
+                  priority: FastImage.priority.normal,
+                  cache: FastImage.cacheControl.immutable, // This line controls caching
+              }}
               />
-          </View> 
+            </View> 
             <View
               style={{
-                flexDirection: 'column',
+               flexDirection: 'column',
                 alignItems: 'flex-start',
                 justifyContent: 'center',
               }}>
@@ -63,17 +61,16 @@ const ChannelCard = ({ name,source, description, category, country, language, ur
                 {name}
               </Text>
               <View style={{flexDirection:'row',marginTop:8}}>
-              <Text
-                style={{
-                  fontFamily: fontFamily.Bozon_Demi_Bold,
-                  fontSize: theme.fonts.caption.fontSize,
-                  lineHeight: 22,
-                  letterSpacing: 0.34,
-                  color: theme.colors.MediumGray,
-                }}>
-                 {language.toUpperCase()}
+                <Text
+                  style={{
+                    fontFamily: fontFamily.Bozon_Demi_Bold,
+                    fontSize: theme.fonts.caption.fontSize,
+                    lineHeight: 22,
+                    letterSpacing: 0.34,
+                    color: theme.colors.MediumGray,
+                  }}>
+                   {language.toUpperCase()}
                 </Text>
-               
                 <Text style={{
                   fontFamily: fontFamily.Bozon_Demi_Bold,
                   fontSize: theme.fonts.body.fontSize,
@@ -86,17 +83,16 @@ const ChannelCard = ({ name,source, description, category, country, language, ur
                   {'   '}
                 </Text>
                 <Text
-                style={{
-                  fontFamily: fontFamily.Bozon_Demi_Bold,
-                  fontSize: theme.fonts.body.fontSize,
-                  lineHeight: 22,
-                  letterSpacing: 0.34,
-                  color: theme.colors.MediumGray,
-                }}>
-              {country.toUpperCase()}
-              </Text>
+                  style={{
+                    fontFamily: fontFamily.Bozon_Demi_Bold,
+                    fontSize: theme.fonts.body.fontSize,
+                    lineHeight: 22,
+                    letterSpacing: 0.34,
+                    color: theme.colors.MediumGray,
+                  }}>
+                {country.toUpperCase()}
+                </Text>
               </View>
-              
             </View>
           </View>
           <Pressable
@@ -107,7 +103,7 @@ const ChannelCard = ({ name,source, description, category, country, language, ur
                 alignItems: 'center',
                 justifyContent: 'center',
                 paddingHorizontal: 15,
-            paddingVertical:5,
+                paddingVertical:5,
                 borderRadius:20,
                 transform: [{rotate: '180deg'},{scale:0.7}],
               }}>
@@ -118,6 +114,7 @@ const ChannelCard = ({ name,source, description, category, country, language, ur
       </View>
     </Pressable>
   );
-};
+});
 
 export default ChannelCard;
+

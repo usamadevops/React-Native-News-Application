@@ -6,7 +6,7 @@ const Notification = () => {
   const [searchtext, setSearchtext] = React.useState('')
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={[styles.container,{ alignItems: 'center',}]}>
       <Header2 title="Browse Channels" />
       <Searchbar text={searchtext} onpress={setSearchtext} placeholder={'Search Channels'}/>  
       <ChannelsList searchtext={searchtext}/>
