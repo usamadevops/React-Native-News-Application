@@ -1,5 +1,5 @@
-import React, { useRef } from 'react';
-import { View, ScrollView, Dimensions, SafeAreaView } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { SafeAreaView, FlatList, View, Dimensions } from 'react-native';
 import styles from '../../Style';
 import {
   Header,
@@ -9,16 +9,35 @@ import {
 import { theme } from '../../../constants';
 import API from '../../../../ApiKey';
 import axios from 'axios';
-import HeadlinesSK from '../../../assets/Skeletons/HeadlinesSk'
-
+import HeadlinesSK from '../../../assets/Skeletons/HeadlinesSk';
 import { NewsList } from '../../../Components';
+
+const DATA = [
+  { type: "ImportantNewsCard" },
+  { type: "TopNewsCard" },
+  { type: "NewsList", data: `https://newsapi.org/v2/everything?q=CryptoCurrency&sortBy=publishedAt&apiKey=${API}` },
+];
+
+
 const Home = () => {
+  const [TopNews, setTopNews] = useState([]);
+  const [isLoading1, setisLoading1] = useState(false);
+  const [error, seterror] = useState('');
 
-  const [TopNews, setTopNews] = React.useState([]);
-  const [isLoading1, setisLoading1] = React.useState(false);
-const random='CryptoCurrency';
-  const [error, seterror] = React.useState('');
-
+  const renderItem = ({ item }) => {
+    switch (item.type) {
+      case 'ImportantNewsCard':
+        return <ImportantNewsCard />;
+      case 'TopNewsCard':
+        // Include your TopNewsCard logic here
+        return <TopNewsCard TopNews={TopNews} />;
+      case 'NewsList':
+        return <NewsList queryString={item.data} />;
+      default:
+        return null;
+    }
+  };
+  
   const GetTopNews = async () => {
     setisLoading1(true);
     var config = {
@@ -34,38 +53,24 @@ const random='CryptoCurrency';
         seterror(error);
         setisLoading1(false);
       });
-  }
+  };
 
-  React.useEffect(() => {
+  useEffect(() => {
     const TopNews = GetTopNews();
     return () => {
       TopNews.remove();
-    }
+    };
   }, []);
+
   return (
     <SafeAreaView style={styles.container}>
       <Header />
-      <ScrollView horizontal={false}>
-        <ImportantNewsCard />
-        {
-          isLoading1 ? (
-            <View style={styles.Maincontainer}>
-              <HeadlinesSK />
-            </View>
-          ) : (
-            <TopNewsCard TopNews={TopNews} />
-          )
-        }
-        <View
-          style={{
-            borderWidth: 0.4,
-            marginHorizontal: 24,
-            marginVertical: 16,
-            borderColor: theme.colors.LightGray,
-          }}
-        />
-        <NewsList queryString={`https://newsapi.org/v2/everything?q=${random}&sortBy=publishedAt&apiKey=${API}`}  />
-      </ScrollView>
+      <FlatList
+        data={DATA}
+        keyExtractor={(item, index) => item.type + index}
+        renderItem={renderItem}
+        ListHeaderComponent={() => isLoading1 ? <HeadlinesSK /> : null}
+      />
     </SafeAreaView>
   );
 };
