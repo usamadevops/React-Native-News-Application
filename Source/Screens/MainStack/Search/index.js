@@ -25,8 +25,8 @@ const Search = () => {
   const [searchtext, setSearchtext] = React.useState('');
   const translateY = useSharedValue(0);//Sheet height
   const OpenSheet=()=>{
-      translateY.value=withSpring(-SCREEN_HEIGHT/1.4,{damping:50})
-      console.log(translateY,SCREEN_HEIGHT);
+    console.log('sdfsd',translateY,SCREEN_HEIGHT);
+      // translateY.value=withSpring(-SCREEN_HEIGHT/1.4,{damping:50})
   }
   const [search, setSearch] = React.useState(`https://newsapi.org/v2/everything?q=AI&sortBy=latest&apiKey=${API}`);
   function onClick() {
@@ -43,7 +43,7 @@ const renderCategory = ({ item, index }) => (
 return (
   <GestureHandlerRootView style={{ flex: 1 }}>
     <SafeAreaView style={styles.container}>
-      <Header2 title="Search any News" icon="filter" onPress={OpenSheet} />
+      <Header2 title="Search any News" icon="filter" onPress={OpenSheet()} />
       <Searchbar text={searchtext} onpress={setSearchtext} onClick={onClick} />
       <View style={{ flex: 0.1, alignItems: 'center', justifyContent: 'center' }}>
         <FlatList

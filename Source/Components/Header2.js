@@ -8,6 +8,13 @@ import {Filter} from '../assets/Icons';
 import {useNavigation} from '@react-navigation/native';
 const Header2 = ({title, backButton, icon,onPress,language}) => {
   const navigation = useNavigation();
+
+  const handleIconPress = () => {
+    if (icon === 'filter' && onPress) {
+      onPress(); // Invoke the provided onPress function
+    }
+  };
+
   return (
     <View
       style={{
@@ -40,26 +47,16 @@ const Header2 = ({title, backButton, icon,onPress,language}) => {
             {title}
           </Text>
         </View>
-        <View>
+     
           <Pressable
             hitSlop={25}
             android_ripple={{
               color:theme.colors.LightGray,
               borderless:true,
-              radius:25
+              radius:50
             }}
-            onPress={onPress}>
-            {icon === 'search' ? (
-              <SearchIcon color={theme.colors.DarkGray} />
-            ) : icon ==='Logout' ?(
-                <Text style={{
-                  borderWidth: 1,
-                  padding:8,
-                color: theme.colors.Red,
-                fontFamily: fontFamily.Bozon_Demi_Bold,
-                fontSize: theme.fonts.body.fontSize,
-              }}>Logout</Text>
-            ):icon==='lang'?(
+            onPress={handleIconPress}>
+            {icon==='lang'?(
             <Text style={{
                   borderWidth: 1,
                   padding:8,
@@ -73,7 +70,7 @@ const Header2 = ({title, backButton, icon,onPress,language}) => {
               <></>
             )}
           </Pressable>
-        </View>
+      
       </View>
     </View>
   );

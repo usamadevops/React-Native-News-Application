@@ -45,9 +45,11 @@ const TopicProfile = ({ route, navigation }) => {
       TopNews;
     }
   }, []);
+
+
   return (
     <SafeAreaView style={{ flex:1,backgroundColor: theme.colors.White }}>
-      <Header2 title={channelName} backButton={true} icon="lang" language={channelLang} />
+      <Header2 title={channelName} backButton={true} icon="lang" language={channelLang}  />
       <ScrollView horizontal={false} >
         <View
           style={{
