@@ -8,7 +8,7 @@ import { ReadDataSingleString } from '../Utils/AsyncStorage';
 import LargeCard from './LargeCard';
 import { useIsFocused, useNavigation } from '@react-navigation/native';
 
-const NewsList = ({ queryString }) => {
+const NewsList = ({ ListHeaderComponent,queryString }) => {
   const navigation = useNavigation();
   const focused = useIsFocused();
   const [articles, setArticles] = useState([]);
@@ -97,6 +97,7 @@ const NewsList = ({ queryString }) => {
         <FlatList
           data={articles}
           renderItem={renderItem}
+          ListHeaderComponent={ListHeaderComponent}
           keyExtractor={(item, index) => index.toString()}
         />
       )}

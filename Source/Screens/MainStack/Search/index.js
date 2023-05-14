@@ -40,10 +40,9 @@ const renderCategory = ({ item, index }) => (
   </View>
 );
 
-return (
-  <GestureHandlerRootView style={{ flex: 1 }}>
-    <SafeAreaView style={styles.container}>
-      <Header2 title="Search any News" icon="filter" onPress={OpenSheet()} />
+const ListHeaderComponent=()=>{
+  return(
+    <>
       <Searchbar text={searchtext} onpress={setSearchtext} onClick={onClick} />
       <View style={{ flex: 0.1, alignItems: 'center', justifyContent: 'center' }}>
         <FlatList
@@ -55,8 +54,16 @@ return (
           contentContainerStyle={{ height: 33, paddingLeft: 24, marginTop: 8 }}
         />
       </View>
+    </>
+  )
+}
+
+return (
+  <GestureHandlerRootView style={{ flex: 1 }}>
+    <SafeAreaView style={styles.container}>
+    <Header2 title="Search any News" icon="filter" onPress={OpenSheet()} />
       <View style={{ flex: 1 }}>
-        <NewsList queryString={search} insearch={true} />
+        <NewsList queryString={search} insearch={true} ListHeaderComponent={ListHeaderComponent} />
       </View>
     </SafeAreaView>
     <Filterpopup translateY={translateY} />

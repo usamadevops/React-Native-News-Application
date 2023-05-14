@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { SafeAreaView, FlatList, View, Dimensions } from 'react-native';
+import { SafeAreaView, FlatList} from 'react-native';
 import styles from '../../Style';
 import {
   Header,
@@ -29,7 +29,6 @@ const Home = () => {
       case 'ImportantNewsCard':
         return <ImportantNewsCard />;
       case 'TopNewsCard':
-        // Include your TopNewsCard logic here
         return <TopNewsCard TopNews={TopNews} />;
       case 'NewsList':
         return <NewsList queryString={item.data} />;
@@ -74,9 +73,10 @@ const Home = () => {
       <Header />
       <FlatList
         data={DATA}
+        initialNumToRender={10}
+        maxToRenderPerBatch={5}
         keyExtractor={(item, index) => item.type + index}
         renderItem={renderItem}
-        ListHeaderComponent={() => isLoading1 ? <HeadlinesSK /> : null}
       />
     </SafeAreaView>
   );
