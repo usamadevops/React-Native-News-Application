@@ -18,7 +18,6 @@ const SmallCard = React.memo(({ NewsChannel, title, image, PostedTime, newsurl }
   }, [navigation, newsurl, title]);
   return (
     <Pressable
-      android_ripple={{ borderless: false, color: '#c4c4c4', radius: 320, }}
       style={{ elevation: 1, marginVertical: 5, marginHorizontal: 5, width: width.toString() - 10, alignSelf: 'center', backgroundColor: theme.colors.White, borderRadius: 10, overflow: 'hidden' }}
       onPress={handlePress}>
       <View style={styles.Maincontainer}>

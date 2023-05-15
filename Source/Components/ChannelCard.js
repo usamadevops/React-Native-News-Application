@@ -24,7 +24,7 @@ const ChannelCard = React.memo(({ name,source, description, category, country, l
   }, [navigation, name, source, description, category, country, language, url, logo]);
 
   return (
-    <Pressable android_ripple={{ color: '#FFFAFB', borderless: false, radius: theme.constants.screenWidth  }} onPress={handlePress} style={{
+    <Pressable  onPress={handlePress} style={{
       width: theme.constants.screenWidth,
       backgroundColor: theme.colors.White,
       borderRadius: 10,

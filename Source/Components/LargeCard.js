@@ -17,7 +17,7 @@ const LargeCard = React.memo(({ NewsChannel, title, image, PostedTime, newsurl }
   }, [navigation, newsurl, title]);
   return (
     <Pressable
-    android_ripple={{borderless:false,color:'#c4c4c4',radius:320,}}
+   
     style={{marginVertical:8,marginHorizontal:5,width:width.toString()-10,alignSelf:'center',backgroundColor:theme.colors.White,borderRadius:10,overflow:'hidden'}}
       onPress={handlePress}>
       <View style={{flex:1,alignItems:'center',justifyContent:'center',}}>

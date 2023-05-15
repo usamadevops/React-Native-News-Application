@@ -11,7 +11,7 @@ const ImportantNewsCard = () => {
     <TouchableWithoutFeedback
       style={{width: theme.constants.screenWidth}}
       onPress={() => navigation.navigate('NewsListScreen', {
-        datasearch:'AI Advancments'
+        datasearch:'AI'
       })}>
       <View
         style={{

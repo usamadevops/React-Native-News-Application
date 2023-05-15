@@ -32,7 +32,6 @@ const TopNewsCard = ({ TopNews, inProfile }) => {
               title: item?.title
             });
           }}
-            android_ripple={{ borderless: false, color: '#c4c4c4', radius: 240, }}
           >
             <View >
               {
