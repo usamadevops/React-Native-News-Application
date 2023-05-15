@@ -1,5 +1,5 @@
 import React, {useCallback} from 'react';
-import {Text, View, Pressable} from 'react-native';
+import {Text, View, Pressable,Animated} from 'react-native';
 import styles from './styles';
 import {theme} from '../constants';
 import {fontFamily} from '../constants/Fonts';
@@ -9,6 +9,7 @@ import FastImage from 'react-native-fast-image';
 
 const ChannelCard = React.memo(({ name,source, description, category, country, language, url,logo }) => {
   const navigation = useNavigation();
+
 
   const handlePress = useCallback(() => {
     navigation.navigate('TopicProfile', {
@@ -30,7 +31,7 @@ const ChannelCard = React.memo(({ name,source, description, category, country, l
       borderRadius: 10,
       marginVertical:10,
     }}>
-      <View >
+   
         <View style={styles.SmallCardContainer}>
           <View style={{ flex: 3,flexDirection:'row' }}>
             <View style={{flexDirection: 'row', paddingRight: 15}}>
@@ -111,7 +112,7 @@ const ChannelCard = React.memo(({ name,source, description, category, country, l
             </View>
           </Pressable>
         </View>
-      </View>
+     
     </Pressable>
   );
 });

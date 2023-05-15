@@ -23,10 +23,10 @@ import styles from '../../Style';
 const Search = () => {
   const [selectedCategory, setselectedCategory] = React.useState('')
   const [searchtext, setSearchtext] = React.useState('');
-  const translateY = useSharedValue(0);//Sheet height
+  const translateY = useSharedValue(SCREEN_HEIGHT);//Sheet height
   const OpenSheet=()=>{
-    console.log('sdfsd',translateY,SCREEN_HEIGHT);
-      // translateY.value=withSpring(-SCREEN_HEIGHT/1.4,{damping:50})
+    translateY.value=withSpring(-SCREEN_HEIGHT/1.4,{damping:50})
+    console.log('sdfsd',translateY.value);
   }
   const [search, setSearch] = React.useState(`https://newsapi.org/v2/everything?q=AI&sortBy=latest&apiKey=${API}`);
   function onClick() {
@@ -61,7 +61,7 @@ const ListHeaderComponent=()=>{
 return (
   <GestureHandlerRootView style={{ flex: 1 }}>
     <SafeAreaView style={styles.container}>
-    <Header2 title="Search any News" icon="filter" onPress={OpenSheet()} />
+    <Header2 title="Search any News" icon="filter" onPress={OpenSheet} />
       <View style={{ flex: 1 }}>
         <NewsList queryString={search} insearch={true} ListHeaderComponent={ListHeaderComponent} />
       </View>
