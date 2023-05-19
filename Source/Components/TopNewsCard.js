@@ -1,36 +1,30 @@
-import React from 'react';
+import React, { memo } from 'react';
 import moment from 'moment';
-import { View, Text, FlatList, Image, Animated, ActivityIndicator, Pressable } from 'react-native';
-import styles from './styles';
-import { theme } from '../constants';
+import { View, Text, FlatList, Image, Pressable } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import FastImage from 'react-native-fast-image';
+import styles from './styles';
 
 const TopNewsCard = ({ TopNews, inProfile }) => {
-  console.log(TopNews);
-  const AnimatedFlatlist = Animated.createAnimatedComponent(FlatList);
   const navigation = useNavigation();
   return (
     <View style={styles.Maincontainer}>
-
       <View
         style={{ alignSelf: 'flex-start', paddingLeft: 18, paddingVertical: 15 }}>
         <Text style={styles.titleText}>{!inProfile ? `What's happening in the World?` : '• Headlines'}</Text>
         <Text style={styles.subTitleText}>{!inProfile ? `Here's You can see` : `Scroll Right to see more«`} </Text>
       </View>
-
-
-
-      <AnimatedFlatlist
+      <FlatList
         data={TopNews}
         horizontal={true}
         scrollEventThrottle={16}
         showsHorizontalScrollIndicator={false}
-        bounces={true}
         pagingEnabled
+        initialNumToRender={10} // Render 10 items initially
+        maxToRenderPerBatch={5} // Render 5 more items per each render batch
+        windowSize={5} 
         automaticallyAdjustsScrollIndicatorInsets
-        legacyImplementation={false}
-        keyExtractor={item => item.title}
+        keyExtractor={(item, index) => index.toString()}
         renderItem={({ item, index }) => (
           <Pressable style={styles.CardContainer} key={index} onPress={() => {
             navigation.navigate('Post', {
@@ -38,7 +32,6 @@ const TopNewsCard = ({ TopNews, inProfile }) => {
               title: item?.title
             });
           }}
-            android_ripple={{ borderless: false, color: '#c4c4c4', radius: 240, }}
           >
             <View >
               {
@@ -56,9 +49,8 @@ const TopNewsCard = ({ TopNews, inProfile }) => {
                     style={{ width: '100%', height: 150, borderRadius: 10 }}
                     source={{
                       uri: item?.urlToImage,
-                      priority: FastImage.priority.normal,
-                      cache: 'web'
-                    }}
+                      priority: FastImage.priority.high,
+                      cache: FastImage.cacheControl.immutable,                    }}
                   />
                 )
               }
@@ -77,4 +69,4 @@ const TopNewsCard = ({ TopNews, inProfile }) => {
   );
 };
 
-export default TopNewsCard;
+export default memo(TopNewsCard);

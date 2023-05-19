@@ -4,7 +4,6 @@ import { theme } from '../constants';
 export default styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
     backgroundColor: theme.colors.White,
   },
   appTitle: {

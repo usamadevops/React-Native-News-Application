@@ -10,7 +10,6 @@ import Statscard from './Stats';
 import TopicsCard from './TopicsCard';
 import NewsList from './NewsList';
 import LargeCard from './LargeCard';
-import ChannelsList from './ChannelsList';
 import Category from './Category';
 import Filterpopup from './Filterpopup';
 export {
@@ -27,6 +26,5 @@ export {
   Statscard,
   NewsList,
   Category,
-  ChannelsList,
   TopicsCard,
 };

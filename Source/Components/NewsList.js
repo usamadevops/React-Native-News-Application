@@ -1,111 +1,108 @@
-import React from 'react';
-import { View, ScrollView } from 'react-native';
+import React, { useState, useEffect, useCallback } from 'react';
+import { View, FlatList } from 'react-native';
 import styles from '../../Source/Screens/Style';
 import SmallCard from './SmallCard';
 import axios from 'axios';
-import SmallCardSK from '../assets/Skeletons/SmallCardSK'
+import SmallCardSK from '../assets/Skeletons/SmallCardSK';
 import { ReadDataSingleString } from '../Utils/AsyncStorage';
 import LargeCard from './LargeCard';
 import { useIsFocused, useNavigation } from '@react-navigation/native';
-const NewsList = ({ queryString }) => {
-  const navigation=useNavigation();
-  const focused=useIsFocused();
-  const [Articles, setArticles] = React.useState([]);
-  const [Layout, setLayout] = React.useState()
-  const [isLoading2, setisLoading2] = React.useState(false);
-  const [error, seterror] = React.useState('');
-  React.useEffect(()=>{
-     ReadDataSingleString('Layout').then(res=>{
-    setLayout(res==='true'?true:false); 
-    console.log('fresh',Layout);
-    })
-    },[focused])
-  const GetArticles = async () => {
-    setisLoading2(true);
-    var config = {
-      method: 'GET',
-      url: queryString
+
+const NewsList = ({ ListHeaderComponent,queryString }) => {
+  const navigation = useNavigation();
+  const focused = useIsFocused();
+  const [articles, setArticles] = useState([]);
+  const [layout, setLayout] = useState();
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
+
+
+  
+  useEffect(() => {
+    let isCancelled = false;
+  
+    ReadDataSingleString('Layout').then((res) => {
+      if (!isCancelled) {
+        setLayout(res === 'true');
+      }
+    });
+  
+    return () => {
+      isCancelled = true;
     };
-    await axios(config)
-      .then(function (response) {
-        setArticles(response.data.articles);
-        console.log(response.data.articles);
-        setisLoading2(false);
-      })
-      .catch(function (error) {
-        seterror(error);
-        setisLoading2(false);
-      });
-  }
-  React.useEffect(() => {
-   const articles= GetArticles();
-   return()=>{
-    articles;
-   }
-  }, [queryString])
+  }, [focused]);
+  
+  useEffect(() => {
+    let isCancelled = false;
+    const getArticles = async () => {
+      setIsLoading(true);
+      try {
+        const response = await axios.get(queryString);
+        if (!isCancelled) {
+          setArticles(response.data.articles);
+          setIsLoading(false);
+        }
+      } catch (error) {
+        if (!isCancelled) {
+          setError(error);
+          setIsLoading(false);
+        }
+      }
+    };
+    getArticles();
+    return () => {
+      isCancelled = true;
+    };
+  }, [queryString]);
 
-//   var offset = 10;
+  const renderItem = useCallback(({ item, index }) => {
+    return (
+      <View key={index}>
+        {!layout ? (
+          <LargeCard
+            title={item?.description}
+            newsurl={item?.url}
+            NewsChannel={item?.source.name}
+            PostedTime={item?.publishedAt}
+            image={item?.urlToImage}
+          />
+        ) : (
+          <SmallCard
+            title={item?.title}
+            newsurl={item?.url}
+            NewsChannel={item?.source.name}
+            PostedTime={item?.publishedAt}
+            image={item?.urlToImage}
+          />
+        )}
+      </View>
+    );
+  }, [layout]);
 
-//   const onScroll = (event)=>{
-//     var currentOffset = event.nativeEvent.contentOffset.y;
-//         var direction = currentOffset > offset ? 'down' : 'up';
-//     offset = currentOffset;
-//     //console.log(direction);
-//     if(direction == 'down'){
-//       console.log("Direction is: " + direction);
-// navigation.setOptions({ tabBarStyle: { display: 'none' } }) 
-//    }
-//     if(direction == 'up'){
-//       console.log("Direction is: " + direction);
-//       navigation.setOptions({ tabBarStyle: { display: 'flex' } }) 
-//     }
-//   }
   return (
     <View style={styles.container}>
-      <ScrollView horizontal={false} scrollToOverflowEnabled={true} bounces={true}  >
-        {
-          isLoading2 ? (
-            <View style={styles.Maincontainer}>
-              <View style={{ marginVertical: 16 }}>
-                <SmallCardSK />
-              </View>
-              <View style={{ marginVertical: 16 }}>
-                <SmallCardSK />
-              </View>
-              <View style={{ marginVertical: 16 }}>
-                <SmallCardSK />
-              </View>
-            </View>
-          ) : (
-            Articles?.map((items, index) => {
-              return (
-                <View key={index}>
-                  {!Layout?(
- <LargeCard
- title={items?.description}
- newsurl={items?.url}
- NewsChannel={items?.source.name}
- PostedTime={items?.publishedAt}
- image={items?.urlToImage}
-/>
-                  ):(
-                    <SmallCard
-                    title={items?.title}
-                    newsurl={items?.url}
-                    NewsChannel={items?.source.name}
-                    PostedTime={items?.publishedAt}
-                    image={items?.urlToImage}
-                  />
-                  )
-                  }
-                </View>
-              );
-            })
-          )
-        }
-      </ScrollView>
+      {isLoading ? (
+        <View style={styles.Maincontainer}>
+          <View style={{ marginVertical: 16 }}>
+            <SmallCardSK />
+          </View>
+          <View style={{ marginVertical: 16 }}>
+            <SmallCardSK />
+          </View>
+          <View style={{ marginVertical: 16 }}>
+            <SmallCardSK />
+          </View>
+        </View>
+      ) : (
+        <FlatList
+          data={articles}
+          renderItem={renderItem}
+          ListHeaderComponent={ListHeaderComponent}
+          keyExtractor={(item, index) => index.toString()}
+        />
+      )}
     </View>
-  )
-}
+  );
+};
 
-export default NewsList
+export default NewsList;

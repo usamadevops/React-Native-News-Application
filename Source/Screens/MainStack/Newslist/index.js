@@ -5,7 +5,7 @@ import { NewsList } from '../../../Components'
 const NewsListScreen = ({ navigation, route }) => {
     const { datasearch } = route.params;
     React.useEffect(()=>{
-        navigation.setOptions({title:'CryptoCurrency News'})
+        navigation.setOptions({title:'AI Advancements'})
       },[navigation]);
   return (
     <SafeAreaView style={{flex:1}}>
