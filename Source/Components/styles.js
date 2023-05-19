@@ -44,9 +44,9 @@ export default styles = StyleSheet.create({
     marginTop: 20,
   },
   headerText: {
-    fontFamily: fontFamily.Bozon_Demi_Bold,
+    fontFamily: fontFamily.BRFirma_Bold,
     fontSize: theme.fonts.body.fontSize,
-    lineHeight: 25,
+    lineHeight: 26,
     letterSpacing: 0.34,
   },
   BottomContainer: {

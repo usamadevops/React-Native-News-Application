@@ -60,7 +60,7 @@ const NewsList = ({ ListHeaderComponent,queryString }) => {
       <View key={index}>
         {!layout ? (
           <LargeCard
-            title={item?.description}
+            title={item?.title}
             newsurl={item?.url}
             NewsChannel={item?.source.name}
             PostedTime={item?.publishedAt}
